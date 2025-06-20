@@ -1,0 +1,796 @@
+/* SCAN DETAILS PAGE - SPECIFIC CSS */
+/* Use same styles as cve_scan.html for consistency */
+/* OVERRIDE BASE.HTML CONFLICTS - Scan Details Specific */
+
+/* Hide loading overlay specifically for scan details page */
+#loadingOverlay {
+    display: none !important;
+}
+
+/* Ensure CSS variables are defined */
+:root {
+    --primary-color: #10b981;
+    --primary-dark: #059669;
+    --primary-light: #34d399;
+    --text-primary: #ffffff;
+    --text-secondary: #9ca3af;
+    --modal-bg: #111827;
+    --modal-header-bg: #1f2937;
+    --border-modal: #374151;
+    --card-bg: #1f2937;
+    --border-color: #374151;
+    /* Enhanced blue colors for better visibility */
+    --bright-blue: #60a5fa;
+    --bright-cyan: #22d3ee;
+    --bright-info: #3b82f6;
+}
+
+/* CVE Modal Tabs - Nền trắng chữ xanh với styling đẹp hơn */
+#cveDetailsModal .modal-tabs {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    margin-bottom: 25px !important;
+    padding: 12px !important;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(6, 182, 212, 0.1)) !important;
+    border-radius: 16px !important;
+    border: 2px solid rgba(16, 185, 129, 0.3) !important;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.2) !important;
+}
+
+/* Copy all the modal styles from cve_scan.html */
+#cveDetailsModal .modal-tab {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    padding: 14px 24px !important;
+    border: none !important;
+    background: linear-gradient(135deg, #ffffff, #f8fafc) !important;
+    color: var(--primary-color) !important;
+    font-weight: 700 !important;
+    font-size: 15px !important;
+    border-radius: 12px !important;
+    cursor: pointer !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    text-transform: none !important;
+    min-width: 180px !important;
+    justify-content: center !important;
+    border: 2px solid rgba(16, 185, 129, 0.2) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+#cveDetailsModal .modal-tab:hover {
+    background: linear-gradient(135deg, #f0fdf4, #dcfce7) !important;
+    color: var(--primary-dark) !important;
+    transform: translateY(-3px) scale(1.02) !important;
+    box-shadow: 0 12px 30px rgba(16, 185, 129, 0.3) !important;
+    border-color: var(--primary-color) !important;
+}
+
+#cveDetailsModal .modal-tab.active {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)) !important;
+    color: white !important;
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4) !important;
+    transform: translateY(-2px) scale(1.05) !important;
+    border-color: transparent !important;
+}
+
+/* CVSS Info Cards */
+#cveDetailsModal .cvss-info-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 20px !important;
+    margin-top: 20px !important;
+}
+
+#cveDetailsModal .cvss-info-card {
+    background: var(--modal-header-bg, #1f2937) !important;
+    border: 1px solid var(--border-modal, #374151) !important;
+    border-radius: 12px !important;
+    padding: 20px !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+#cveDetailsModal .cvss-info-item {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    margin-bottom: 15px !important;
+}
+
+#cveDetailsModal .cvss-icon {
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 8px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 18px !important;
+    color: white !important;
+}
+
+#cveDetailsModal .cvss-icon.score {
+    background: linear-gradient(135deg, #10b981, #059669) !important;
+}
+
+#cveDetailsModal .cvss-icon.severity {
+    background: linear-gradient(135deg, #dc2626, #b91c1c) !important;
+}
+
+#cveDetailsModal .cvss-icon.vector {
+    background: linear-gradient(135deg, #3b82f6, #2563eb) !important;
+}
+
+#cveDetailsModal .cvss-icon.assessment {
+    background: linear-gradient(135deg, #f59e0b, #d97706) !important;
+}
+
+#cveDetailsModal .cvss-icon.confidence {
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed) !important;
+}
+
+#cveDetailsModal .cvss-info-content h6 {
+    color: var(--primary-color, #10b981) !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    margin: 0 0 4px 0 !important;
+    letter-spacing: 0.5px !important;
+}
+
+#cveDetailsModal .cvss-info-content .value {
+    color: var(--text-primary, #ffffff) !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    margin: 0 !important;
+}
+
+/* Modal Labels */
+#cveDetailsModal .modal-label {
+    display: block !important;
+    color: var(--primary-color, #10b981) !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    margin-bottom: 10px !important;
+    letter-spacing: 1px !important;
+}
+
+#cveDetailsModal .modal-section-content {
+    color: var(--text-primary, #ffffff) !important;
+    line-height: 1.6 !important;
+}
+
+/* Modal styling */
+#cveDetailsModal .modal-content {
+    background: var(--modal-bg, #111827) !important;
+    border: 1px solid var(--border-modal, #374151) !important;
+    border-radius: 12px !important;
+}
+
+#cveDetailsModal .modal-header {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(6, 182, 212, 0.1)) !important;
+    border-bottom: 2px solid rgba(16, 185, 129, 0.3) !important;
+    border-radius: 12px 12px 0 0 !important;
+}
+
+#cveDetailsModal .modal-title {
+    font-weight: 700 !important;
+    color: var(--primary-color, #10b981) !important;
+}
+
+/* General styles for the scan details page */
+.scan-details-header {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(6, 182, 212, 0.1));
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.session-info-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.session-stat {
+    text-align: center;
+    padding: 1rem;
+}
+
+.session-stat-number {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.session-stat-number.text-primary {
+    color: var(--bright-blue) !important;
+    text-shadow: 0 0 8px rgba(96, 165, 250, 0.4);
+}
+
+.session-stat-label {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.breadcrumb-custom {
+    background: transparent;
+    padding: 0;
+    margin-bottom: 1rem;
+}
+
+.breadcrumb-custom .breadcrumb-item a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.breadcrumb-custom .breadcrumb-item.active {
+    color: var(--text-secondary);
+}
+
+/* Enhanced styles for better visibility of blue elements */
+.text-primary {
+    color: var(--bright-blue) !important;
+}
+
+.text-info {
+    color: var(--bright-cyan) !important;
+    text-shadow: 0 0 6px rgba(34, 211, 238, 0.3);
+}
+
+.badge.bg-primary {
+    background: linear-gradient(135deg, var(--bright-blue), var(--bright-info)) !important;
+    color: white !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+    box-shadow: 0 2px 8px rgba(96, 165, 250, 0.4) !important;
+    border: 1px solid rgba(96, 165, 250, 0.6) !important;
+}
+
+.btn-outline-primary {
+    border-color: var(--bright-blue) !important;
+    color: var(--bright-blue) !important;
+    background: rgba(96, 165, 250, 0.1) !important;
+}
+
+.btn-outline-primary:hover {
+    background: var(--bright-blue) !important;
+    border-color: var(--bright-blue) !important;
+    color: white !important;
+    box-shadow: 0 4px 12px rgba(96, 165, 250, 0.4) !important;
+}
+
+/* CVE ID links enhancement */
+.table td a {
+    color: var(--bright-cyan) !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
+    text-shadow: 0 0 4px rgba(34, 211, 238, 0.3) !important;
+}
+
+.table td a:hover {
+    color: #ffffff !important;
+    text-shadow: 0 0 8px rgba(34, 211, 238, 0.6) !important;
+}
+
+/* Enhanced icons in header */
+.fas.text-primary {
+    color: var(--bright-blue) !important;
+    filter: drop-shadow(0 0 4px rgba(96, 165, 250, 0.4)) !important;
+}
+
+/* Small text info enhancement */
+.text-info.small {
+    color: var(--bright-cyan) !important;
+    font-weight: 500 !important;
+}
+
+/* Badge enhancements for better contrast */
+.badge.bg-info {
+    background: linear-gradient(135deg, var(--bright-cyan), #0ea5e9) !important;
+    color: white !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+    box-shadow: 0 2px 6px rgba(34, 211, 238, 0.4) !important;
+}
+
+/* === GROK AI ANALYSIS STYLING - FIXED DARK THEME === */
+
+/* Grok AI Plugin Card */
+.plugin-card .grok-analysis-container {
+    margin-top: 15px !important;
+}
+
+/* Enhanced Grok Analysis Content - DARK BACKGROUND WITH WHITE TEXT */
+.grok-analysis-content {
+    background: #0f172a !important; /* Very dark background */
+    border: 2px solid rgba(139, 92, 246, 0.4) !important;
+    border-radius: 12px !important;
+    padding: 25px !important;
+    max-height: 500px !important;
+    overflow-y: auto !important;
+    font-size: 15px !important;
+    line-height: 1.8 !important;
+    color: #ffffff !important; /* Pure white text */
+    box-shadow: 0 8px 32px rgba(139, 92, 246, 0.2) !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+/* Force white text for all content */
+.grok-analysis-content * {
+    color: #ffffff !important;
+}
+
+/* Grok Analysis Headers - Purple headers on dark background */
+.grok-analysis-content h1,
+.grok-analysis-content h2,
+.grok-analysis-content h3,
+.grok-analysis-content h4,
+.grok-analysis-content h5,
+.grok-analysis-content h6 {
+    color: #c084fc !important; /* Light purple for headers */
+    font-weight: 700 !important;
+    margin: 20px 0 15px 0 !important;
+    padding: 0 !important;
+    border-bottom: 2px solid rgba(192, 132, 252, 0.3) !important;
+    padding-bottom: 8px !important;
+    background: none !important;
+}
+
+.grok-analysis-content h1 { font-size: 24px !important; }
+.grok-analysis-content h2 { font-size: 20px !important; }
+.grok-analysis-content h3 { font-size: 18px !important; }
+.grok-analysis-content h4 { font-size: 16px !important; }
+.grok-analysis-content h5 { font-size: 15px !important; }
+.grok-analysis-content h6 { font-size: 14px !important; }
+
+/* Grok Analysis Paragraphs - White text */
+.grok-analysis-content p {
+    margin: 15px 0 !important;
+    color: #ffffff !important;
+    text-align: justify !important;
+    background: none !important;
+}
+
+/* Grok Analysis Lists - White text */
+.grok-analysis-content ul,
+.grok-analysis-content ol {
+    margin: 15px 0 !important;
+    padding-left: 25px !important;
+}
+
+.grok-analysis-content li {
+    margin: 8px 0 !important;
+    color: #ffffff !important;
+    line-height: 1.6 !important;
+    background: none !important;
+}
+
+.grok-analysis-content ul li {
+    list-style-type: none !important;
+    position: relative !important;
+}
+
+.grok-analysis-content ul li:before {
+    content: "▶" !important;
+    color: #c084fc !important; /* Light purple bullets */
+    font-weight: bold !important;
+    position: absolute !important;
+    left: -20px !important;
+}
+
+.grok-analysis-content ol li {
+    color: #ffffff !important;
+}
+
+/* Grok Analysis Strong/Bold Text - Yellow highlights */
+.grok-analysis-content strong,
+.grok-analysis-content b {
+    color: #fbbf24 !important;
+    font-weight: 700 !important;
+    background: none !important;
+}
+
+/* Grok Analysis Code and Technical Terms - Blue highlights */
+.grok-analysis-content code {
+    background: rgba(59, 130, 246, 0.2) !important;
+    color: #60a5fa !important;
+    padding: 2px 6px !important;
+    border-radius: 4px !important;
+    font-family: 'Courier New', monospace !important;
+    font-size: 13px !important;
+}
+
+/* Grok Analysis Blockquotes */
+.grok-analysis-content blockquote {
+    border-left: 4px solid #c084fc !important;
+    margin: 20px 0 !important;
+    padding: 15px 20px !important;
+    background: rgba(192, 132, 252, 0.1) !important;
+    border-radius: 0 8px 8px 0 !important;
+    font-style: italic !important;
+    color: #ffffff !important;
+}
+
+/* Grok Analysis Tables */
+.grok-analysis-content table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    margin: 20px 0 !important;
+    background: rgba(15, 23, 42, 0.8) !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+}
+
+.grok-analysis-content table th,
+.grok-analysis-content table td {
+    padding: 12px !important;
+    text-align: left !important;
+    border-bottom: 1px solid rgba(192, 132, 252, 0.3) !important;
+    color: #ffffff !important;
+    background: none !important;
+}
+
+.grok-analysis-content table th {
+    background: rgba(192, 132, 252, 0.2) !important;
+    color: #c084fc !important;
+    font-weight: 700 !important;
+}
+
+/* Grok Analysis Links - Blue links */
+.grok-analysis-content a {
+    color: #60a5fa !important;
+    text-decoration: underline !important;
+    transition: color 0.3s ease !important;
+    background: none !important;
+}
+
+.grok-analysis-content a:hover {
+    color: #93c5fd !important;
+    text-shadow: 0 0 4px rgba(96, 165, 250, 0.5) !important;
+}
+
+/* Grok Analysis Scrollbar */
+.grok-analysis-content::-webkit-scrollbar {
+    width: 8px !important;
+}
+
+.grok-analysis-content::-webkit-scrollbar-track {
+    background: rgba(15, 23, 42, 0.5) !important;
+    border-radius: 4px !important;
+}
+
+.grok-analysis-content::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #c084fc, #a855f7) !important;
+    border-radius: 4px !important;
+}
+
+.grok-analysis-content::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #a855f7, #9333ea) !important;
+}
+
+/* Grok Analysis Special Sections */
+.grok-analysis-content .section-header {
+    background: rgba(192, 132, 252, 0.1) !important;
+    padding: 15px 20px !important;
+    border-radius: 8px !important;
+    margin: 20px 0 15px 0 !important;
+    border: 1px solid rgba(192, 132, 252, 0.4) !important;
+    color: #ffffff !important;
+}
+
+/* Grok Analysis Dividers */
+.grok-analysis-content hr {
+    border: none !important;
+    height: 2px !important;
+    background: linear-gradient(135deg, transparent, #c084fc, transparent) !important;
+    margin: 25px 0 !important;
+}
+
+/* Grok Analysis Number Lists Enhancement */
+.grok-analysis-content ol {
+    counter-reset: custom-counter !important;
+}
+
+.grok-analysis-content ol li {
+    counter-increment: custom-counter !important;
+    position: relative !important;
+}
+
+.grok-analysis-content ol li:before {
+    content: counter(custom-counter) !important;
+    background: linear-gradient(135deg, #c084fc, #a855f7) !important;
+    color: white !important;
+    font-weight: 700 !important;
+    font-size: 12px !important;
+    width: 20px !important;
+    height: 20px !important;
+    border-radius: 50% !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    position: absolute !important;
+    left: -35px !important;
+    top: 2px !important;
+}
+
+/* Force dark background for any nested elements */
+.grok-analysis-content div,
+.grok-analysis-content span,
+.grok-analysis-content section,
+.grok-analysis-content article {
+    background: transparent !important;
+    color: inherit !important;
+}
+
+/* Override any inline styles that might set white background */
+.grok-analysis-content [style*="background"] {
+    background: transparent !important;
+}
+
+.grok-analysis-content [style*="color: white"],
+.grok-analysis-content [style*="color:#ffffff"],
+.grok-analysis-content [style*="color:#fff"] {
+    color: #ffffff !important;
+}
+
+/* === MODAL SIZE FIXES - Prevent shrinking after Grok analysis === */
+
+/* Ensure modal dialog maintains size */
+#cveDetailsModal .modal-dialog {
+    max-width: 95vw !important;
+    width: 95vw !important;
+    margin: 1rem auto !important;
+    min-height: calc(100vh - 2rem) !important;
+}
+
+#cveDetailsModal .modal-content {
+    height: auto !important;
+    min-height: calc(100vh - 2rem) !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+#cveDetailsModal .modal-body {
+    flex: 1 !important;
+    overflow-y: auto !important;
+    max-height: calc(100vh - 200px) !important;
+}
+
+/* Prevent plugin card from shrinking */
+.plugin-card.grok-ai-plugin {
+    min-height: 200px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* Ensure grok analysis container doesn't break layout */
+.grok-analysis-container {
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* Force proper display for analysis container */
+.grok-analysis-container[style*="display: block"] {
+    display: block !important;
+    width: 100% !important;
+}
+
+/* Override any conflicting styles on modal tabs */
+#cveDetailsModal .modal-tabs {
+    width: 100% !important;
+    flex-wrap: nowrap !important;
+}
+
+#cveDetailsModal .modal-tab-content {
+    width: 100% !important;
+    min-height: 400px !important;
+}
+
+/* Ensure plugins tab content maintains width */
+#detectionPlugins {
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.plugins-container {
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .grok-analysis-content {
+        padding: 20px !important;
+        font-size: 14px !important;
+        max-height: 400px !important;
+    }
+    
+    .grok-analysis-content h1 { font-size: 20px !important; }
+    .grok-analysis-content h2 { font-size: 18px !important; }
+    .grok-analysis-content h3 { font-size: 16px !important; }
+    
+    #cveDetailsModal .modal-dialog {
+        max-width: 98vw !important;
+        width: 98vw !important;
+        margin: 0.5rem auto !important;
+    }
+}
+
+/* Loading animation enhancement */
+.plugin-card .spinner-border {
+    border-color: #a855f7 !important;
+    border-right-color: transparent !important;
+}
+
+/* Analyze button enhancement */
+.plugin-card .btn-outline-primary {
+    border: 2px solid #a855f7 !important;
+    color: #a855f7 !important;
+    background: rgba(139, 92, 246, 0.1) !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+}
+
+.plugin-card .btn-outline-primary:hover {
+    background: linear-gradient(135deg, #a855f7, #7c3aed) !important;
+    border-color: #a855f7 !important;
+    color: white !important;
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4) !important;
+    transform: translateY(-2px) !important;
+}
+
+.plugin-card .btn-outline-primary:disabled {
+    opacity: 0.6 !important;
+    cursor: not-allowed !important;
+    transform: none !important;
+}
+
+/* Default message styling */
+.plugin-card .fas.fa-robot {
+    color: #6b7280 !important;
+    margin-bottom: 10px !important;
+}
+
+.plugin-card .text-muted {
+    color: #9ca3af !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+}
+
+/* Force modal to maintain size after Grok AI analysis */
+#cveDetailsModal .modal-dialog {
+    max-width: 95vw !important;
+    width: 95vw !important;
+    margin: 1rem auto !important;
+    height: calc(100vh - 2rem) !important;
+}
+
+#cveDetailsModal .modal-content {
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: hidden !important;
+}
+
+#cveDetailsModal .modal-body {
+    flex: 1 !important;
+    overflow-y: auto !important;
+    padding: 20px !important;
+}
+
+/* Force plugin cards to maintain width */
+.plugin-card,
+.plugin-card.grok-ai-plugin {
+    width: 100% !important;
+    min-width: 100% !important;
+    box-sizing: border-box !important;
+    margin-bottom: 20px !important;
+}
+
+/* Force grok analysis container to maintain size */
+.grok-analysis-container {
+    width: 100% !important;
+    min-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.grok-analysis-container[style*="display: block"] {
+    display: block !important;
+    width: 100% !important;
+    min-width: 100% !important;
+}
+
+/* Force plugins container to maintain width */
+.plugins-container {
+    width: 100% !important;
+    min-width: 100% !important;
+    display: block !important;
+}
+
+/* Override any JavaScript-set styles that might shrink the modal */
+#cveDetailsModal * {
+    box-sizing: border-box !important;
+}
+
+#cveDetailsModal .modal-tab-content {
+    width: 100% !important;
+    min-width: 100% !important;
+    padding: 20px !important;
+}
+
+#detectionPlugins {
+    width: 100% !important;
+    min-width: 100% !important;
+    display: block !important;
+}
+
+/* Ensure all divs inside modal maintain full width */
+#cveDetailsModal .modal-body > *,
+#cveDetailsModal .modal-tab-content > *,
+#detectionPlugins > * {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+/* Force Grok AI analysis content to use dark theme */
+.grok-analysis-content {
+    background: #0f172a !important;
+    color: #ffffff !important;
+    border: 2px solid rgba(139, 92, 246, 0.4) !important;
+    border-radius: 12px !important;
+    padding: 25px !important;
+    max-height: 500px !important;
+    overflow-y: auto !important;
+    font-size: 15px !important;
+    line-height: 1.8 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.grok-analysis-content * {
+    color: #ffffff !important;
+}
+
+.grok-analysis-content h1,
+.grok-analysis-content h2,
+.grok-analysis-content h3,
+.grok-analysis-content h4,
+.grok-analysis-content h5,
+.grok-analysis-content h6 {
+    color: #c084fc !important;
+    font-weight: 700 !important;
+    margin: 20px 0 15px 0 !important;
+    border-bottom: 2px solid rgba(192, 132, 252, 0.3) !important;
+    padding-bottom: 8px !important;
+}
+
+.grok-analysis-content strong,
+.grok-analysis-content b {
+    color: #fbbf24 !important;
+    font-weight: 700 !important;
+}
+
+.grok-analysis-content code {
+    background: rgba(59, 130, 246, 0.2) !important;
+    color: #60a5fa !important;
+    padding: 2px 6px !important;
+    border-radius: 4px !important;
+}
+
+/* DISABLE MODAL-FIX.JS INTERFERENCE */
+/* Override modal-fix.js cleanup that might reset modal size */
+.modal.show .modal-dialog {
+    max-width: 95vw !important;
+    width: 95vw !important;
+    height: calc(100vh - 2rem) !important;
+    margin: 1rem auto !important;
+}

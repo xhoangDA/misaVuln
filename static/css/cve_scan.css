@@ -1,0 +1,685 @@
+/* ================================================
+   CVE SCAN SPECIFIC OVERRIDES
+   ================================================ */
+
+/* CVE Modal Tabs - Nền trắng chữ xanh với styling đẹp hơn */
+#cveDetailsModal .modal-tabs {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    margin-bottom: 25px !important;
+    padding: 12px !important;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(6, 182, 212, 0.1)) !important;
+    border-radius: 16px !important;
+    border: 2px solid rgba(16, 185, 129, 0.3) !important;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.2) !important;
+}
+
+#cveDetailsModal .modal-tab {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    padding: 14px 24px !important;
+    border: none !important;
+    background: linear-gradient(135deg, #ffffff, #f8fafc) !important;
+    color: var(--primary-color) !important;
+    font-weight: 700 !important;
+    font-size: 15px !important;
+    border-radius: 12px !important;
+    cursor: pointer !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    text-transform: none !important;
+    min-width: 180px !important;
+    justify-content: center !important;
+    border: 2px solid rgba(16, 185, 129, 0.2) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+#cveDetailsModal .modal-tab i {
+    font-size: 18px !important;
+    color: var(--primary-color) !important;
+    transition: all 0.4s ease !important;
+    filter: drop-shadow(0 2px 4px rgba(16, 185, 129, 0.3)) !important;
+}
+
+#cveDetailsModal .modal-tab:before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: -100% !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.2), transparent) !important;
+    transition: left 0.6s ease !important;
+}
+
+#cveDetailsModal .modal-tab:hover:before {
+    left: 100% !important;
+}
+
+#cveDetailsModal .modal-tab:hover {
+    background: linear-gradient(135deg, #f0fdf4, #dcfce7) !important;
+    color: var(--primary-dark) !important;
+    transform: translateY(-3px) scale(1.02) !important;
+    box-shadow: 0 12px 30px rgba(16, 185, 129, 0.3) !important;
+    border-color: var(--primary-color) !important;
+}
+
+#cveDetailsModal .modal-tab:hover i {
+    color: var(--primary-dark) !important;
+    transform: scale(1.15) rotate(5deg) !important;
+    filter: drop-shadow(0 4px 8px rgba(16, 185, 129, 0.5)) !important;
+}
+
+#cveDetailsModal .modal-tab.active {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)) !important;
+    color: var(--text-primary) !important;
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4) !important;
+    transform: translateY(-2px) scale(1.05) !important;
+    border-color: transparent !important;
+    position: relative !important;
+}
+
+#cveDetailsModal .modal-tab.active::after {
+    content: '' !important;
+    position: absolute !important;
+    top: -2px !important;
+    left: -2px !important;
+    right: -2px !important;
+    bottom: -2px !important;
+    background: linear-gradient(45deg, var(--primary-color), var(--primary-light), var(--primary-color)) !important;
+    border-radius: 14px !important;
+    z-index: -1 !important;
+    animation: borderGlow 2s linear infinite !important;
+}
+
+@keyframes borderGlow {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+#cveDetailsModal .modal-tab.active i {
+    color: var(--text-primary) !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5)) !important;
+}
+
+#cveDetailsModal .modal-tab.active:hover {
+    background: linear-gradient(135deg, var(--primary-dark), #047857) !important;
+    color: var(--text-primary) !important;
+    transform: translateY(-4px) scale(1.08) !important;
+    box-shadow: 0 15px 35px rgba(16, 185, 129, 0.5) !important;
+}
+
+#cveDetailsModal .modal-tab.active:hover i {
+    color: var(--text-primary) !important;
+    transform: scale(1.2) rotate(-5deg) !important;
+    filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.8)) !important;
+}
+
+/* Tab Content Styling */
+#cveDetailsModal .modal-tab-content {
+    background: var(--modal-bg) !important;
+    border-radius: 8px !important;
+    padding: 0 !important;
+    transition: all 0.3s ease !important;
+}
+
+#cveDetailsModal .modal-tab-content.d-none {
+    display: none !important;
+}
+
+/* Enhanced Modal Labels with Green Color */
+#cveDetailsModal .modal-label {
+    display: block !important;
+    color: var(--primary-color) !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    margin-bottom: 10px !important;
+    letter-spacing: 1px !important;
+    text-shadow: 0 1px 3px rgba(16, 185, 129, 0.3) !important;
+    position: relative !important;
+}
+
+#cveDetailsModal .modal-label::after {
+    content: '' !important;
+    position: absolute !important;
+    bottom: -3px !important;
+    left: 0 !important;
+    width: 30px !important;
+    height: 2px !important;
+    background: linear-gradient(90deg, var(--primary-color), transparent) !important;
+    border-radius: 1px !important;
+}
+
+/* Enhanced CVSS Badges */
+#cveDetailsModal .badge-score {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)) !important;
+    color: var(--text-primary) !important;
+    padding: 10px 18px !important;
+    border-radius: 25px !important;
+    font-weight: 700 !important;
+    font-size: 16px !important;
+    margin-right: 12px !important;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3) !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+#cveDetailsModal .badge-critical {
+    background: linear-gradient(135deg, var(--vuln-critical), #b91c1c) !important;
+    color: var(--text-primary) !important;
+    padding: 8px 14px !important;
+    border-radius: 20px !important;
+    font-weight: 600 !important;
+    font-size: 12px !important;
+    text-transform: uppercase !important;
+    box-shadow: 0 3px 8px rgba(220, 38, 38, 0.4) !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* CVSS Info Cards với Icon */
+#cveDetailsModal .cvss-info-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 20px !important;
+    margin-top: 20px !important;
+}
+
+#cveDetailsModal .cvss-info-card {
+    background: var(--modal-header-bg) !important;
+    border: 1px solid var(--border-modal) !important;
+    border-radius: 12px !important;
+    padding: 20px !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+#cveDetailsModal .cvss-info-card::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 3px !important;
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-light)) !important;
+}
+
+#cveDetailsModal .cvss-info-item {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    margin-bottom: 15px !important;
+}
+
+#cveDetailsModal .cvss-info-item:last-child {
+    margin-bottom: 0 !important;
+}
+
+#cveDetailsModal .cvss-icon {
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 8px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 18px !important;
+    color: var(--text-primary) !important;
+}
+
+#cveDetailsModal .cvss-icon.score {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)) !important;
+}
+
+#cveDetailsModal .cvss-icon.severity {
+    background: linear-gradient(135deg, var(--vuln-critical), #b91c1c) !important;
+}
+
+#cveDetailsModal .cvss-icon.vector {
+    background: linear-gradient(135deg, var(--info-color), #2563eb) !important;
+}
+
+#cveDetailsModal .cvss-icon.assessment {
+    background: linear-gradient(135deg, var(--warning-color), var(--vuln-medium)) !important;
+}
+
+#cveDetailsModal .cvss-icon.confidence {
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed) !important;
+}
+
+#cveDetailsModal .cvss-info-content h6 {
+    color: var(--primary-color) !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    margin: 0 0 4px 0 !important;
+    letter-spacing: 0.5px !important;
+}
+
+#cveDetailsModal .cvss-info-content .value {
+    color: var(--text-primary) !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    margin: 0 !important;
+}
+
+/* Enhanced Pulse Animation */
+#cveDetailsModal .pulse-icon {
+    animation: modalPulse 2s infinite !important;
+}
+
+@keyframes modalPulse {
+    0%, 100% {
+        opacity: 1 !important;
+        transform: scale(1) !important;
+    }
+    50% {
+        opacity: 0.7 !important;
+        transform: scale(1.05) !important;
+    }
+}
+
+/* Enhanced CVE Modal Info Section Styling */
+#cveDetailsModal .info-section {
+    margin-bottom: 2rem;
+}
+
+#cveDetailsModal .info-icon-wrapper {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(16, 185, 129, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+#cveDetailsModal .info-content {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+#cveDetailsModal .card-header-custom {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* Severity Icon Classes */
+#cveDetailsModal .severity-critical {
+    background: linear-gradient(135deg, #dc2626, #7f1d1d) !important;
+    box-shadow: 0 0 15px rgba(220, 38, 38, 0.6) !important;
+    animation: criticalPulse 2s infinite !important;
+}
+
+#cveDetailsModal .severity-high {
+    background: linear-gradient(135deg, #dc2626, #b91c1c) !important;
+    box-shadow: 0 0 12px rgba(220, 38, 38, 0.5) !important;
+}
+
+#cveDetailsModal .severity-medium {
+    background: linear-gradient(135deg, #f59e0b, #d97706) !important;
+    box-shadow: 0 0 12px rgba(245, 158, 11, 0.5) !important;
+}
+
+#cveDetailsModal .severity-low,
+#cveDetailsModal .severity-unknown {
+    background: linear-gradient(135deg, #10b981, #059669) !important;
+    box-shadow: 0 0 12px rgba(16, 185, 129, 0.5) !important;
+}
+
+@keyframes criticalPulse {
+    0%, 100% {
+        box-shadow: 0 0 15px rgba(220, 38, 38, 0.6) !important;
+        transform: scale(1) !important;
+    }
+    50% {
+        box-shadow: 0 0 25px rgba(220, 38, 38, 0.8) !important;
+        transform: scale(1.05) !important;
+    }
+}
+
+/* Enhanced Risk Color System */
+#cveDetailsModal .risk-critical {
+    background: linear-gradient(135deg, #dc2626, #7f1d1d) !important;
+    box-shadow: 0 0 15px rgba(220, 38, 38, 0.6) !important;
+    animation: criticalPulse 2s infinite !important;
+}
+
+#cveDetailsModal .risk-high {
+    background: linear-gradient(135deg, #dc2626, #b91c1c) !important;
+    box-shadow: 0 0 12px rgba(220, 38, 38, 0.5) !important;
+}
+
+#cveDetailsModal .risk-medium {
+    background: linear-gradient(135deg, #f59e0b, #d97706) !important;
+    box-shadow: 0 0 12px rgba(245, 158, 11, 0.5) !important;
+}
+
+#cveDetailsModal .risk-low,
+#cveDetailsModal .risk-unknown {
+    background: linear-gradient(135deg, #10b981, #059669) !important;
+    box-shadow: 0 0 12px rgba(16, 185, 129, 0.5) !important;
+}
+
+/* Enhanced Badge Colors for Severity */
+.badge.bg-danger {
+    background: linear-gradient(135deg, #dc2626, #b91c1c) !important;
+    color: white !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+    box-shadow: 0 2px 8px rgba(220, 38, 38, 0.4) !important;
+}
+
+.badge.bg-warning {
+    background: linear-gradient(135deg, #f59e0b, #d97706) !important;
+    color: white !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.4) !important;
+}
+
+.badge.bg-success {
+    background: linear-gradient(135deg, #10b981, #059669) !important;
+    color: white !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.4) !important;
+}
+
+/* Modal Header Enhancement */
+#cveDetailsModal .modal-header {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(6, 182, 212, 0.1)) !important;
+    border-bottom: 2px solid rgba(16, 185, 129, 0.3) !important;
+    border-radius: 12px 12px 0 0 !important;
+}
+
+#cveDetailsModal .modal-title {
+    font-weight: 700 !important;
+    color: var(--primary-color) !important;
+    text-shadow: 0 2px 4px rgba(16, 185, 129, 0.3) !important;
+}
+
+/* Enhanced Close Button - Màu đỏ chữ trắng */
+#cveDetailsModal .btn-close {
+    width: 40px !important;
+    height: 40px !important;
+    background: linear-gradient(135deg, #dc2626, #b91c1c) !important;
+    border-radius: 50% !important;
+    opacity: 1 !important;
+    border: 2px solid rgba(220, 38, 38, 0.3) !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3) !important;
+    position: relative !important;
+}
+
+#cveDetailsModal .btn-close:hover {
+    background: linear-gradient(135deg, #b91c1c, #991b1b) !important;
+    transform: scale(1.1) rotate(90deg) !important;
+    box-shadow: 0 6px 18px rgba(220, 38, 38, 0.5) !important;
+    border-color: #dc2626 !important;
+}
+
+#cveDetailsModal .btn-close::before {
+    content: '✕' !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    color: white !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Hide loading overlay specifically for this page */
+#loadingOverlay {
+    display: none !important;
+}
+
+/* References Container Styling */
+#cveDetailsModal .references-container {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+#cveDetailsModal .reference-item {
+    transition: all 0.3s ease;
+    border-left-color: var(--primary-color) !important;
+}
+
+#cveDetailsModal .reference-item:hover {
+    background: rgba(16, 185, 129, 0.1) !important;
+    transform: translateX(5px);
+}
+
+#cveDetailsModal .reference-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(16, 185, 129, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
+
+#cveDetailsModal .reference-actions .btn {
+    min-width: 80px;
+}
+
+#cveDetailsModal .hover-underline:hover {
+    text-decoration: underline !important;
+}
+
+/* Fix reference URL text color - Change from black to white */
+#cveDetailsModal .reference-item .text-muted {
+    color: #9ca3af !important; /* Light gray for better readability */
+}
+
+#cveDetailsModal .reference-item .flex-grow-1 .text-muted.small {
+    color: #d1d5db !important; /* Even lighter gray for URLs */
+}
+
+/* Scan History Styles */
+.scan-history-section {
+    padding: 2rem 0;
+    background: var(--bg-primary);
+}
+
+.history-header h2 {
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+.stat-card-history {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.stat-card-history:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.15);
+    border-color: var(--primary-color);
+}
+
+.stat-icon-history {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    background: rgba(16, 185, 129, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.stat-number-history {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+}
+
+.stat-label-history {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.history-table-container .cyber-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.search-box-small {
+    position: relative;
+    width: 250px;
+}
+
+.search-box-small input {
+    background: var(--input-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0.5rem 0.75rem 0.5rem 2.5rem;
+    font-size: 0.875rem;
+    color: var(--text-primary);
+    width: 100%;
+}
+
+.search-box-small i {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+.session-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: rgba(16, 185, 129, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+}
+
+date-range {
+    font-size: 0.875rem;
+}
+
+.vulnerability-summary-small {
+    font-size: 0.75rem;
+}
+
+.vulnerability-summary-small .badge {
+    font-size: 0.65rem;
+    padding: 0.25rem 0.5rem;
+}
+
+.text-xs {
+    font-size: 0.65rem !important;
+}
+
+/* --- CVE Scan Summary Section --- */
+.scan-summary-section {
+    margin: 0 auto 0.5rem auto !important;
+    padding: 0.5rem 0 0.5rem 0 !important;
+    background: var(--card-bg, #f8fafc) !important;
+    border-radius: 14px !important;
+    box-shadow: 0 2px 8px rgba(16,185,129,0.07) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 70px !important;
+    width: 100% !important;
+    font-size: 1.15rem !important;
+    font-weight: 600 !important;
+    z-index: 2;
+}
+
+.scan-metrics {
+    display: flex !important;
+    gap: 2.5rem !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100%;
+}
+
+.metric-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 110px;
+}
+
+.metric-value {
+    font-size: 2.1rem !important;
+    font-weight: 800 !important;
+    color: var(--primary-color, #10b981) !important;
+    margin-bottom: 0.15rem !important;
+    line-height: 1.1;
+}
+
+.metric-label {
+    font-size: 1rem !important;
+    color: var(--text-secondary, #6b7280) !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.5px;
+}
+
+/* Remove extra margin between summary and vulnerability summary */
+.scan-summary-section + .scan-results-section,
+.scan-summary-section + .vulnerability-summary {
+    margin-top: 0.5rem !important;
+}
+
+/* Ensure scan-results-section is close to summary */
+.scan-results-section {
+    margin-top: 0 !important;
+}
+
+@media (max-width: 900px) {
+    .scan-metrics {
+        gap: 1.2rem !important;
+    }
+    .metric-value {
+        font-size: 1.3rem !important;
+    }
+    .scan-summary-section {
+        padding: 0.25rem 0 !important;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .history-stats .col-lg-3 {
+        margin-bottom: 1rem;
+    }
+    
+    .search-box-small {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+    
+    .card-header .d-flex {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}

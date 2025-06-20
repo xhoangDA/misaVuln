@@ -1,0 +1,313 @@
+{% extends 'base.html' %}
+
+{% block title %}Scan Details - Session #{{ session.id }}{% endblock %}
+
+{% block extra_css %}
+<!-- CVE Modal Enhanced CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/cve-modal-enhanced.css') }}?v={{ range(1, 10000) | random }}">
+<!-- Scan Details Specific CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/scan_details.css') }}?v={{ range(1, 10000) | random }}">
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid" style="margin-top: 20px; padding-top: 15px;" data-session-id="{{ session.id }}">
+    <!-- Scan Details Header -->
+    <div class="scan-details-header" style="margin-top: 10px;">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <h2 class="mb-2 mt-2">
+                    <i class="fas fa-search text-primary me-2"></i>
+                    Scan Session #{{ session.id }}
+                </h2>
+                <p class="text-muted mb-3">{{ session.name }}</p>
+                <div class="d-flex gap-3 flex-wrap">
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-calendar-alt text-primary me-2"></i>
+                        <span><strong>Date Range:</strong> {{ session.start_date }} to {{ session.end_date }}</span>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-clock text-primary me-2"></i>
+                        <span><strong>Duration:</strong> {{ session.duration or 'N/A' }}</span>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-calendar-check text-primary me-2"></i>
+                        <span><strong>Scanned:</strong> {{ session.scan_start_time.strftime('%Y-%m-%d %H:%M') if session.scan_start_time }}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 text-end">
+                <div class="d-flex gap-2 justify-content-end">
+                    <button class="btn btn-outline-primary" onclick="window.history.back()">
+                        <i class="fas fa-arrow-left me-1"></i>
+                        Back
+                    </button>
+                    <button class="btn btn-outline-success" onclick="downloadScanReport({{ session.id }})">
+                        <i class="fas fa-download me-1"></i>
+                        Export Report
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Session Statistics -->
+    <div class="row g-4 mb-4">
+        <div class="col-lg-2 col-md-4 col-sm-6">
+            <div class="session-info-card">
+                <div class="session-stat">
+                    <div class="session-stat-number text-danger">{{ session.critical_count or 0 }}</div>
+                    <div class="session-stat-label">Critical</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-6">
+            <div class="session-info-card">
+                <div class="session-stat">
+                    <div class="session-stat-number text-warning">{{ session.high_count or 0 }}</div>
+                    <div class="session-stat-label">High</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-6">
+            <div class="session-info-card">
+                <div class="session-stat">
+                    <div class="session-stat-number text-info">{{ session.medium_count or 0 }}</div>
+                    <div class="session-stat-label">Medium</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-6">
+            <div class="session-info-card">
+                <div class="session-stat">
+                    <div class="session-stat-number text-success">{{ session.low_count or 0 }}</div>
+                    <div class="session-stat-label">Low</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-6">
+            <div class="session-info-card">
+                <div class="session-stat">
+                    <div class="session-stat-number text-primary">{{ session.total_technologies_scanned or 0 }}</div>
+                    <div class="session-stat-label">Technologies</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-6">
+            <div class="session-info-card">
+                <div class="session-stat">
+                    <div class="session-stat-number text-secondary">{{ session.vulnerabilities_found or 0 }}</div>
+                    <div class="session-stat-label">Total Vulns</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Vulnerabilities Table -->
+    <div class="results-table-container">
+        <div class="table-header">
+            <h3><i class="fas fa-list"></i> Vulnerability Details</h3>
+            <div class="table-actions">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Filter results..." id="vulnerabilityFilter">
+                </div>
+                <button class="export-btn" onclick="exportResults()">
+                    <i class="fas fa-download"></i>
+                    Export Results
+                </button>
+            </div>
+        </div>
+        <div class="table-container">
+            <table class="cyber-table" id="vulnerabilitiesTable">
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Risk</th>
+                        <th>CVE ID</th>
+                        <th>Technology</th>
+                        <th>CVSS Score</th>
+                        <th>Confidence</th>
+                        <th>Published</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="vulnerabilitiesTableBody">
+                    <!-- Vulnerabilities will be populated by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- CVE Details Modal (same as cve_scan.html) -->
+    <div class="modal fade" id="cveDetailsModal" tabindex="-1">
+        <div class="modal-dialog modal-xl modal-fullscreen-lg-down">
+            <div class="modal-content cyber-modal">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        <i class="fas fa-shield-alt me-2 pulse-icon"></i>
+                        CVE Details
+                    </h5>
+                    <div class="modal-controls">
+                        <button type="button" class="btn btn-sm btn-dark" onclick="toggleFullscreen()">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                </div>
+                <div class="modal-body" id="cveDetailsBody">
+                    <!-- Tabs with icons -->
+                    <div class="modal-tabs">
+                        <button class="modal-tab active" onclick="switchModalTab(0)">
+                            <i class="fas fa-info-circle"></i>
+                            Information
+                        </button>
+                        <button class="modal-tab" onclick="switchModalTab(1)">
+                            <i class="fas fa-puzzle-piece"></i>
+                            Affected Components
+                        </button>
+                        <button class="modal-tab" onclick="switchModalTab(2)">
+                            <i class="fas fa-plug"></i>
+                            Plugins
+                        </button>
+                    </div>
+                    <div class="modal-tab-content">
+                        <div class="modal-section modal-section-horizontal">
+                            <div class="modal-row">
+                                <div class="modal-col modal-col-desc">
+                                    <span class="modal-label">
+                                        <i class="fas fa-file-alt me-2"></i>Description
+                                    </span>
+                                    <div class="modal-section-content" id="cveDescription">
+                                        <!-- Content will be populated by JavaScript -->
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- CVSS Information Grid với Icon -->
+                            <div class="cvss-info-grid">
+                                <!-- CVSS v3 Card -->
+                                <div class="cvss-info-card">
+                                    <div class="cvss-info-item">
+                                        <div class="cvss-icon score">
+                                            <i class="fas fa-tachometer-alt"></i>
+                                        </div>
+                                        <div class="cvss-info-content">
+                                            <h6>Base Score</h6>
+                                            <div class="value" id="cvssBaseScore">N/A</div>
+                                        </div>
+                                    </div>
+                                    <div class="cvss-info-item">
+                                        <div class="cvss-icon severity">
+                                            <i class="fas fa-exclamation-triangle"></i>
+                                        </div>
+                                        <div class="cvss-info-content">
+                                            <h6>Severity</h6>
+                                            <div class="value" id="cvssSeverity">N/A</div>
+                                        </div>
+                                    </div>
+                                    <div class="cvss-info-item">
+                                        <div class="cvss-icon vector">
+                                            <i class="fas fa-code"></i>
+                                        </div>
+                                        <div class="cvss-info-content">
+                                            <h6>Vector</h6>
+                                            <div class="value" id="cvssVector">N/A</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Risk Assessment Card -->
+                                <div class="cvss-info-card">
+                                    <div class="cvss-info-item">
+                                        <div class="cvss-icon assessment">
+                                            <i class="fas fa-exclamation-circle"></i>
+                                        </div>
+                                        <div class="cvss-info-content">
+                                            <h6>Assessment</h6>
+                                            <div class="value" id="riskAssessment">N/A</div>
+                                        </div>
+                                    </div>
+                                    <div class="cvss-info-item">
+                                        <div class="cvss-icon confidence">
+                                            <i class="fas fa-chart-line"></i>
+                                        </div>
+                                        <div class="cvss-info-content">
+                                            <h6>Confidence</h6>
+                                            <div class="value" id="confidenceScore">N/A</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- References Section -->
+                            <div style="margin-top: 30px;">
+                                <span class="modal-label">
+                                    <i class="fas fa-link me-2"></i>References
+                                </span>
+                                <div class="modal-section-content" id="cveReferences">
+                                    <!-- References will be populated by JavaScript -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-tab-content d-none">
+                        <!-- Affected Projects content here -->
+                        <div class="modal-section">
+                            <span class="modal-label">
+                                <i class="fas fa-puzzle-piece me-2"></i>Affected Projects
+                            </span>
+                            <div class="modal-section-content" id="affectedProjects">
+                                <!-- Affected projects will be populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-tab-content d-none">
+                        <!-- Plugins content here -->
+                        <div class="modal-section">
+                            <span class="modal-label">
+                                <i class="fas fa-plug me-2"></i>Detection Plugins
+                            </span>
+                            <div class="modal-section-content" id="detectionPlugins">
+                                <!-- Plugin information will be populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="modal-footer-stats">
+                        <div class="footer-stat">
+                            <i class="fas fa-fingerprint"></i>
+                            <span id="modalFooterCveId">CVE-2024-12345</span>
+                        </div>
+                        <div class="footer-stat">
+                            <i class="fas fa-microchip"></i>
+                            <span id="modalFooterAffectedCount">1 affected component</span>
+                        </div>
+                    </div>
+                    <div class="modal-footer-actions">
+                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                            <i class="fas fa-times me-1"></i>
+                            Close
+                        </button>
+                        <button type="button" class="btn btn-primary cyber-btn" onclick="markAsReviewed()">
+                            <i class="fas fa-check me-1"></i>
+                            Mark as Reviewed
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Pass vulnerabilities data to JavaScript -->
+<script>
+    // Store vulnerabilities data for JavaScript to use
+    window.vulnerabilitiesData = {{ vulnerabilities | tojson | safe }};
+</script>
+{% endblock %}
+
+{% block extra_js %}
+<!-- Scan Details Specific JavaScript -->
+<script src="{{ url_for('static', filename='js/scan_details.js') }}?v={{ range(1, 10000) | random }}"></script>
+{% endblock %}

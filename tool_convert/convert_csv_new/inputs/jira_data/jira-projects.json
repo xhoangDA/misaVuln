@@ -1,0 +1,727 @@
+[
+  {
+    "id": "11119",
+    "key": "FO",
+    "name": "5FOOD"
+  },
+  {
+    "id": "11403",
+    "key": "AIMS",
+    "name": "AIAgentPlatform"
+  },
+  {
+    "id": "10129",
+    "key": "AIM",
+    "name": "AMIS aiMarketing "
+  },
+  {
+    "id": "10115",
+    "key": "MISAIVAN",
+    "name": "AMIS BHXH "
+  },
+  {
+    "id": "11307",
+    "key": "AMISCHAT",
+    "name": "AMIS Chat"
+  },
+  {
+    "id": "10114",
+    "key": "TIMESHEET",
+    "name": "AMIS Chấm công"
+  },
+  {
+    "id": "10112",
+    "key": "CRM",
+    "name": "AMIS CRM "
+  },
+  {
+    "id": "10704",
+    "key": "CRMMB",
+    "name": "AMIS CRM2 Mobile"
+  },
+  {
+    "id": "10118",
+    "key": "TASK",
+    "name": "AMIS Công việc "
+  },
+  {
+    "id": "10302",
+    "key": "MAGC",
+    "name": "AMIS Ghi chép "
+  },
+  {
+    "id": "11126",
+    "key": "HRMMISA",
+    "name": "AMIS HRM MISA"
+  },
+  {
+    "id": "10600",
+    "key": "AMISKM",
+    "name": "AMIS Khuyến mại "
+  },
+  {
+    "id": "10101",
+    "key": "MAKT",
+    "name": "AMIS Kế toán "
+  },
+  {
+    "id": "10905",
+    "key": "MAKTAPI",
+    "name": "AMIS Kế toán API"
+  },
+  {
+    "id": "11135",
+    "key": "MAKTEDU",
+    "name": "AMIS Kế toán EDU"
+  },
+  {
+    "id": "10207",
+    "key": "HKD",
+    "name": "AMIS Kế toán HKD "
+  },
+  {
+    "id": "10909",
+    "key": "HKDM",
+    "name": "AMIS Kế toán HKD Mobile"
+  },
+  {
+    "id": "11405",
+    "key": "HTX",
+    "name": "AMIS Kế toán Hợp tác xã"
+  },
+  {
+    "id": "10716",
+    "key": "MAK",
+    "name": "AMIS kế toán Mobile"
+  },
+  {
+    "id": "10303",
+    "key": "AMH",
+    "name": "AMIS Mua hàng "
+  },
+  {
+    "id": "10304",
+    "key": "MAMXH",
+    "name": "AMIS Mạng xã hội "
+  },
+  {
+    "id": "10601",
+    "key": "AMISMT",
+    "name": "AMIS Mục tiêu"
+  },
+  {
+    "id": "10901",
+    "key": "ASB",
+    "name": "AMIS nền tảng kế toán dịch vụ"
+  },
+  {
+    "id": "11600",
+    "key": "ONEAI",
+    "name": "AMIS OneAI"
+  },
+  {
+    "id": "10209",
+    "key": "MAPH",
+    "name": "AMIS Phòng họp "
+  },
+  {
+    "id": "10900",
+    "key": "MACORE",
+    "name": "AMIS PL Core"
+  },
+  {
+    "id": "10906",
+    "key": "MADB",
+    "name": "AMIS PL Danh bạ"
+  },
+  {
+    "id": "11303",
+    "key": "KHO",
+    "name": "AMIS PL Kho"
+  },
+  {
+    "id": "11308",
+    "key": "QTSX",
+    "name": "AMIS PL Sản xuất "
+  },
+  {
+    "id": "10126",
+    "key": "AMPROCESS",
+    "name": "AMIS Quy trình "
+  },
+  {
+    "id": "10117",
+    "key": "MINTAX",
+    "name": "AMIS Thuế TNCN "
+  },
+  {
+    "id": "10116",
+    "key": "TTNS",
+    "name": "AMIS Thông tin nhân sự "
+  },
+  {
+    "id": "10113",
+    "key": "PAYROLL",
+    "name": "AMIS Tiền lương "
+  },
+  {
+    "id": "10208",
+    "key": "MATD",
+    "name": "AMIS Tuyển dụng "
+  },
+  {
+    "id": "10124",
+    "key": "ASSET",
+    "name": "AMIS Tài sản "
+  },
+  {
+    "id": "10305",
+    "key": "APVT",
+    "name": "AMIS Văn Thư"
+  },
+  {
+    "id": "10125",
+    "key": "WESIGN",
+    "name": "AMIS WeSign "
+  },
+  {
+    "id": "11400",
+    "key": "AMISWF",
+    "name": "AMIS Workflow"
+  },
+  {
+    "id": "10911",
+    "key": "AMDH",
+    "name": "AMIS Điều hành"
+  },
+  {
+    "id": "10602",
+    "key": "AMISDG",
+    "name": "AMIS Đánh giá"
+  },
+  {
+    "id": "10910",
+    "key": "ASPM",
+    "name": "ASP Mobile"
+  },
+  {
+    "id": "10701",
+    "key": "STORE",
+    "name": "Automation Sales"
+  },
+  {
+    "id": "11302",
+    "key": "AVAAMIS",
+    "name": "AVA AMIS - NỘI BỘ"
+  },
+  {
+    "id": "11101",
+    "key": "CUS",
+    "name": "Customize"
+  },
+  {
+    "id": "11134",
+    "key": "DBTOOL",
+    "name": "DBTOOL"
+  },
+  {
+    "id": "11143",
+    "key": "EKTM",
+    "name": "EMIS Thanh toán KDTM"
+  },
+  {
+    "id": "10714",
+    "key": "EM",
+    "name": "eSign Mobile"
+  },
+  {
+    "id": "11128",
+    "key": "QVA",
+    "name": "General"
+  },
+  {
+    "id": "11132",
+    "key": "HCSNMONITO",
+    "name": "HCSN Monitor"
+  },
+  {
+    "id": "11109",
+    "key": "HC",
+    "name": "Healthcheck"
+  },
+  {
+    "id": "11131",
+    "key": "PE",
+    "name": "Hóa đơn xăng dầu"
+  },
+  {
+    "id": "11130",
+    "key": "HTDT",
+    "name": "Hợp tác đối tác"
+  },
+  {
+    "id": "11123",
+    "key": "MIP",
+    "name": "Internal Product SP nội bộ"
+  },
+  {
+    "id": "10705",
+    "key": "JPBANK",
+    "name": "JetPay BankHub "
+  },
+  {
+    "id": "11122",
+    "key": "JPMM",
+    "name": "JETPAY MEMAS"
+  },
+  {
+    "id": "10715",
+    "key": "JPCTT",
+    "name": "Jetpay Payment "
+  },
+  {
+    "id": "10702",
+    "key": "JPTHP",
+    "name": "JETPAY Thu học phí"
+  },
+  {
+    "id": "11107",
+    "key": "LS",
+    "name": "Location Service"
+  },
+  {
+    "id": "11133",
+    "key": "EMS",
+    "name": "mail Service"
+  },
+  {
+    "id": "11129",
+    "key": "AMIS",
+    "name": "MISA AMIS 1.0"
+  },
+  {
+    "id": "10131",
+    "key": "AMISV2",
+    "name": "MISA AMIS 2.0"
+  },
+  {
+    "id": "10902",
+    "key": "AMISMOBILE",
+    "name": "MISA AMIS Mobile"
+  },
+  {
+    "id": "11104",
+    "key": "MAI",
+    "name": "MISA Artificial Intelligence"
+  },
+  {
+    "id": "10130",
+    "key": "ASP",
+    "name": "MISA ASP "
+  },
+  {
+    "id": "11105",
+    "key": "MAL",
+    "name": "MISA Auditing Log Service"
+  },
+  {
+    "id": "10711",
+    "key": "AVA",
+    "name": "MISA AVA platfrom"
+  },
+  {
+    "id": "10500",
+    "key": "MBO",
+    "name": "MISA Bamboo online"
+  },
+  {
+    "id": "10103",
+    "key": "BAM",
+    "name": "MISA Bamboo.Net 2020"
+  },
+  {
+    "id": "10205",
+    "key": "QLNS",
+    "name": "MISA Bumas"
+  },
+  {
+    "id": "11305",
+    "key": "BUTW",
+    "name": "MISA Bumas TW"
+  },
+  {
+    "id": "11141",
+    "key": "QLNSV3",
+    "name": "MISA Bumas V3"
+  },
+  {
+    "id": "10127",
+    "key": "CEGOV",
+    "name": "MISA CeGov"
+  },
+  {
+    "id": "11116",
+    "key": "MCC",
+    "name": "MISA Cloud Center"
+  },
+  {
+    "id": "11115",
+    "key": "CRM08",
+    "name": "MISA CRM.NET 2008"
+  },
+  {
+    "id": "10110",
+    "key": "CUK",
+    "name": "MISA Cukcuk"
+  },
+  {
+    "id": "10713",
+    "key": "MCP",
+    "name": "MISA Customer Profile"
+  },
+  {
+    "id": "11136",
+    "key": "DVC",
+    "name": "MISA DVC"
+  },
+  {
+    "id": "11300",
+    "key": "MECS",
+    "name": "MISA eCommerce Service"
+  },
+  {
+    "id": "11404",
+    "key": "MEP",
+    "name": "MISA Education Program"
+  },
+  {
+    "id": "11500",
+    "key": "MEH",
+    "name": "MISA eHospital"
+  },
+  {
+    "id": "10301",
+    "key": "STUD",
+    "name": "MISA EMIS Học sinh"
+  },
+  {
+    "id": "10105",
+    "key": "FEE",
+    "name": "MISA EMIS Khoản thu"
+  },
+  {
+    "id": "10903",
+    "key": "EMTT",
+    "name": "MISA EMIS Kindergarten"
+  },
+  {
+    "id": "10106",
+    "key": "EQUI",
+    "name": "MISA EMIS Thiết bị"
+  },
+  {
+    "id": "10107",
+    "key": "LIBR",
+    "name": "MISA EMIS Thư viện"
+  },
+  {
+    "id": "10108",
+    "key": "SCHE",
+    "name": "MISA EMIS Thời khóa biểu"
+  },
+  {
+    "id": "11140",
+    "key": "EOF",
+    "name": "MISA eOffice (TaskGo/TaskGov/...)"
+  },
+  {
+    "id": "10111",
+    "key": "ESHOP",
+    "name": "MISA eShop"
+  },
+  {
+    "id": "11402",
+    "key": "SHOPV2",
+    "name": "MISA eShop v2"
+  },
+  {
+    "id": "10121",
+    "key": "ES",
+    "name": "MISA eSign "
+  },
+  {
+    "id": "10202",
+    "key": "FC",
+    "name": "MISA Falcon 2023"
+  },
+  {
+    "id": "11112",
+    "key": "FORUM",
+    "name": "MISA Forum"
+  },
+  {
+    "id": "10912",
+    "key": "GOLFHANDIC",
+    "name": "MISA Golf"
+  },
+  {
+    "id": "10300",
+    "key": "MH",
+    "name": "MISA Hotich"
+  },
+  {
+    "id": "10703",
+    "key": "IMS",
+    "name": "MISA IMS"
+  },
+  {
+    "id": "11121",
+    "key": "INC",
+    "name": "MISA Incident"
+  },
+  {
+    "id": "10719",
+    "key": "ISMAC",
+    "name": "MISA ISMAC"
+  },
+  {
+    "id": "10707",
+    "key": "MK",
+    "name": "MISA KYSO"
+  },
+  {
+    "id": "10206",
+    "key": "LEKI",
+    "name": "MISA Lekima"
+  },
+  {
+    "id": "10710",
+    "key": "MLP",
+    "name": "MISA Lending "
+  },
+  {
+    "id": "11117",
+    "key": "MLA",
+    "name": "MISA License Agreement"
+  },
+  {
+    "id": "10201",
+    "key": "LOMAS",
+    "name": "MISA Lomas"
+  },
+  {
+    "id": "10000",
+    "key": "ME",
+    "name": "MISA meInvoice hóa đơn đầu ra"
+  },
+  {
+    "id": "10119",
+    "key": "MEINBOT",
+    "name": "MISA meInvoice hóa đơn đầu vào"
+  },
+  {
+    "id": "10102",
+    "key": "MIMO",
+    "name": "MISA Mimosa 2022"
+  },
+  {
+    "id": "11142",
+    "key": "MM25",
+    "name": "MISA Mimosa 2025"
+  },
+  {
+    "id": "10132",
+    "key": "MMO",
+    "name": "MISA Mimosa Online"
+  },
+  {
+    "id": "11306",
+    "key": "MIMOX",
+    "name": "MISA Mimosa X1"
+  },
+  {
+    "id": "10203",
+    "key": "SOTHUCHI",
+    "name": "MISA MoneyKeeper"
+  },
+  {
+    "id": "11110",
+    "key": "MM",
+    "name": "MISA Monitor"
+  },
+  {
+    "id": "11124",
+    "key": "MMA",
+    "name": "MISA Monitoring Alerts"
+  },
+  {
+    "id": "10120",
+    "key": "MTAX",
+    "name": "MISA mTax"
+  },
+  {
+    "id": "11106",
+    "key": "MIN",
+    "name": "MISA Notification"
+  },
+  {
+    "id": "10200",
+    "key": "OCM",
+    "name": "MISA OCM "
+  },
+  {
+    "id": "10708",
+    "key": "MISAORDER",
+    "name": "MISA ORDER"
+  },
+  {
+    "id": "11125",
+    "key": "ORG",
+    "name": "MISA OrgInfo"
+  },
+  {
+    "id": "10204",
+    "key": "PANDA",
+    "name": "MISA Panda.net 2021"
+  },
+  {
+    "id": "10709",
+    "key": "MSP",
+    "name": "Misa Partner"
+  },
+  {
+    "id": "10718",
+    "key": "MPG",
+    "name": "MISA Payment Gateway"
+  },
+  {
+    "id": "11100",
+    "key": "PA",
+    "name": "MISA Process Automation"
+  },
+  {
+    "id": "10122",
+    "key": "QLCB",
+    "name": "MISA QLCB"
+  },
+  {
+    "id": "10104",
+    "key": "QLTS",
+    "name": "MISA QLTS"
+  },
+  {
+    "id": "10123",
+    "key": "SLG",
+    "name": "MISA Salagov"
+  },
+  {
+    "id": "10109",
+    "key": "SISAP",
+    "name": "MISA SISAP"
+  },
+  {
+    "id": "10400",
+    "key": "SMEO",
+    "name": "MISA SME 2022 trở về trước"
+  },
+  {
+    "id": "10100",
+    "key": "SME",
+    "name": "MISA SME 2023"
+  },
+  {
+    "id": "10915",
+    "key": "STARTBOOKS",
+    "name": "MISA StartBooks"
+  },
+  {
+    "id": "11137",
+    "key": "MSUPPORT",
+    "name": "MISA SUPPORT"
+  },
+  {
+    "id": "11145",
+    "key": "MSS",
+    "name": "MISA Sync Service"
+  },
+  {
+    "id": "10128",
+    "key": "TASKGO",
+    "name": "MISA TaskGo "
+  },
+  {
+    "id": "11139",
+    "key": "JIRA",
+    "name": "MISA TICKET"
+  },
+  {
+    "id": "11144",
+    "key": "MWS",
+    "name": "MISA Web Socket"
+  },
+  {
+    "id": "10706",
+    "key": "WEBSITE",
+    "name": "MISA Website"
+  },
+  {
+    "id": "11114",
+    "key": "MISACUSTOM",
+    "name": "MISACustomize"
+  },
+  {
+    "id": "10712",
+    "key": "MID",
+    "name": "MISAID"
+  },
+  {
+    "id": "10700",
+    "key": "CRMMISA",
+    "name": "MISAJSC CRM Nội bộ"
+  },
+  {
+    "id": "11118",
+    "key": "MOP",
+    "name": "Mobile Push Notification Service"
+  },
+  {
+    "id": "11301",
+    "key": "QLTC",
+    "name": "Quản lý thi công"
+  },
+  {
+    "id": "11102",
+    "key": "SMSBRAND",
+    "name": "SMS BRAND NAME"
+  },
+  {
+    "id": "11127",
+    "key": "SRE",
+    "name": "SRE DevOps"
+  },
+  {
+    "id": "11103",
+    "key": "ARC",
+    "name": "Technical Issues"
+  },
+  {
+    "id": "11120",
+    "key": "TSDR",
+    "name": "Technical Request"
+  },
+  {
+    "id": "11111",
+    "key": "SA",
+    "name": "Thiết kế kiến trúc"
+  },
+  {
+    "id": "10133",
+    "key": "UN",
+    "name": "Uncategory"
+  },
+  {
+    "id": "11108",
+    "key": "VC",
+    "name": "Vantage Customize"
+  }
+]

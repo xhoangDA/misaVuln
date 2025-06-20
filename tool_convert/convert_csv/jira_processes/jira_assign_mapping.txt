@@ -1,0 +1,21 @@
+# Format: <project_key>: <username>
+# Mỗi dòng là 1 ánh xạ project-user
+MAKT: B06-0414
+SLG: B06-0005
+SRE: B06-0238
+QLTS: B06-0064
+MEP: B06-0275
+SLG: B06-0005
+CEGOV: B06-0454
+AIM: B-1255
+ME: B06-0307
+MINTAX: B-0587
+# ams2
+# act2
+CRM: B06-0042
+ASP: B06-0407
+MEINBOT: B06-0426
+# suman 
+MEP: B06-0275
+STUD: B06-0454
+DVC: B06-0005

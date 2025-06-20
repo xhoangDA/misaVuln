@@ -1,0 +1,116 @@
+Summary,Issue key,Issue id,Issue Type,Status,Project key,Project name,Priority,Assignee,Reporter,Creator,Component/s,Custom field (Bộ phận phản ánh),Custom field (CSM Ultra gia hạn),Custom field (Ghi chú (Mô tả vấn đề)),Custom field (Kênh hỗ trợ),Custom field (Loại hỗ trợ),Custom field (Loại lỗi),Custom field (Severity),Custom field (Thêm labels),Custom field (Đã tiếp nhận yêu cầu),Custom field (Độ khó)
+CVE-2024-53141 ảnh hưởng đến Linux Kernel từ phiên bản v2.7 đến v6.12.,QVA-35,2900186,Vấn đề của khách hàng,Chờ xử lý,QVA,General,Cao,A02-0004,B-1153,B-1153,,Khối HT và chăm sóc KH,Không,"Kính gửi phòng QTHT
+Lỗ hổng CVE-2024-53141 được xác định nằm trong thành phần ipset thuộc netfilter – một phần quan trọng trong hệ thống tường lửa và NAT trên Linux. Đây là lỗ hổng truy cập ngoài vùng nhớ (Out-of-Bounds Access), có thể bị khai thác để:
+Leo thang đặc quyền lên root
+Bỏ qua kỹ thuật bảo vệ KASLR (Kernel Address Space Layout Randomization)
+Thực thi mã tùy ý ở cấp kernel
+Lỗ hổng có điểm CVSS là 7.8, xếp vào mức cao, đặc biệt nghiêm trọng nếu hệ thống có sử dụng ipset trong cấu hình tường lửa hoặc lọc gói tin.
+Nguyên nhân gốc
+Lỗi nằm ở hàm bitmap_ip_uadt() khi xử lý tham số IPSET_ATTR_CIDR. Trường hợp IPSET_ATTR_IP_TO không tồn tại nhưng IPSET_ATTR_CIDR có mặt, hệ thống sẽ hoán đổi giá trị ip và ip_to mà không kiểm tra giới hạn giá trị, gây ra truy cập ngoài phạm vi hợp lệ của bộ nhớ.
+
+Đánh giá mức độ: Cao
+POC: Đã công bố khả năng khai thác cao
+Hệ thống ảnh hưởng:
++ Tất cả hệ thống sử dụng Linux Kernel từ phiên bản 2.7 đến 6.12
++ Đặc biệt nghiêm trọng nếu có sử dụng netfilter và ipset trong cấu hình tường lửa, NAT hoặc routing
+
+Khuyến nghị:
++ Cập nhật kernel lên bản mới nhất để vá lỗi
++ Kiểm tra cấu hình hệ thống để xác định có sử dụng ipset hay không
+++ lsmod | grep ip_set
+++ which ipset
+
+Nhờ phòng QTHT lên kế hoạch update cho các máy chủ bị ảnh hưởng!",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,High,None,Tiếp nhận,Trung bình
+CVE-2025-23120 - Liên quan đến Veeam Backup & Replication,QVA-32,2547390,Vấn đề của khách hàng,Chờ xử lý,QVA,General,Cao,A17-0007,B-1153,B-1153,,Khối HT và chăm sóc KH,Không,"Kính gửi phòng QTHT, Veeam vừa công bố lỗ hổng mức độ nghiêm trọng liên quan đến Veeam Backup & Replication
+Mô tả: Lỗ hổng cho phép thực thi mã từ xa từ bất kỳ tài khoản nào trong domain (Chưa có công bố gì thêm)
+Mức độ: Nghiêm trọng
+Mức độ ảnh hưởng đến MISA: Cao
+Điểm CVSS: 9.9
+Biện pháp khắc phục: Update lên phiên bản Veeam Backup & Replication 12.3.1.1139 để khắc phục lỗ hổng trên
+Ref: https://www.rapid7.com/blog/post/2025/03/19/etr-critical-veeam-backup-and-replication-cve-2025-23120/
+Kính nhờ phòng QTHT rà soát các dịch vụ và phiên bản hiện tại để lên kế hoạch update bản vá.
+Trân trọng cảm ơn!",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,High,None,Tiếp nhận,Trung bình
+CVE Patch Tuesday March 2025,QVA-30,2479256,Vấn đề của khách hàng,Chờ xử lý,QVA,General,Cao,A02-0004,B-1153,B-1153,,TT PTPM,Không,"Kính gửi phòng QTHT, Ban ANTT đã tổng hợp và thống kê các lỗ hổng Patch Tuesday Tháng 3/2025 tại Sheet:
+https://docs.google.com/spreadsheets/d/1km7YrokM5CFQKaaNpW99DzGXmPwLo861ark1I9W0Qew/edit?gid=1442000449#gid=1442000449
+Nhờ các anh lên kế hoạch và update bản vá!
+Trân trọng cảm ơn!",Khối sản xuất,Lỗi phần mềm,None,High,None,Tiếp nhận,Trung bình
+"CVE-2025-22224, CVE-2025-22225, CVE-2025-22226	liên quan đến VMware ESXi ",QVA-27,2404370,Vấn đề của khách hàng,Chờ xử lý,QVA,General,Cao,A17-0007,B-1153,B-1153,,Khối HT và chăm sóc KH,Không,"Kính gửi phòng QTHT VMware ESXi vừa công bố một số lỗ hổng ảnh hưởng đến VMware ESXi
+1. CVE-2025-22224 là một lỗ hổng bảo mật tồn tại trong VMware ESXi và Workstation. Lỗ hổng này liên quan đến một vấn đề TOCTOU (Time-of-Check Time-of-Use), dẫn đến việc ghi ra ngoài vùng nhớ (out-of-bounds write). Một user có quyền truy cập quản trị cục bộ trên một máy ảo có thể khai thác lỗ hổng này để thực thi mã dưới dạng quy trình VMX của máy ảo đó đang chạy trên máy chủ. 
+Tác động: Khi lỗ hổng này được khai thác thành công, nó có thể cho phép kẻ tấn công thực hiện mã tùy ý trên máy chủ host, đưa đến các nguy cơ nghiêm trọng đối với tính toàn vẹn, bí mật và quyền truy cập vào hệ thống. Việc này có thể dẫn đến mất dữ liệu, xâm phạm quyền riêng tư, hoặc gây ra các tác động tiêu cực khác đến hoạt động của tổ chức.
+CVSS: 9.3 Mức độ nghiêm trọng
+Mức độ ảnh hưởng đến MISA: Cao
+2. CVE-2025-22225 là một lỗ hổng trong VMware ESXi cho phép một tác nhân độc hại có quyền trong quy trình VMX (Virtual Machine Monitor) có thể kích hoạt việc ghi đè một cách tùy ý vào kernel, dẫn đến khả năng thoát ra khỏi môi trường sandbox.
+Tác động: Sự khai thác lỗ hổng này có thể cho phép kẻ tấn công thực hiện các hành động không được phép trên máy chủ chủ quản, có thể dẫn đến việc kiểm soát hoàn toàn hệ thống hoặc truy cập vào thông tin nhạy cảm.
+CVSS: 8.2 Mức độ Cao
+Mức độ ảnh hưởng đến MISA: Cao
+3. CVE-2025-22226 là lỗ hổng rò rỉ thông tin trong các sản phẩm VMware ESXi, Workstation và Fusion do lỗi đọc ngoài biên (out-of-bounds read) trong HGFS (Host-Guest File System). Một tác nhân độc hại có quyền quản trị đối với một máy ảo có thể khai thác lỗ hổng này để rò rỉ bộ nhớ từ tiến trình vmx, có thể gây ra nguy hiểm cho tính bảo mật của hệ thống và thông tin nhạy cảm.
+Tác động: Rò rỉ thông tin: Lỗ hổng này cho phép kẻ tấn công có quyền truy cập máy ảo có thể truy xuất thông tin nhạy cảm từ bộ nhớ của quy trình vmx.
+
+Biện pháp khắc phục: 
+Nâng cấp lên  phiên bản VMware ESXi thích hợp (Hinh ảnh đính kèm)
+",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,,None,Tiếp nhận,Trung bình
+ CVE-2025-26465 và CVE-2025-26466 trong OpenSSH,QVA-15,2296436,Vấn đề của khách hàng,Chờ xử lý,QVA,General,Cao,A02-0004,B-1417,B-1417,,TT PTPM,Không,"Kính gửi Phòng QHTH,
+Có 2 lỗ hổng mới vừa được công bố trong OpenSSH là CVE-2025-26465 và CVE-2025-26466, được đánh giá là có thể ảnh hưởng đến cả máy khách (client) và máy chủ (server). Những lỗ hổng này cho phép kẻ tấn công thực hiện các cuộc tấn công máy ở giữa (MITM) và khai thác từ chối dịch vụ (DoS).
+1. CVE-2025-26465: Tấn công Machine-in-the-Middle (MITM) trên OpenSSH Client
+- Mức độ: Cao
+- Tác động: Kẻ tấn công có thể đánh cắp dữ liệu, chiếm quyền SSH session mà không cần tương tác từ người dùng.
+- Phiên bản bị ảnh hưởng: OpenSSH 6.8p1 → 9.9p1 (lỗi tồn tại từ năm 2014).
+- Cách thức khắc phục: Cập nhật OpenSSH lên phiên bản 9.9p2
+2. CVE-2025-26466: Tấn công từ chối dịch vụ (DoS) trên cả máy khách & máy chủ
+- Mức độ: Cao
+- Tác động:
++Tấn công pre-authentication DoS, khiến hệ thống tiêu tốn tài nguyên (RAM, CPU), gây gián đoạn dịch vụ SSH.
++Có thể khiến quản trị viên không thể đăng nhập, gây đình trệ hoạt động quan trọng.
+- Phiên bản bị ảnh hưởng: OpenSSH 9.5p1 → 9.9p1 (lỗi xuất hiện từ năm 2023).
+- Cách thức khắc phục: Cập nhật OpenSSH lên phiên bản 9.9p2
+Kính nhờ Phòng QTHT lên kế hoạch update OpenSSH trong thời gian sớm nhất.
+Xin trân trọng cảm ơn!",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,High,None,,Trung bình
+CVE-2025-1094: PostgreSQL psql SQL injection,QVA-14,2289544,Vấn đề của khách hàng,Chờ xử lý,QVA,General,Cao,B06-0090,B-1153,B-1153,,,,,,"Action: Tất cả các phiên bản postgres cấp mới đều bắt buộc cấp từ >= các phiên bản sau trở lên:  17.3, 16.7, 15.11, 14.16, và 13.19 ",,,,,
+CVE Patch Tuesday February 2025,QVA-8,2212064,Vấn đề của khách hàng,Chờ xử lý,QVA,General,Cao,A02-0004,B-1417,B-1417,,TT PTPM,Không,"Kính gửi phòng QTHT, Ban ANTT đã tổng hợp và thống kê các lỗ hổng Patch Tuesday Tháng 2/2025 tại Sheet:
+https://docs.google.com/spreadsheets/d/1km7YrokM5CFQKaaNpW99DzGXmPwLo861ark1I9W0Qew/edit?gid=1442000449#gid=1442000449
+Nhờ các anh lên kế hoạch và update bản vá!
+Trân trọng cảm ơn!",Khối sản xuất,Lỗi phần mềm,None,High,None,Tiếp nhận,Trung bình
+CVE-2024-43044 (SECURITY-3430) và CVE-2024-43045 (SECURITY-3349) Lỗ hổng trong Jenkins,QVA-13,2259274,Vấn đề của khách hàng,Chờ xử lý,QVA,General,Trung bình,B-1388,B-1417,B-1417,,Khối HT và chăm sóc KH,Không,"Hi anh Cường, hiện tại có hai lỗ hổng bảo mật quan trọng được phát hiện trong Jenkins:
+- CVE-2024-43044 (SECURITY-3430): Lỗ hổng này cho phép đọc tệp tùy ý thông qua kết nối agent, có thể dẫn đến thực thi mã từ xa (RCE).
+    - Mức độ nghiêm trọng: Trung bình (Jenkins nằm trong mạng nội bộ)
+    - Phạm vi ảnh hưởng: Ảnh hưởng đến thư viện Remoting của Jenkins
+    - Phiên bản ảnh hưởng: Ảnh hưởng đến Jenkins 2.470 trở xuống và LTS 2.452.3 trở xuống
+- CVE-2024-43045 (SECURITY-3349): Lỗ hổng này liên quan đến việc thiếu kiểm tra quyền truy cập trong một endpoint HTTP. Cho phép kẻ tấn công có quyền Overall/Read truy cập vào ""My Views"" của người dùng khác. Kẻ tấn công có quyền global View/Configure và View/Delete có thể thay đổi ""My Views"" của người dùng khác.
+    - Phiên bản ảnh hưởng: Ảnh hưởng đến Jenkins 2.470 trở xuống và LTS 2.452.3 trở xuống.
+- Biện pháp khắc phục cho 2 lỗ hổng: Cập nhật Jenkins LTS lên phiên bản 2.452.4 hoặc 2.462.1
+Nhờ các anh rà soát lại version Jenkins đang được sử dụng để từ đó khắc phục lỗ hổng một cách sớm nhất.
+Trân trọng cảm ơn!",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,None,,Trung bình
+CVE-2024-5594 trong OpenVPN,QVA-2,2066049,Vấn đề của khách hàng,Chờ xử lý,QVA,General,Trung bình,A02-0004,B-1417,misaticket,,TT PTPM,Không,"Kính gửi Phòng QTHT,
+CVE-2024-5594: Lỗ hổng không kiểm tra thông báo PUSH_REPLY, cho phép thực thi mã từ xa (RCE) hoặc tấn công từ chối dịch vụ (DoS). 
+Phiên bản ảnh hưởng:  Tất cả các phiên bản OpenVPN trước 2.6.11. 
+Cách thức khắc phục: Nâng cấp lên phiên bản 2.6.11 hoặc mới hơn.  
+Nhờ các anh rà soát lại version của OpenVPN để từ đó khắc phục lỗ hổng này một cách sớm nhất.
+Trân trọng cảm ơn!",Zoom,Lỗi phần mềm,Lỗi an ninh,Medium,QTHT,Tiếp nhận,Dễ
+CVE Patch Tuesday April 2025,QVA-34,2842369,Vấn đề của khách hàng,Chờ xử lý,QVA,General,Trung bình,A17-0007,B-1153,B-1153,,Khối HT và chăm sóc KH,Không,"Kính gửi phòng QTHT, Ban ANTT đã tổng hợp và thống kê các lỗ hổng Patch Tuesday tại Sheet:
+https://docs.google.com/spreadsheets/d/1km7YrokM5CFQKaaNpW99DzGXmPwLo861ark1I9W0Qew/edit?gid=1442000449#gid=1442000449
+Nhờ các anh lên kế hoạch và update bản vá!
+Trân trọng cảm ơn!",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,High,None,Tiếp nhận,Trung bình
+ CVE-2024-24747 Lỗ hổng leo thang đặc quyền trên hệ thống MINIO,QVA-22,2352194,Vấn đề của khách hàng,Chờ xử lý,QVA,General,Trung bình,B-0614,B-1153,admin,SRE,Khối HT và chăm sóc KH,Không,"1. Mô tả biểu hiện lỗi (các bước dẫn đến lỗi): 
+2. Môi trường phát sinh lỗi: 
+3. Mô tả những việc đã thực hiện hỗ trợ hoặc đã kiểm tra: 
+4. Đã thực hiện kiểm tra test lỗi trên demo hay chưa: ",Khối sản xuất,Lỗi phần mềm,None,,None,,Trung bình
+CVE-2024-45324 ảnh hưởng đến FortiOS,QVA-28,2467407,Vấn đề của khách hàng,Chờ xử lý,QVA,General,Thấp,A17-0007,B-1153,B-1153,,,,,,,,,,,
+[SRE_01] - Lỗ hổng bảo mật CVE-2024-23897 trên dịch vụ Jenkins,QVA-11,2258584,Vấn đề của khách hàng,Chờ xử lý,QVA,General,Thấp,B06-0238,B-1001,B-1001,,TT PTPM,Không,"(Ban ANTT chuyển mã tồn từ baotri.misa.vn sang jira ticket mới)
+Dear anh Cường,
+Qua việc đánh giá bảo mật trên dịch vụ Jenkins môi trường Local, Ban ANTT xác nhận dịch vụ Jenkins phiên bản hiện tại đang tồn tại lỗ hổng CVE-2024-23897, tiềm ẩn rủi ro tấn công RCE. Thông tin đánh giá chi tiết đã được Trưởng Ban ANTT gửi tới anh qua email.
+Đề nghị team SRE thực hiện các cách cách thức giảm thiểu lỗ hổng theo một số khuyến nghị trong báo cáo.
+Tks anh!",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,High,None,Tiếp nhận,Trung bình
+CVE-2024-23651 - Lỗ hổng bảo mật trên Buildkit của Docker,QVA-10,2258216,Vấn đề của khách hàng,Chờ xử lý,QVA,General,Thấp,B-0614,B-1001,B-1001,,TT PTPM,Không,"(Ban ANTT chuyển mã ticket tồn từ trang baotri.misa.vn cũ sang jira ticket mới)
+Gửi anh Cường và team SRE,
+Ban ANTT mới ghi nhận lỗ hổng mới CVE-2024-23651 có thông tin như sau:
+- Chương trình bị ảnh hưởng: Toolkit Buildkit (phiên bản thấp hơn 0.12.5) của Docker.
+- Tác động: cho phép kẻ tấn công lạm dụng các tiến trình trong contaner để truy cập trái phép hoặc làm gián đoạn hoạt động bình thường của container.
+- Mức độ nghiêm trọng: tại thời điểm tạo issue đang được đánh điểm CVSS là 8.7 - High
+Qua đánh giá sơ bộ, Ban ANTT xác định lỗ hổng này đang có phạm vi ảnh hưởng trên tất cả máy chủ chạy Docker tại công ty.
+Để khắc phục lỗ hổng, Ban ANTT sẽ phối hợp với team SRE lên kế hoạch để thực hiện các biện pháp khắc phục lâu dài.
+Thông tin tham khảo:
+- https://nvd.nist.gov/vuln/detail/CVE-2024-23651
+- https://snyk.io/blog/cve-2024-23651-docker-buildkit-mount-cache-race/
+- https://www.bleepingcomputer.com/news/security/leaky-vessels-flaws-allow-hackers-to-escape-docker-runc-containers/
+...
+Tks anh",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,High,None,Tiếp nhận,Trung bình

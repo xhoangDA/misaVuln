@@ -1,0 +1,24 @@
+# Format: <key-hostname>: <project>
+empty: SRE
+sme: MAKT
+cep: SRE
+elk-acc: SRE
+elk-bus: SRE
+elk-apm: SRE
+lb: SRE
+slg: SLG
+cgv: CEGOV
+qts: QLTS
+aim: AIM
+inv: ME
+mtx: MINTAX
+# ams2
+# act2
+crm2: CRM
+asb: ASP
+act: MAKT
+ibt: MEINBOT
+# suman: 
+mep: MEP
+qth: STUD
+dvc: DVC

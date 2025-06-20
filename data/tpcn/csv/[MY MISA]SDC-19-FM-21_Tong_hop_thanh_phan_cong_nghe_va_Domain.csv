@@ -1,0 +1,44 @@
+Unnamed: 0,Khối sản xuất,Unnamed: 2,Unnamed: 3,SDC-19-FM-21/v1.0
+,,,,
+,"TỔNG HỢP THÀNH PHẦN CÔNG NGHỆ, CÔNG CỤ CỦA DỰ ÁN: Automation Sales",,,
+,,,,
+,Nội dung,Công nghệ sử dụng,Phiên bản ,Ngày cập nhật
+,1. Thông tin chung về webapp,,,
+,"Tên webapp: MY MISA
+URL: https://id.misa.vn/subcription
+Người phụ trách: Phí Hồng Mạnh",,,
+,2. Front-end,,,
+,Framework / Library: ,Vuejs,v3,2025-03-06 00:00:00
+,Ngôn ngữ lập trình: ,JavaScript,ES6,2025-03-06 00:00:00
+,Thư viện UI/UX: ,Vuejs,v3,2025-03-06 00:00:00
+,Công cụ build/deploy: ,Webpack,v5.5.2,2025-03-06 00:00:00
+,CDN cache: ,Cloudflare,,2025-03-06 00:00:00
+,3. Back-end,,,2025-03-06 00:00:00
+,Web Server,Nginx,v1.23.1,2025-03-06 00:00:00
+,Framework:,.NET Core,v6.0,2025-03-06 00:00:00
+,Ngôn ngữ lập trình:,C#,1900-01-06 00:00:00,2025-03-06 00:00:00
+,API Gateway:,Nginx,v1.27.1,2025-03-06 00:00:00
+,Phương thức xác thực (authentication/authorization) ,JWT/ API Key/ Basic Auth,,2025-03-06 00:00:00
+,Cache,Redis,v6.2.6,2025-03-06 00:00:00
+,Queue,Kafka,v3.11.3,2025-03-06 00:00:00
+,Quản lý FileUpload/ FileStorage,MinIO,v2024,2025-03-06 00:00:00
+,Search Engine,Không sử dụng,,2025-03-06 00:00:00
+,LoadBalance,Nginx,v1.27.1,2025-03-06 00:00:00
+,Streaming real-time,Không sử dụng,,2025-03-06 00:00:00
+,4. Cơ sở dữ liệu,,,2025-03-06 00:00:00
+,Loại database:,MySQL/ SQLServer,mysql 8.0.31/ mssql 2017,2025-03-06 00:00:00
+,Công cụ quản lý database: ,DbForge/SSMS,v19.1,2025-03-06 00:00:00
+,5. Hạ tầng và DevOps,,,2025-03-06 00:00:00
+,Công cụ điều phối ứng dụng,K8S,v1.25.16,2025-03-06 00:00:00
+,CI,Jenkins,v2.492.3,2025-03-06 00:00:00
+,CD,ArgoCD,v2.14.9,2025-03-06 00:00:00
+,Công cụ lưu trữ log,Elasticsearch,v8.2.2,2025-03-06 00:00:00
+,6. Dịch vụ bên ngoài (nếu có),,,2025-03-06 00:00:00
+,Dịch vụ thanh toán,Không,,2025-03-06 00:00:00
+,Dịch vụ Email,Không,,2025-03-06 00:00:00
+,Dịch vụ phân tích và tracking,Google Analytic,v4,2025-03-06 00:00:00
+,Các API bên ngoài khác,,,2025-03-06 00:00:00
+,,,,2025-03-06 00:00:00
+,,,,2025-03-06 00:00:00
+,,,,2025-03-06 00:00:00
+,,,,2025-03-06 00:00:00

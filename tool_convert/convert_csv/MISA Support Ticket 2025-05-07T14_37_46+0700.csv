@@ -1,0 +1,169 @@
+Summary,Issue key,Issue id,Issue Type,Status,Project key,Project name,Project type,Project lead,Project description,Project url,Priority,Resolution,Assignee,Reporter,Creator,Created,Updated,Last Viewed,Resolved,Component/s,Due Date,Votes,Labels,Labels,Description,Environment,Watchers,Watchers,Work Ratio,Security Level,Inward issue link (Cloners),Outward issue link (Cloners),Attachment,Custom field (BBPA),Custom field (Biện pháp phòng ngừa),Custom field (Biện pháp xử lý),Custom field (Bộ phận phản ánh),Custom field (Bộ phận thực hiện),Custom field (CCCD),Custom field (CSAT Assignee),Custom field (CSAT Category),Custom field (CSAT Comment),Custom field (CSAT Rate),Custom field (CSAT Rating Comment),Custom field (CSAT Rating Date),Custom field (CSAT Rating Type),Custom field (CSAT Recipient),Custom field (CSAT Score),Custom field (CSAT Token),Custom field (CSAT Trigger Date),Custom field (CSM Ultra gia hạn),Custom field (CallUniqueID),Custom field (ChatID),Custom field (Chất lượng dịch vụ),Custom field (Chất lượng dịch vụ (New)),Custom field (CommunityID),Custom field (Căn cước công dân),Custom field (Cấp độ yêu cầu),Custom field (Cấp độ yêu cầu text),Custom field (Diễn giải),Custom field (Email),Custom field (Email KH),Custom field (Epic Color),Custom field (Epic Link),Custom field (Epic Name),Custom field (Epic Status),Custom field (First Resolution Date),Custom field (Ghi chú (Mô tả vấn đề)),Custom field (Giải pháp),Custom field (Giải pháp sơ bộ),Custom field (Group editable),Custom field (Hạng khách hàng),Custom field (Họ tên Trưởng dự án giám sát),Custom field (Họ tên người truy cập),Custom field (Họ và tên),Custom field (Khách hàng của),Custom field (Kênh hỗ trợ),Custom field (LastComment),Custom field (Link edit Ticket),Custom field (Loại dữ liệu cần lấy),Custom field (Loại hỗ trợ),Custom field (Loại lỗi),Custom field (Loại yêu cầu),Custom field (Mong muốn xử lý trước ngày),Custom field (Mã hỗ trợ liên quan),Custom field (Mã ngân sách),Custom field (Mã số thuế),Custom field (Mục đích lấy dữ liệu),Custom field (NPS Rate),Custom field (NPS Rating Comment),Custom field (NPS Rating Comment V2),Custom field (NPS Rating Date),Custom field (NPS Recipient),Custom field (NPS Token),Custom field (NPS Trigger Date),Custom field (NPSUser),Custom field (NTQUYEN),Custom field (NV chuyển KSX),Custom field (Nguyên nhân),Custom field (Nguyên nhân lọt lỗi),Custom field (Ngày chuyển KSX),Custom field (Ngày tiếp nhận),Custom field (Nhân viên AE),Custom field (Nhân viên CSM),Custom field (Nhân viên Gia hạn),Custom field (Nhân viên ONB),Custom field (Nhân viên chăm sóc),Custom field (OldCreated),Custom field (OldID),Custom field (Phân hệ),Custom field (Phân hệ_Không dùng),Custom field (Phân loại yêu cầu),Custom field (Phòng phản ánh),Custom field (Phạm vi và các thành phần bị ảnh hưởng),Custom field (QueryBaoTri),Custom field (Rank),Custom field (Score),Custom field (Severity),Custom field (Story Points),Custom field (SubscriptionID),Custom field (Summary chat),Custom field (Survey RatingRest),Custom field (Sản phẩm),Custom field (Số lần không nghe máy),Custom field (Số điện thoại),Custom field (Sửa Ticket),Custom field (TFS ID),Custom field (Theo yêu cầu của),"Custom field (Theo yêu cầu mã jira, chỉ đạo)",Custom field (ThreadID),Custom field (Thêm labels),Custom field (Thông tin dữ liệu),Custom field (Thông tin liên hệ của khách hàng (bảo trì)),Custom field (Thời gian chuyển dự án),Custom field (Thời gian hẹn khách hàng),Custom field (Thời gian tiếp nhận của tư vấn),Custom field (Thời gian tư vấn cuối tiếp nhận),Custom field (Thời hạn hoàn thành),Custom field (Truy cập vào hệ thống (ghi chi tiết vào đâu)),Custom field (Trạng thái liên hệ),Custom field (Trạng thái yêu cầu phát triển),Custom field (Trạng thái yêu cầu phát triển),Custom field (Tên liên hệ),Custom field (Tên miền KH (VD eshop Cukcuk)),Custom field (Tên tổ chức),Custom field (Tình trạng bàn giao KH),Custom field (Tóm tắt yêu cầu),Custom field (Ultraview),Custom field (Yêu cầu KH),Custom field (Đánh giá rủi ro có thể xảy ra),Custom field (Đánh giá sao),Custom field (Đã tiếp nhận yêu cầu),Custom field (Độ khó),Custom field (Độ khó (Không dùng)),Custom field (Độ ưu tiên phân mã theo Kênh hỗ trợ),Custom field (Độ ưu tiên phân mã theo project),Comment,Comment
+CVE-2024-53141 ảnh hưởng đến Linux Kernel từ phiên bản v2.7 đến v6.12.,QVA-35,2900186,Vấn đề của khách hàng,Chờ xử lý,QVA,General,software,B06-0523,,,Cao,,A02-0004,B-1153,B-1153,06/05/2025 5:33 PM,07/05/2025 11:45 AM,07/05/2025 2:36 PM,,,,0,,,,,A02-0004,B-1153,,,,,,,,,Khối HT và chăm sóc KH,,,,,,,,,,,,,,Không,,,,,,,0,,,,ntquyen@gmail.com,,,,,,"Kính gửi phòng QTHT
+Lỗ hổng CVE-2024-53141 được xác định nằm trong thành phần ipset thuộc netfilter – một phần quan trọng trong hệ thống tường lửa và NAT trên Linux. Đây là lỗ hổng truy cập ngoài vùng nhớ (Out-of-Bounds Access), có thể bị khai thác để:
+Leo thang đặc quyền lên root
+Bỏ qua kỹ thuật bảo vệ KASLR (Kernel Address Space Layout Randomization)
+Thực thi mã tùy ý ở cấp kernel
+Lỗ hổng có điểm CVSS là 7.8, xếp vào mức cao, đặc biệt nghiêm trọng nếu hệ thống có sử dụng ipset trong cấu hình tường lửa hoặc lọc gói tin.
+Nguyên nhân gốc
+Lỗi nằm ở hàm bitmap_ip_uadt() khi xử lý tham số IPSET_ATTR_CIDR. Trường hợp IPSET_ATTR_IP_TO không tồn tại nhưng IPSET_ATTR_CIDR có mặt, hệ thống sẽ hoán đổi giá trị ip và ip_to mà không kiểm tra giới hạn giá trị, gây ra truy cập ngoài phạm vi hợp lệ của bộ nhớ.
+
+Đánh giá mức độ: Cao
+POC: Đã công bố khả năng khai thác cao
+Hệ thống ảnh hưởng:
++ Tất cả hệ thống sử dụng Linux Kernel từ phiên bản 2.7 đến 6.12
++ Đặc biệt nghiêm trọng nếu có sử dụng netfilter và ipset trong cấu hình tường lửa, NAT hoặc routing
+
+Khuyến nghị:
++ Cập nhật kernel lên bản mới nhất để vá lỗi
++ Kiểm tra cấu hình hệ thống để xác định có sử dụng ipset hay không
+++ lsmod | grep ip_set
+++ which ipset
+
+Nhờ phòng QTHT lên kế hoạch update cho các máy chủ bị ảnh hưởng!",,,jira-software-users,Basic,,,,,Khối sản xuất,"Các dịch vụ chạy qua F5 không bị ảnh hưởng trực tiếp -> gián tiếp
+Cụm MWS không qua F5 -> ảnh hưởng trực tiếp",,,Lỗi phần mềm,Lỗi an ninh,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|idqrx3:,,High,,,,,,0,,,,,,,None,,,,,,,,,,None,Đã làm rõ,,,,,,,,,,Tiếp nhận,Trung bình,,,,07/05/2025 9:21 AM;A02-0004;https://ubuntu.com/security/CVE-2024-53141,"07/05/2025 11:45 AM;A02-0004;Các dịch vụ chạy qua F5 không bị ảnh hưởng trực tiếp -> gián tiếp
+Cụm MWS không qua F5 -> ảnh hưởng trực tiếp"
+CVE-2025-23120 - Liên quan đến Veeam Backup & Replication,QVA-32,2547390,Vấn đề của khách hàng,Chờ xử lý,QVA,General,software,B06-0523,,,Cao,,A17-0007,B-1153,B-1153,21/03/2025 11:03 AM,30/04/2025 9:38 AM,14/04/2025 11:46 AM,,,,0,,,,,B-1153,,,,,,,,,,Khối HT và chăm sóc KH,,,,,,,,,,,,,,Không,,,,,,,0,,,,ntquyen@gmail.com,,,,,,"Kính gửi phòng QTHT, Veeam vừa công bố lỗ hổng mức độ nghiêm trọng liên quan đến Veeam Backup & Replication
+Mô tả: Lỗ hổng cho phép thực thi mã từ xa từ bất kỳ tài khoản nào trong domain (Chưa có công bố gì thêm)
+Mức độ: Nghiêm trọng
+Mức độ ảnh hưởng đến MISA: Cao
+Điểm CVSS: 9.9
+Biện pháp khắc phục: Update lên phiên bản Veeam Backup & Replication 12.3.1.1139 để khắc phục lỗ hổng trên
+Ref: https://www.rapid7.com/blog/post/2025/03/19/etr-critical-veeam-backup-and-replication-cve-2025-23120/
+Kính nhờ phòng QTHT rà soát các dịch vụ và phiên bản hiện tại để lên kế hoạch update bản vá.
+Trân trọng cảm ơn!",,,jira-software-users,Basic,,,,,Khối sản xuất,,,,Lỗi phần mềm,Lỗi an ninh,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|ic2ltz:,,High,,,,,,0,,,,,,,None,,,,,21/03/2025 11:03 AM,,,,,None,,,,,,,,,,,Tiếp nhận,Trung bình,,,,,
+CVE Patch Tuesday March 2025,QVA-30,2479256,Vấn đề của khách hàng,Chờ xử lý,QVA,General,software,B06-0523,,,Cao,,A02-0004,B-1153,B-1153,14/03/2025 9:10 AM,30/04/2025 5:34 AM,07/05/2025 2:37 PM,,,,0,,,,,A02-0004,B-1153,,,,QVA-8,,,,,TT PTPM,,,,,,,,,,,,,,Không,,,,,,,0,,,,ntquyen@gmail.com,,,,,,"Kính gửi phòng QTHT, Ban ANTT đã tổng hợp và thống kê các lỗ hổng Patch Tuesday Tháng 3/2025 tại Sheet:
+https://docs.google.com/spreadsheets/d/1km7YrokM5CFQKaaNpW99DzGXmPwLo861ark1I9W0Qew/edit?gid=1442000449#gid=1442000449
+Nhờ các anh lên kế hoạch và update bản vá!
+Trân trọng cảm ơn!",,,jira-software-users,Basic,,,,,Khối sản xuất,Hi a Dương em đã update các thông tin theo yêu cầu,,,Lỗi phần mềm,None,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|ibqx93:,,High,,,,,,0,,,,,,,None,,,,,14/03/2025 9:10 AM,,,,,None,,,,,,,,,,,Tiếp nhận,Trung bình,,,,14/03/2025 9:51 AM;A02-0004;Yêu cầu bổ sung đầy đủ thông tin ảnh hưởng đến dịch vụ của MISA và các VP/TT,17/03/2025 2:57 PM;B-1153;Hi a Dương em đã update các thông tin theo yêu cầu
+"CVE-2025-22224, CVE-2025-22225, CVE-2025-22226	liên quan đến VMware ESXi ",QVA-27,2404370,Vấn đề của khách hàng,Chờ xử lý,QVA,General,software,B06-0523,,,Cao,,A17-0007,B-1153,B-1153,05/03/2025 4:11 PM,30/04/2025 1:19 AM,28/03/2025 10:48 AM,,,,0,,,,,B-1153,,,,,,,,,,Khối HT và chăm sóc KH,,,,,,,,,,,,,,Không,,,,,,,0,,,,ntquyen@gmail.com,,,,,,"Kính gửi phòng QTHT VMware ESXi vừa công bố một số lỗ hổng ảnh hưởng đến VMware ESXi
+1. CVE-2025-22224 là một lỗ hổng bảo mật tồn tại trong VMware ESXi và Workstation. Lỗ hổng này liên quan đến một vấn đề TOCTOU (Time-of-Check Time-of-Use), dẫn đến việc ghi ra ngoài vùng nhớ (out-of-bounds write). Một user có quyền truy cập quản trị cục bộ trên một máy ảo có thể khai thác lỗ hổng này để thực thi mã dưới dạng quy trình VMX của máy ảo đó đang chạy trên máy chủ. 
+Tác động: Khi lỗ hổng này được khai thác thành công, nó có thể cho phép kẻ tấn công thực hiện mã tùy ý trên máy chủ host, đưa đến các nguy cơ nghiêm trọng đối với tính toàn vẹn, bí mật và quyền truy cập vào hệ thống. Việc này có thể dẫn đến mất dữ liệu, xâm phạm quyền riêng tư, hoặc gây ra các tác động tiêu cực khác đến hoạt động của tổ chức.
+CVSS: 9.3 Mức độ nghiêm trọng
+Mức độ ảnh hưởng đến MISA: Cao
+2. CVE-2025-22225 là một lỗ hổng trong VMware ESXi cho phép một tác nhân độc hại có quyền trong quy trình VMX (Virtual Machine Monitor) có thể kích hoạt việc ghi đè một cách tùy ý vào kernel, dẫn đến khả năng thoát ra khỏi môi trường sandbox.
+Tác động: Sự khai thác lỗ hổng này có thể cho phép kẻ tấn công thực hiện các hành động không được phép trên máy chủ chủ quản, có thể dẫn đến việc kiểm soát hoàn toàn hệ thống hoặc truy cập vào thông tin nhạy cảm.
+CVSS: 8.2 Mức độ Cao
+Mức độ ảnh hưởng đến MISA: Cao
+3. CVE-2025-22226 là lỗ hổng rò rỉ thông tin trong các sản phẩm VMware ESXi, Workstation và Fusion do lỗi đọc ngoài biên (out-of-bounds read) trong HGFS (Host-Guest File System). Một tác nhân độc hại có quyền quản trị đối với một máy ảo có thể khai thác lỗ hổng này để rò rỉ bộ nhớ từ tiến trình vmx, có thể gây ra nguy hiểm cho tính bảo mật của hệ thống và thông tin nhạy cảm.
+Tác động: Rò rỉ thông tin: Lỗ hổng này cho phép kẻ tấn công có quyền truy cập máy ảo có thể truy xuất thông tin nhạy cảm từ bộ nhớ của quy trình vmx.
+
+Biện pháp khắc phục: 
+Nâng cấp lên  phiên bản VMware ESXi thích hợp (Hinh ảnh đính kèm)
+",,,jira-software-users,Basic,,,,,Khối sản xuất,,,,Lỗi phần mềm,Lỗi an ninh,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|ibe2zr:,,,,,,,,0,,,,,,,None,,,,,05/03/2025 4:11 PM,,,,,None,Đã làm rõ,,,,,,,,,,Tiếp nhận,Trung bình,,,,,
+ CVE-2025-26465 và CVE-2025-26466 trong OpenSSH,QVA-15,2296436,Vấn đề của khách hàng,Chờ xử lý,QVA,General,software,B06-0523,,,Cao,,A02-0004,B-1417,B-1417,21/02/2025 1:49 PM,29/04/2025 5:50 PM,07/05/2025 2:37 PM,,,,0,,,,,B-1417,,,,,,,,,,TT PTPM,,,,,,,,,,,,,,Không,,,,,,,0,,"1. Mô tả biểu hiện lỗi (các bước dẫn đến lỗi):
+2. Môi trường phát sinh lỗi:
+3. Mô tả những việc CSM/ ONB/ TV... đã thực hiện hỗ trợ hoặc đã kiểm tra?:
+4. Đã thực hiện kiểm tra test lỗi trên demo hay chưa?:",,ntquyen@gmail.com,,,,,,"Kính gửi Phòng QHTH,
+Có 2 lỗ hổng mới vừa được công bố trong OpenSSH là CVE-2025-26465 và CVE-2025-26466, được đánh giá là có thể ảnh hưởng đến cả máy khách (client) và máy chủ (server). Những lỗ hổng này cho phép kẻ tấn công thực hiện các cuộc tấn công máy ở giữa (MITM) và khai thác từ chối dịch vụ (DoS).
+1. CVE-2025-26465: Tấn công Machine-in-the-Middle (MITM) trên OpenSSH Client
+- Mức độ: Cao
+- Tác động: Kẻ tấn công có thể đánh cắp dữ liệu, chiếm quyền SSH session mà không cần tương tác từ người dùng.
+- Phiên bản bị ảnh hưởng: OpenSSH 6.8p1 → 9.9p1 (lỗi tồn tại từ năm 2014).
+- Cách thức khắc phục: Cập nhật OpenSSH lên phiên bản 9.9p2
+2. CVE-2025-26466: Tấn công từ chối dịch vụ (DoS) trên cả máy khách & máy chủ
+- Mức độ: Cao
+- Tác động:
++Tấn công pre-authentication DoS, khiến hệ thống tiêu tốn tài nguyên (RAM, CPU), gây gián đoạn dịch vụ SSH.
++Có thể khiến quản trị viên không thể đăng nhập, gây đình trệ hoạt động quan trọng.
+- Phiên bản bị ảnh hưởng: OpenSSH 9.5p1 → 9.9p1 (lỗi xuất hiện từ năm 2023).
+- Cách thức khắc phục: Cập nhật OpenSSH lên phiên bản 9.9p2
+Kính nhờ Phòng QTHT lên kế hoạch update OpenSSH trong thời gian sớm nhất.
+Xin trân trọng cảm ơn!",,,jira-software-users,Basic,,,,,Khối sản xuất,,,,Lỗi phần mềm,Lỗi an ninh,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|iavlk7:,,High,,,,,,0,,,,,,,None,,,,,21/02/2025 1:49 PM,,,,,None,,,,,,,,,,,,Trung bình,,,,,
+CVE-2025-1094: PostgreSQL psql SQL injection,QVA-14,2289544,Vấn đề của khách hàng,Chờ xử lý,QVA,General,software,B06-0523,,,Cao,,B06-0090,B-1153,B-1153,21/02/2025 8:23 AM,29/04/2025 5:19 PM,11/04/2025 10:48 AM,,,,0,,,,,B06-0090,B-1153,,,,,21/02/2025 8:23 AM;B-1153;screenshot-1.png;https://jira-ticket.misa.vn/secure/attachment/300754/screenshot-1.png,,,,Khối HT và chăm sóc KH,,,,,,,,,,,,,,Không,,,,,,,0,,"1. Mô tả biểu hiện lỗi (các bước dẫn đến lỗi):
+2. Môi trường phát sinh lỗi:
+3. Mô tả những việc CSM/ ONB/ TV... đã thực hiện hỗ trợ hoặc đã kiểm tra?:
+4. Đã thực hiện kiểm tra test lỗi trên demo hay chưa?:",,ntquyen@gmail.com,,,,,,"Kính gửi Team DBO, PostgresQL vừa công bố lỗ hổng mức nghiêm trọng PostgreSQL psql SQL injection.
+
+Mô tả: Bắt nguồn từ việc PostgreSQL xử lý không đúng dữ liệu đầu vào không tin cậy, dù đã được thoát ký tự bằng cơ chế bảo vệ mặc định. Khi kết hợp với cách psql xử lý chuỗi UTF-8 không hợp lệ, kẻ tấn công có thể chèn và thực thi mã SQL độc hại.
+
+Tác động: Người tấn công có thể khai thác lỗ hổng này để thực hiện các cuộc tấn công SQL injection, qua đó có thể truy xuất hoặc sửa đổi dữ liệu trong cơ sở dữ liệu mà không có sự ủy quyền.  Cao hơn lỗ hổng này còn gây ra tác động có thể giúp kẻ tấn công chiếm quyền điều khiển hệ thống.
+POC: Đã có POC trên Github
+
+Sản phẩm bị ảnh hưởng: Tất cả các phiên bản PostgreSQL được hỗ trợ trước các bản cập nhật 17.3, 16.7, 15.11, 14.16, và 13.19 đều bị ảnh hưởng.
+
+Biện pháp khắc phục: Nâng cấp liên các phiên bản mới của PostgresQL (Chi tiết đính kèm trong ảnh)
+
+Kính nhờ team DBO lên kế hoạch update version cho các dự án liên quan
+Trân trọng cảm ơn!",,,jira-software-users,Basic,,,,,Khối sản xuất,"Action: Tất cả các phiên bản postgres cấp mới đều bắt buộc cấp từ >= các phiên bản sau trở lên:  17.3, 16.7, 15.11, 14.16, và 13.19 ",,,Lỗi phần mềm,Lỗi an ninh,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Bảo mật,,,,0|iauf0n:,,High,,,,,,0,,,,,,,None,,,,,21/02/2025 8:23 AM,,,,,None,,,,,,,,,,,Tiếp nhận,Trung bình,,,,"18/03/2025 8:49 AM;B06-0090;Action: Tất cả các phiên bản postgres cấp mới đều bắt buộc cấp từ >= các phiên bản sau trở lên:  17.3, 16.7, 15.11, 14.16, và 13.19 ",
+CVE Patch Tuesday February 2025,QVA-8,2212064,Vấn đề của khách hàng,Chờ xử lý,QVA,General,software,B06-0523,,,Cao,,A02-0004,B-1417,B-1417,13/02/2025 2:37 PM,29/04/2025 7:52 AM,11/04/2025 1:33 PM,,,,0,,,,,A02-0004,B-1417,,,QVA-30,,,,,,TT PTPM,,,,,,,,,,,,,,Không,,,,,,,0,,,,ntquyen@gmail.com,,,,,,"Kính gửi phòng QTHT, Ban ANTT đã tổng hợp và thống kê các lỗ hổng Patch Tuesday Tháng 2/2025 tại Sheet:
+https://docs.google.com/spreadsheets/d/1km7YrokM5CFQKaaNpW99DzGXmPwLo861ark1I9W0Qew/edit?gid=1442000449#gid=1442000449
+Nhờ các anh lên kế hoạch và update bản vá!
+Trân trọng cảm ơn!",,,jira-software-users,Basic,,,,,Khối sản xuất,Cần bổ sung thêm cột Severity làm căn cứ để đặt mức độ ưu tiên xử lý,,,Lỗi phần mềm,None,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|iah4qv:,,High,,,,,,0,,,,,,,None,,,,,13/02/2025 2:37 PM,,,,,None,,,,,,,,,,,Tiếp nhận,Trung bình,,,,18/02/2025 10:41 AM;A02-0004;Cần bổ sung thêm cột Severity làm căn cứ để đặt mức độ ưu tiên xử lý,
+CVE-2024-43044 (SECURITY-3430) và CVE-2024-43045 (SECURITY-3349) Lỗ hổng trong Jenkins,QVA-13,2259274,Vấn đề của khách hàng,Chờ xử lý,QVA,General,software,B06-0523,,,Trung bình,,B-1388,B-1417,B-1417,19/02/2025 11:21 AM,29/04/2025 2:00 PM,07/05/2025 2:37 PM,,,,0,,,,,B-1417,,,,,,,,,,Khối HT và chăm sóc KH,,,,,,,,,,,,,,Không,,,,,,,0,,"Hi anh Cường, hiện tại có hai lỗ hổng bảo mật quan trọng được phát hiện trong Jenkins:
+- CVE-2024-43044 (SECURITY-3430): Lỗ hổng này cho phép đọc tệp tùy ý thông qua kết nối agent, có thể dẫn đến thực thi mã từ xa (RCE).
+    - Mức độ nghiêm trọng: Trung bình (Jenkins nằm trong mạng nội bộ)
+    - Phạm vi ảnh hưởng: Ảnh hưởng đến thư viện Remoting của Jenkins
+    - Phiên bản ảnh hưởng: Ảnh hưởng đến Jenkins 2.470 trở xuống và LTS 2.452.3 trở xuống
+- CVE-2024-43045 (SECURITY-3349): Lỗ hổng này liên quan đến việc thiếu kiểm tra quyền truy cập trong một endpoint HTTP. Cho phép kẻ tấn công có quyền Overall/Read truy cập vào ""My Views"" của người dùng khác. Kẻ tấn công có quyền global View/Configure và View/Delete có thể thay đổi ""My Views"" của người dùng khác.
+    - Phiên bản ảnh hưởng: Ảnh hưởng đến Jenkins 2.470 trở xuống và LTS 2.452.3 trở xuống.
+- Biện pháp khắc phục cho 2 lỗ hổng: Cập nhật Jenkins LTS lên phiên bản 2.452.4 hoặc 2.462.1
+Nhờ các anh rà soát lại version Jenkins đang được sử dụng để từ đó khắc phục lỗ hổng một cách sớm nhất.
+Trân trọng cảm ơn!",,ntquyen@gmail.com,,,,,,"Hi anh Cường, hiện tại có hai lỗ hổng bảo mật quan trọng được phát hiện trong Jenkins:
+- CVE-2024-43044 (SECURITY-3430): Lỗ hổng này cho phép đọc tệp tùy ý thông qua kết nối agent, có thể dẫn đến thực thi mã từ xa (RCE).
+    - Mức độ nghiêm trọng: Trung bình (Jenkins nằm trong mạng nội bộ)
+    - Phạm vi ảnh hưởng: Ảnh hưởng đến thư viện Remoting của Jenkins
+    - Phiên bản ảnh hưởng: Ảnh hưởng đến Jenkins 2.470 trở xuống và LTS 2.452.3 trở xuống
+- CVE-2024-43045 (SECURITY-3349): Lỗ hổng này liên quan đến việc thiếu kiểm tra quyền truy cập trong một endpoint HTTP. Cho phép kẻ tấn công có quyền Overall/Read truy cập vào ""My Views"" của người dùng khác. Kẻ tấn công có quyền global View/Configure và View/Delete có thể thay đổi ""My Views"" của người dùng khác.
+    - Phiên bản ảnh hưởng: Ảnh hưởng đến Jenkins 2.470 trở xuống và LTS 2.452.3 trở xuống.
+- Biện pháp khắc phục cho 2 lỗ hổng: Cập nhật Jenkins LTS lên phiên bản 2.452.4 hoặc 2.462.1
+Nhờ các anh rà soát lại version Jenkins đang được sử dụng để từ đó khắc phục lỗ hổng một cách sớm nhất.
+Trân trọng cảm ơn!",,,jira-software-users,Basic,,,,,Khối sản xuất,,,,Lỗi phần mềm,Lỗi an ninh,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|iap85z:,,Medium,,,,,,0,,,,,,,None,,,,,19/02/2025 11:21 AM,,,,,None,,,,,,,,,,,,Trung bình,,,,,
+CVE-2024-5594 trong OpenVPN,QVA-2,2066049,Vấn đề của khách hàng,Chờ xử lý,QVA,General,software,B06-0523,,,Trung bình,,A02-0004,B-1417,misaticket,15/01/2025 2:51 PM,28/04/2025 10:47 PM,07/05/2025 2:37 PM,,,,0,Kinh_doanh,Ticket,,,misaticket,,,,,,,,,,TT PTPM,,,,,,,,,,,,,,Không,,,,,,,0,,,,ntquyen@gmail.com,,,,,,"Kính gửi Phòng QTHT,
+CVE-2024-5594: Lỗ hổng không kiểm tra thông báo PUSH_REPLY, cho phép thực thi mã từ xa (RCE) hoặc tấn công từ chối dịch vụ (DoS). 
+Phiên bản ảnh hưởng:  Tất cả các phiên bản OpenVPN trước 2.6.11. 
+Cách thức khắc phục: Nâng cấp lên phiên bản 2.6.11 hoặc mới hơn.  
+Nhờ các anh rà soát lại version của OpenVPN để từ đó khắc phục lỗ hổng này một cách sớm nhất.
+Trân trọng cảm ơn!",,,jira-software-users,Basic,,,,,Zoom,,https://ticket.misa.vn/apps/jira-support/jira/ticket/edit/0e869120-cd60-429c-b888-861040f912d0,,Lỗi phần mềm,Lỗi an ninh,,,,,,,,,,,,,,,,,,,,,,,,,,,,555_Hỗ trợ KD,,,,,,0|i9s3yn:,,Medium,,,,,,0,353034627,,,,,,QTHT,,,,,15/01/2025 2:51 PM,,,,,None,,Đặng Bình An,,Ban ANTT,,55501_Yêu cầu tiếp nhận từ KD,,55501_Yêu cầu tiếp nhận từ KD,,,Tiếp nhận,Dễ,,,,,
+CVE Patch Tuesday April 2025,QVA-34,2842369,Vấn đề của khách hàng,Chờ xử lý,QVA,General,software,B06-0523,,,Trung bình,,A17-0007,B-1153,B-1153,25/04/2025 8:55 AM,25/04/2025 8:55 AM,07/05/2025 2:37 PM,,,,0,,,,,B-1153,,,,,,,,,,Khối HT và chăm sóc KH,,,,,,,,,,,,,,Không,,,,,,,0,,,,ntquyen@gmail.com,,,,,,"Kính gửi phòng QTHT, Ban ANTT đã tổng hợp và thống kê các lỗ hổng Patch Tuesday tại Sheet:
+https://docs.google.com/spreadsheets/d/1km7YrokM5CFQKaaNpW99DzGXmPwLo861ark1I9W0Qew/edit?gid=1442000449#gid=1442000449
+Nhờ các anh lên kế hoạch và update bản vá!
+Trân trọng cảm ơn!",,,jira-software-users,Basic,,,,,Khối sản xuất,,,,Lỗi phần mềm,Lỗi an ninh,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|idgx8f:,,High,,,,,,0,,,,,,,None,,,,,,,,,,None,Đã làm rõ,,,,,,,,,,Tiếp nhận,Trung bình,,,,,
+ CVE-2024-24747 Lỗ hổng leo thang đặc quyền trên hệ thống MINIO,QVA-22,2352194,Vấn đề của khách hàng,Chờ xử lý,QVA,General,software,B06-0523,,,Trung bình,,B-0614,B-1153,admin,22/04/2024 10:09 AM,27/02/2025 9:14 PM,07/05/2025 2:37 PM,,SRE,,0,,,,,misaticket,,,,,,,,,,Khối HT và chăm sóc KH,,,,,,,,,,,,,,Không,,,,,,,0,,,,ntquyen@gmail.com,,,,,,"1. Mô tả biểu hiện lỗi (các bước dẫn đến lỗi): 
+2. Môi trường phát sinh lỗi: 
+3. Mô tả những việc đã thực hiện hỗ trợ hoặc đã kiểm tra: 
+4. Đã thực hiện kiểm tra test lỗi trên demo hay chưa: ",,,jira-software-users,Basic,,,,,Khối sản xuất,admin ~ MISA Ticket Admin ~ Chuyển yêu cầu cho KSX,,,Lỗi phần mềm,None,,,,,,,,,,,,,,,,admin,,,27/02/2025 9:14 PM,,,,,,,22/04/2024 10:09 AM,https://baotri.misa.vn/browse/QVA-16,,,,,,,0|ib55qv:,,,,,,,,0,,,,,,,None,,,,,,,,,,None,,,,,,"Kính gửi đội SRE, hiện MINIO đang ghi nhận lỗ hổng leo thang đặc quyền  CVE-2024-24747. Lỗ hổng cho phép  các access key có thể ghi đè quyền của chính nó và có được nhiều quyền truy cập dễ dàng hơn, bao gồm cả quyền Admin.
+1. Ngày công bố CVE: 1/2/2024 (hiện đã có mã khai thác cho CVE này)
++ Độ phức tạp tấn công: Thấp
++ Mức độ ảnh hưởng: Cao (8.8/10)
++ Yêu cầu quyền để khai thác: Thấp
+2.  Phiên bản bị ảnh hưởng: MINIO < RELEASE.2024-01-31T20-20-33Z 
+3. Cách thức khắc phục: Update lên phiên bản >=  RELEASE.2024-01-31T20-20-33Z
+Tài liệu tham khảo: 
+- https://vuldb.com/?id.252530
+- https://www.recordedfuture.com/vulnerability-database/CVE-2024-24747
+Trân trọng cảm ơn!
+",,,,,,Trung bình,,,,27/02/2025 3:47 PM;misaticket;admin ~ MISA Ticket Admin ~ Chuyển yêu cầu cho KSX,27/02/2025 9:14 PM;misaticket;admin ~ MISA Ticket Admin ~ Chuyển yêu cầu cho KSX
+CVE-2024-45324 ảnh hưởng đến FortiOS,QVA-28,2467407,Vấn đề của khách hàng,Chờ xử lý,QVA,General,software,B06-0523,,,Thấp,,A17-0007,B-1153,B-1153,13/03/2025 8:57 AM,30/04/2025 4:54 AM,07/05/2025 2:37 PM,,,,0,,,,,B-1153,,,,,,13/03/2025 8:58 AM;B-1153;screenshot-1.png;https://jira-ticket.misa.vn/secure/attachment/349141/screenshot-1.png,,,,Khối HT và chăm sóc KH,,,,,,,,,,,,,,Không,,,,,,,0,,,,ntquyen@gmail.com,,,,,,"Kính gửi phòng QTHT, Fortiguard vừa công bố lỗ hổng CVE-2024-45324 ảnh hưởng đến hệ thống FortiOS
+Mô tả Lỗ hổng CVE-2024-45324: Việc sử dụng lỗ hổng chuỗi định dạng được kiểm soát bên ngoài  [CWE-134] có thể cho phép kẻ tấn công đặc quyền thực thi mã hoặc lệnh trái phép thông qua các lệnh HTTP hoặc HTTP được chế tạo đặc biệt.
+Type: Execute unauthorized code or commands
+CVSS score: 7.0
+Cách thức khắc phục: Nâng cấp lên phiên bản mới hơn để sửa lỗi (Danh sách được gửi trong ảnh đính kèm)
+Kính nhờ phòng QTHT kiểm tra phiên bản ảnh hưởng và điều phối các TT/VP có phiên bản bị ảnh hưởng lên kế hoạch để Update
+
+Trân trọng cảm ơn",,,jira-software-users,Basic,,,,,Khối sản xuất,,,,Lỗi phần mềm,Lỗi an ninh,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|ibow3z:,,Medium,,,,,,0,,,,,,,None,,,,,13/03/2025 8:57 AM,,,,,None,Đã làm rõ,,,,,,,,,,Tiếp nhận,Trung bình,,,,,
+[SRE_01] - Lỗ hổng bảo mật CVE-2024-23897 trên dịch vụ Jenkins,QVA-11,2258584,Vấn đề của khách hàng,Chờ xử lý,QVA,General,software,B06-0523,,,Thấp,,B06-0238,B-1001,B-1001,19/02/2025 10:50 AM,29/04/2025 1:53 PM,07/05/2025 2:37 PM,,,,0,,,,,B06-0238,B-1001,,,,,,,,,TT PTPM,,,,,,,,,,,,,,Không,,,,,,,0,,"1. Mô tả biểu hiện lỗi (các bước dẫn đến lỗi):
+2. Môi trường phát sinh lỗi:
+3. Mô tả những việc CSM/ ONB/ TV... đã thực hiện hỗ trợ hoặc đã kiểm tra?:
+4. Đã thực hiện kiểm tra test lỗi trên demo hay chưa?:",,ntquyen@gmail.com,,,,,,"(Ban ANTT chuyển mã tồn từ baotri.misa.vn sang jira ticket mới)
+Dear anh Cường,
+Qua việc đánh giá bảo mật trên dịch vụ Jenkins môi trường Local, Ban ANTT xác nhận dịch vụ Jenkins phiên bản hiện tại đang tồn tại lỗ hổng CVE-2024-23897, tiềm ẩn rủi ro tấn công RCE. Thông tin đánh giá chi tiết đã được Trưởng Ban ANTT gửi tới anh qua email.
+Đề nghị team SRE thực hiện các cách cách thức giảm thiểu lỗ hổng theo một số khuyến nghị trong báo cáo.
+Tks anh!",,,jira-software-users,Basic,,,,,Khối sản xuất,Theo dõi thêm mã nâng cấp version jenkins https://jira-ticket.misa.vn/browse/TSDR-1085,,,Lỗi phần mềm,Lỗi an ninh,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Bảo mật,,,https://baotri.misa.vn/browse/QVA-2,0|iap3wn:,,High,,,,,,0,,,,,,,None,,,,,19/02/2025 10:50 AM,,,,,None,,,,,,,,,,,Tiếp nhận,Trung bình,,,,07/03/2025 11:18 AM;B06-0238;Theo dõi thêm mã nâng cấp version jenkins https://jira-ticket.misa.vn/browse/TSDR-1085,
+CVE-2024-23651 - Lỗ hổng bảo mật trên Buildkit của Docker,QVA-10,2258216,Vấn đề của khách hàng,Chờ xử lý,QVA,General,software,B06-0523,,,Thấp,,B-0614,B-1001,B-1001,19/02/2025 10:33 AM,29/04/2025 1:49 PM,28/03/2025 10:48 AM,,,,0,,,,,B06-0238,B-1001,,,,,,,,,TT PTPM,,,,,,,,,,,,,,Không,,,,,,,0,,"1. Mô tả biểu hiện lỗi (các bước dẫn đến lỗi):
+2. Môi trường phát sinh lỗi:
+3. Mô tả những việc CSM/ ONB/ TV... đã thực hiện hỗ trợ hoặc đã kiểm tra?:
+4. Đã thực hiện kiểm tra test lỗi trên demo hay chưa?:",,ntquyen@gmail.com,,,,,,"(Ban ANTT chuyển mã ticket tồn từ trang baotri.misa.vn cũ sang jira ticket mới)
+Gửi anh Cường và team SRE,
+Ban ANTT mới ghi nhận lỗ hổng mới CVE-2024-23651 có thông tin như sau:
+- Chương trình bị ảnh hưởng: Toolkit Buildkit (phiên bản thấp hơn 0.12.5) của Docker.
+- Tác động: cho phép kẻ tấn công lạm dụng các tiến trình trong contaner để truy cập trái phép hoặc làm gián đoạn hoạt động bình thường của container.
+- Mức độ nghiêm trọng: tại thời điểm tạo issue đang được đánh điểm CVSS là 8.7 - High
+Qua đánh giá sơ bộ, Ban ANTT xác định lỗ hổng này đang có phạm vi ảnh hưởng trên tất cả máy chủ chạy Docker tại công ty.
+Để khắc phục lỗ hổng, Ban ANTT sẽ phối hợp với team SRE lên kế hoạch để thực hiện các biện pháp khắc phục lâu dài.
+Thông tin tham khảo:
+- https://nvd.nist.gov/vuln/detail/CVE-2024-23651
+- https://snyk.io/blog/cve-2024-23651-docker-buildkit-mount-cache-race/
+- https://www.bleepingcomputer.com/news/security/leaky-vessels-flaws-allow-hackers-to-escape-docker-runc-containers/
+...
+Tks anh",,,jira-software-users,Basic,,,,,Khối sản xuất,e follow mã này nhé hải,,,Lỗi phần mềm,Lỗi an ninh,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Bảo mật,,,https://baotri.misa.vn/browse/QVA-4,0|iap1mv:,,High,,,,,,0,,,,,,,None,,,,,19/02/2025 10:33 AM,,,,,None,,,,,,,,,,,Tiếp nhận,Trung bình,,,,07/03/2025 11:20 AM;B06-0238;Chỉ còn cụm Jetpay,07/03/2025 11:21 AM;B06-0238;e follow mã này nhé hải

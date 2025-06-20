@@ -1,0 +1,497 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Stats Overview Section -->
+<div class="stats-overview mb-4">
+    <div class="container">
+        <div class="row">
+            <!-- Total Components Card -->
+            <div class="col-md-3">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>{{ components|length }}</h3>
+                        <p>Total Components</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Top 10 Technologies Card -->
+            <div class="col-md-9">
+                <div class="top-tech-card">
+                    <div class="top-tech-header">
+                        <h5 class="mb-3">
+                            <i class="fas fa-chart-bar text-warning me-2"></i>
+                            Top Popular Technologies
+                        </h5>
+                    </div>
+                    <div class="top-tech-content">
+                        {% if popular_techs %}
+                        <div class="row g-2">
+                            {% for tech_name, count in popular_techs[:10] %}
+                            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                                <div class="mini-tech-card">
+                                    <div class="mini-tech-icon">
+                                        {% set tech_lower = tech_name.lower() %}
+                                        {% if 'react' in tech_lower %}
+                                            <i class="fab fa-react text-info"></i>
+                                        {% elif 'vue' in tech_lower %}
+                                            <i class="fab fa-vuejs text-success"></i>
+                                        {% elif 'angular' in tech_lower %}
+                                            <i class="fab fa-angular text-danger"></i>
+                                        {% elif 'node' in tech_lower %}
+                                            <i class="fab fa-node-js text-success"></i>
+                                        {% elif 'python' in tech_lower %}
+                                            <i class="fab fa-python text-primary"></i>
+                                        {% elif 'java' in tech_lower %}
+                                            <i class="fab fa-java text-warning"></i>
+                                        {% elif 'javascript' in tech_lower or 'js' in tech_lower %}
+                                            <i class="fab fa-js-square text-warning"></i>
+                                        {% elif 'php' in tech_lower %}
+                                            <i class="fab fa-php text-primary"></i>
+                                        {% elif 'mysql' in tech_lower %}
+                                            <i class="fas fa-database text-info"></i>
+                                        {% elif 'docker' in tech_lower %}
+                                            <i class="fab fa-docker text-primary"></i>
+                                        {% elif 'git' in tech_lower %}
+                                            <i class="fab fa-git-alt text-danger"></i>
+                                        {% elif 'bootstrap' in tech_lower %}
+                                            <i class="fab fa-bootstrap text-primary"></i>
+                                        {% elif 'jquery' in tech_lower %}
+                                            <i class="fas fa-code text-primary"></i>
+                                        {% elif 'redis' in tech_lower %}
+                                            <i class="fas fa-memory text-danger"></i>
+                                        {% elif 'nginx' in tech_lower %}
+                                            <i class="fas fa-server text-success"></i>
+                                        {% elif 'css' in tech_lower %}
+                                            <i class="fab fa-css3-alt text-primary"></i>
+                                        {% elif 'html' in tech_lower %}
+                                            <i class="fab fa-html5 text-danger"></i>
+                                        {% elif 'c#' in tech_lower or 'csharp' in tech_lower %}
+                                            <i class="fas fa-code text-purple"></i>
+                                        {% elif 'sql' in tech_lower %}
+                                            <i class="fas fa-database text-warning"></i>
+                                        {% else %}
+                                            <i class="fas fa-code text-secondary"></i>
+                                        {% endif %}
+                                    </div>
+                                    <div class="mini-tech-content">
+                                        <div class="tech-count">{{ count }}</div>
+                                        <div class="tech-name">{{ tech_name[:12] + '...' if tech_name|length > 12 else tech_name }}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        {% else %}
+                        <div class="text-center text-muted py-3">
+                            <i class="fas fa-info-circle me-2"></i>
+                            No technology data available
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Header Section -->
+<div class="container mb-4">
+    <div class="card">
+        <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <h5 class="card-title mb-0">Technology Components</h5>
+                    <p class="small mb-0">Manage technology stack across projects</p>
+                </div>
+                <div class="d-flex gap-2">
+                    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#importComponentModal">
+                        <i class="fas fa-upload me-2"></i>Import CSV
+                    </button>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addComponentModal">
+                        <i class="fas fa-plus me-2"></i>Add Component
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for adding new component -->
+<div class="modal fade" id="addComponentModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add New Technology Component</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>            <div class="modal-body">
+                <form id="addComponentForm">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Component Name</label>
+                                <input type="text" class="form-control" name="name" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Version</label>
+                                <input type="text" class="form-control" name="version">
+                            </div>
+                        </div>                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Category</label>
+                                <input type="text" class="form-control" name="category" placeholder="Enter category (e.g. Frontend, Backend, etc.)">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Vendor</label>
+                                <input type="text" class="form-control" name="vendor">
+                            </div>
+                        </div>                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Project</label>
+                                <select class="form-select" name="project_id">
+                                    <option value="">Select Project</option>
+                                    {% for project in projects %}
+                                    <option value="{{ project.id }}">{{ project.project_name }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Manager Name</label>
+                                <input type="text" class="form-control" name="manager_name" readonly>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mb-3">
+                                <label class="form-label">Description</label>
+                                <textarea class="form-control" name="description" rows="3"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mb-3">
+                                <label class="form-label">Notes</label>
+                                <textarea class="form-control" name="notes" rows="3"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" id="saveComponent">
+                    <i class="fas fa-save me-2"></i>Save Component
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Components Table -->
+<div class="full-width-section px-3">
+    <!-- Enhanced Search and Filter Section -->
+    <div class="filter-section mb-4">
+        <div class="row g-3">
+            <div class="col-md-5">
+                <label for="search" class="form-label text-white">Tìm kiếm theo tên:</label>
+                <div class="search-input-wrapper">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" class="form-control" id="search" placeholder="Nhập tên technology để tìm kiếm...">
+                </div>
+            </div>
+            <div class="col-md-2">
+                <label for="categoryFilter" class="form-label text-white">Category:</label>
+                <select class="form-select filter-select" id="categoryFilter">
+                    <option value="">Tất cả</option>
+                </select>
+            </div>
+            <div class="col-md-2">
+                <label for="projectFilter" class="form-label text-white">Project:</label>
+                <select class="form-select filter-select" id="projectFilter">
+                    <option value="">Tất cả</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label class="form-label text-white">&nbsp;</label>
+                <div class="d-flex gap-2">
+                    <button class="btn btn-secondary btn-sm" onclick="resetFilters()">
+                        <i class="fas fa-times"></i> Reset Filter
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Table Info -->
+    <div class="table-info mb-3">
+        <span class="results-count" id="resultsCount">Hiển thị 0 kết quả</span>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-hover align-middle">
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Name</th>
+                    <th>Version</th>
+                    <th>Category</th>
+                    <th>Project Name</th>
+                    <th>Manager</th>
+                    <th>Description</th>
+                    <th>Created At</th>
+                    <th>Updated At</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="componentTableBody">
+                {% for component in components %}
+                <tr data-id="{{ component.id }}">
+                    <td>
+                        <span class="badge bg-primary bg-opacity-10 text-primary border border-primary fw-semibold">
+                            {{ loop.index }}
+                        </span>
+                    </td>
+                    <td>
+                        <div class="d-flex align-items-center">
+                            <div class="avatar-circle me-2">
+                                <i class="fas fa-cube"></i>
+                            </div>
+                            <span class="fw-semibold">{{ component.name }}</span>
+                        </div>
+                    </td>
+                    <td>
+                        {% if component.version %}
+                        <span class="badge bg-info bg-opacity-20 text-info border border-info">{{ component.version }}</span>
+                        {% else %}
+                        <span class="badge bg-secondary bg-opacity-20 text-secondary border border-secondary">N/A</span>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if component.category %}
+                        <span class="badge bg-success bg-opacity-20 text-success border border-success">{{ component.category }}</span>
+                        {% else %}
+                        <span class="badge bg-secondary bg-opacity-20 text-secondary border border-secondary">N/A</span>
+                        {% endif %}
+                    </td>
+                    <td>
+                        <span class="fw-medium">{{ component.project.project_name if component.project else '-' }}</span>
+                    </td>
+                    <td>
+                        <span class="fw-medium">{{ component.project.manager.name if component.project and component.project.manager else '-' }}</span>
+                    </td>
+                    <td>
+                        <span class="fw-medium">{{ component.description[:50] + '...' if component.description and component.description|length > 50 else (component.description or '-') }}</span>
+                    </td>
+                    <td class="text-success">
+                        <div class="text-info small">
+                            <div><strong>{{ component.created_at.strftime('%d/%m/%Y %H:%M') if component.created_at else 'N/A' }}</strong></div>
+                        </div>
+                    </td>
+                    <td class="text-info">
+                        <div class="text-warning small">
+                            <div><strong>{{ component.updated_at.strftime('%d/%m/%Y %H:%M') if component.updated_at else 'N/A' }}</strong></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="btn-group">
+                            <button class="btn btn-sm btn-outline-primary" onclick="editComponent('{{ component.id }}')">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="btn btn-sm btn-outline-danger" onclick="deleteComponent('{{ component.id }}', '{{ component.name }}')">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    {% if not components %}
+    <div class="text-center py-5">
+        <div class="empty-state">
+            <i class="fas fa-cogs fa-4x text-muted mb-3"></i>
+            <h4>No Components Yet</h4>
+            <p class="text-muted">Start by adding your first technology component</p>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addComponentModal">
+                <i class="fas fa-plus me-2"></i>Add Component
+            </button>
+        </div>
+    </div>
+    {% endif %}
+</div>
+
+<!-- Delete Confirmation Modal -->
+<div class="modal fade" id="deleteConfirmModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Confirm Delete</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to delete <span id="componentToDelete"></span>?</p>
+                <p class="text-danger">This action cannot be undone.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-danger" id="confirmDelete">
+                    <i class="fas fa-trash me-2"></i>Delete
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Edit Component Modal -->
+<div class="modal fade" id="editComponentModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Edit Technology Component</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div><div class="modal-body">
+                <form id="editComponentForm">
+                    <input type="hidden" name="id" id="editComponentId">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Component Name</label>
+                                <input type="text" class="form-control" name="name" id="editComponentName" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Version</label>
+                                <input type="text" class="form-control" name="version" id="editComponentVersion">
+                            </div>
+                        </div>                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Category</label>
+                                <input type="text" class="form-control" name="category" id="editComponentCategory" placeholder="Enter category (e.g. Frontend, Backend, etc.)">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Vendor</label>
+                                <input type="text" class="form-control" name="vendor" id="editComponentVendor">
+                            </div>
+                        </div>                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Project</label>
+                                <select class="form-select" name="project_id" id="editComponentProject">
+                                    <option value="">Select Project</option>
+                                    {% for project in projects %}
+                                    <option value="{{ project.id }}">{{ project.project_name }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Manager Name</label>
+                                <input type="text" class="form-control" name="manager_name" id="editComponentManagerName" readonly>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mb-3">
+                                <label class="form-label">Description</label>
+                                <textarea class="form-control" name="description" id="editComponentDescription" rows="3"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mb-3">
+                                <label class="form-label">Notes</label>
+                                <textarea class="form-control" name="notes" id="editComponentNotes" rows="3"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" id="updateComponent">
+                    <i class="fas fa-save me-2"></i>Update Component
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for importing components from CSV -->
+<div class="modal fade" id="importComponentModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Import Components from CSV</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="alert alert-info">
+                    <i class="fas fa-info-circle me-2"></i>
+                    <strong>Auto Project Detection:</strong> The system will automatically create a project based on "Tên webapp" found in your CSV file, or use the filename if not found.
+                </div>
+                <form id="importComponentForm">
+                    <div class="mb-3">
+                        <label class="form-label">CSV File</label>
+                        <input type="file" class="form-control" name="csv_file" accept=".csv" required>
+                        <div class="form-text">
+                            Expected format: Skip 4 rows, then columns: Nội dung, Công nghệ sử dụng, Phiên bản, Ngày cập nhật
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-success" id="importComponents">
+                    <i class="fas fa-upload me-2"></i>Import Components
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Technology List Modal -->
+<div id="technologyListModal">
+  <div class="technology-list-modal-content">
+    <div class="technology-list-modal-header">
+      <span class="technology-list-modal-title">Technology list</span>
+      <button class="technology-list-modal-close" onclick="closeTechnologyListModal()">&times;</button>
+    </div>
+    <div class="technology-list-table-wrapper">
+      <table class="technology-list-table">
+        <thead>
+          <tr>
+            <th>STT</th>
+            <th>NAME</th>
+            <th>VERSION</th>
+            <th>CATEGORY</th>
+            <th>PROJECT NAME</th>
+            <th>MANAGER</th>
+            <th>DESCRIPTION</th>
+            <th>ACTIONS</th>
+          </tr>
+        </thead>
+        <tbody id="technologyListTableBody">
+          <!-- Rows will be injected by JS -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/components.css') }}?v=1">
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/components.js') }}"></script>
+{% endblock %}

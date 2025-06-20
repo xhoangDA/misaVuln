@@ -1,0 +1,437 @@
+{% extends 'base.html' %}
+
+{% block title %}CVE Vulnerability Scanner - AI-Powered Security Assessment{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/cve_scan.css') }}?v={{ (range(1, 10000) | random if false else 1) }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/cve-modal-enhanced.css') }}?v={{ (range(1, 10000) | random if false else 1) }}">
+{% endblock %}
+
+{% block content %}
+<div class="cve-scan-container">
+    <!-- Model Selection Cards -->
+    <div class="model-selection">
+        <div class="container-fluid">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="model-card active" data-model="rag-llm">
+                        <div class="model-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h4>CVE Prime RAG LLM model</h4>
+                        <p class="model-description">Advanced AI model for vulnerability analysis</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="model-card" data-model="mitre-attack">
+                        <div class="model-icon">
+                            <i class="fas fa-crosshairs"></i>
+                        </div>
+                        <h4>CVE Prime Mitre ATT&CK Tagging ML model</h4>
+                        <p class="model-description">MITRE ATT&CK framework mapping</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="model-card" data-model="language-detection">
+                        <div class="model-icon">
+                            <i class="fas fa-language"></i>
+                        </div>
+                        <h4>CVE Prime Language detection ML model</h4>
+                        <p class="model-description">Multi-language vulnerability detection</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    <!-- Scan Configuration Section -->
+    <div class="scan-section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="scan-config-card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-cogs"></i> Scan Configuration</h3>
+                            <p class="config-subtitle">Configure your vulnerability assessment parameters</p>
+                        </div>
+                        <div class="card-body">
+                            <form id="cveScanForm" method="POST">
+                                <div class="form-grid">
+                                    <div class="form-group">
+                                        <label for="startDate">
+                                            <i class="fas fa-calendar-alt"></i>
+                                            Start Date
+                                        </label>
+                                        <input type="date" class="form-control cyber-input" id="startDate" name="start_date" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="endDate">
+                                            <i class="fas fa-calendar-alt"></i>
+                                            End Date
+                                        </label>
+                                        <input type="date" class="form-control cyber-input" id="endDate" name="end_date" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="quick-actions">
+                                    <button type="button" class="quick-btn" onclick="setQuickDateRange('7days')">
+                                        <i class="fas fa-clock"></i>
+                                        Last 7 Days
+                                    </button>
+                                    <button type="button" class="quick-btn" onclick="setQuickDateRange('30days')">
+                                        <i class="fas fa-calendar-week"></i>
+                                        Last 30 Days
+                                    </button>
+                                    <button type="button" class="quick-btn" onclick="setQuickDateRange('90days')">
+                                        <i class="fas fa-calendar-month"></i>
+                                        Last 90 Days
+                                    </button>
+                                </div>
+                                
+                                <div class="scan-button-container">
+                                    <button type="button" class="scan-btn" id="startScanBtn" onclick="startCVEScan()">
+                                        <span class="btn-bg"></span>
+                                        <i class="fas fa-search"></i>
+                                        <span>Start CVE Scan</span>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="stats-panel">
+                        <h3><i class="fas fa-chart-bar"></i> System Statistics</h3>
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-microchip"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <div class="stat-number" id="totalTechnologies">Loading...</div>
+                                    <div class="stat-label">Technologies</div>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-project-diagram"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <div class="stat-number" id="totalProjects">Loading...</div>
+                                    <div class="stat-label">Projects</div>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-database"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <div class="stat-number">506K+</div>
+                                    <div class="stat-label">CVE Rules</div>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <div class="stat-number">NVD 2.0</div>
+                                    <div class="stat-label">Data Source</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scan Progress Section -->
+    <div class="scan-progress-section" id="scanProgressSection" style="display: none;">
+        <div class="container-fluid">
+            <div class="progress-card">
+                <div class="progress-header">
+                    <h3>
+                        <i class="fas fa-spinner fa-spin"></i>
+                        Scanning in Progress...
+                    </h3>
+                </div>
+                <div class="progress-content">
+                    <div class="progress-bar-container">
+                        <div class="progress-bar-cyber">
+                            <div class="progress-fill" id="scanProgressBar" style="width: 0%"></div>
+                            <div class="progress-text" id="scanProgressText">0%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scan Summary Section (always visible after scan starts) -->
+    <div class="scan-summary-section" id="scanSummarySection" style="display: block;">
+        <div class="container-fluid">
+            <div class="scan-metrics">
+                <div class="metric-item">
+                    <div class="metric-value" id="scannedCVEs">0</div>
+                    <div class="metric-label">CVEs Analyzed</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value" id="scannedTechnologies">0</div>
+                    <div class="metric-label">Technologies Scanned</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value" id="vulnerabilitiesFound">0</div>
+                    <div class="metric-label">Vulnerabilities Found</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value" id="scanElapsedTime">0s</div>
+                    <div class="metric-label">Elapsed Time</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scan Results Section -->
+    <div class="scan-results-section" id="scanResultsSection" style="display: none;">
+        <div class="container-fluid">
+            <!-- Vulnerability Summary Cards -->
+            <div class="vulnerability-summary">
+                <div class="row g-4">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="vulnerability-card critical">
+                            <div class="card-glow"></div>
+                            <div class="card-content">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <div class="vuln-count" id="criticalCount">0</div>
+                                <div class="vuln-label">Critical</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="vulnerability-card high">
+                            <div class="card-glow"></div>
+                            <div class="card-content">
+                                <i class="fas fa-exclamation-circle"></i>
+                                <div class="vuln-count" id="highCount">0</div>
+                                <div class="vuln-label">High</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="vulnerability-card medium">
+                            <div class="card-glow"></div>
+                            <div class="card-content">
+                                <i class="fas fa-exclamation"></i>
+                                <div class="vuln-count" id="mediumCount">0</div>
+                                <div class="vuln-label">Medium</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="vulnerability-card low">
+                            <div class="card-glow"></div>
+                            <div class="card-content">
+                                <i class="fas fa-info-circle"></i>
+                                <div class="vuln-count" id="lowCount">0</div>
+                                <div class="vuln-label">Low</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vulnerabilities Table -->
+            <div class="results-table-container">
+                <div class="table-header">
+                    <h3><i class="fas fa-list"></i> Vulnerability Details</h3>
+                    <div class="table-actions">
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Filter results..." id="vulnerabilityFilter">
+                        </div>
+                        <button class="export-btn" onclick="exportResults()">
+                            <i class="fas fa-download"></i>
+                            Export Results
+                        </button>
+                    </div>
+                </div>
+                <div class="table-container">
+                    <table class="cyber-table" id="vulnerabilitiesTable">
+                        <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>Risk</th>
+                                <th>CVE ID</th>
+                                <th>Technology</th>
+                                <th>CVSS Score</th>
+                                <th>Confidence</th>
+                                <th>Published</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="vulnerabilitiesTableBody">
+                            <!-- Results will be populated here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CVE Details Modal -->
+<div class="modal fade" id="cveDetailsModal" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-fullscreen-lg-down">
+        <div class="modal-content cyber-modal">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    <i class="fas fa-shield-alt me-2 pulse-icon"></i>
+                    CVE Details
+                </h5>
+                <div class="modal-controls">
+                    <button type="button" class="btn btn-sm btn-dark" onclick="toggleFullscreen()">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+            </div>
+            <div class="modal-body" id="cveDetailsBody">
+                <!-- Tabs with icons -->
+                <div class="modal-tabs">
+                    <button class="modal-tab active">
+                        <i class="fas fa-info-circle"></i>
+                        Information
+                    </button>
+                    <button class="modal-tab">
+                        <i class="fas fa-puzzle-piece"></i>
+                        Affected Components
+                    </button>
+                    <button class="modal-tab">
+                        <i class="fas fa-plug"></i>
+                        Plugins
+                    </button>
+                </div>
+                <div class="modal-tab-content">
+                    <div class="modal-section modal-section-horizontal">
+                        <div class="modal-row">
+                            <div class="modal-col modal-col-desc">
+                                <span class="modal-label">
+                                    <i class="fas fa-file-alt me-2"></i>
+                                    Description
+                                </span>
+                                <div class="modal-section-content">
+                                    Donetick an open-source app for managing tasks and chores. Prior to version 0.1.44, the application uses JSON Web Tokens (JWT) for authentication, but the signing secret has a weak default value. While the responsibility is left to the system administrator to change it, this approach is inadequate. The vulnerability is proven by existence of the issue in the live version as well. This issue can result in full account takeover of any user. Version 0.1.44 contains a patch.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- CVSS Information Grid với Icon -->
+                        <div class="cvss-info-grid">
+                            <!-- CVSS v3 Card -->
+                            <div class="cvss-info-card">
+                                <div class="cvss-info-item">
+                                    <div class="cvss-icon score">
+                                        <i class="fas fa-tachometer-alt"></i>
+                                    </div>
+                                    <div class="cvss-info-content">
+                                        <h6>Base Score</h6>
+                                        <div class="value">9.1</div>
+                                    </div>
+                                </div>
+                                <div class="cvss-info-item">
+                                    <div class="cvss-icon severity">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                    </div>
+                                    <div class="cvss-info-content">
+                                        <h6>Severity</h6>
+                                        <div class="value">CRITICAL</div>
+                                    </div>
+                                </div>
+                                <div class="cvss-info-item">
+                                    <div class="cvss-icon vector">
+                                        <i class="fas fa-code"></i>
+                                    </div>
+                                    <div class="cvss-info-content">
+                                        <h6>Vector</h6>
+                                        <div class="value">CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Risk Assessment Card -->
+                            <div class="cvss-info-card">
+                                <div class="cvss-info-item">
+                                    <div class="cvss-icon assessment">
+                                        <i class="fas fa-exclamation-circle"></i>
+                                    </div>
+                                    <div class="cvss-info-content">
+                                        <h6>Assessment</h6>
+                                        <div class="value">CRITICAL</div>
+                                    </div>
+                                </div>
+                                <div class="cvss-info-item">
+                                    <div class="cvss-icon confidence">
+                                        <i class="fas fa-chart-line"></i>
+                                    </div>
+                                    <div class="cvss-info-content">
+                                        <h6>Confidence</h6>
+                                        <div class="value">70%</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- References Section -->
+                        <div style="margin-top: 30px;">
+                            <span class="modal-label">
+                                <i class="fas fa-link me-2"></i>References
+                            </span>
+                            <div class="modal-section-content">
+                                <ul style="margin: 0; padding-left: 20px;">
+                                    <li><a href="https://github.com/donetick/donetick/commit/620b897bc0135f6668bb3a5562678104531108eb" target="_blank" style="color: #10b981;">https://github.com/donetick/donetick/commit/620b897bc0135f6668bb3a5562678104531108eb</a></li>
+                                    <li><a href="https://github.com/donetick/donetick/commit/b9a6e177eefdcc605dedbc5320f0d93d6573d1db6" target="_blank" style="color: #10b981;">https://github.com/donetick/donetick/commit/b9a6e177eefdcc605dedbc5320f0d93d6573d1db6</a></li>
+                                    <li><a href="https://github.com/donetick/donetick/security/advisories/GHSA-hjjg-vw4j-986x" target="_blank" style="color: #10b981;">https://github.com/donetick/donetick/security/advisories/GHSA-hjjg-vw4j-986x</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-tab-content d-none">
+                    <!-- Affected Projects content here -->
+                </div>
+                <div class="modal-tab-content d-none">
+                    <!-- Plugins content here -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="modal-footer-stats">
+                    <div class="footer-stat">
+                        <i class="fas fa-fingerprint"></i>
+                        <span id="modalFooterCveId">CVE-2024-12345</span>
+                    </div>
+                    <div class="footer-stat">
+                        <i class="fas fa-microchip"></i>
+                        <span id="modalFooterAffectedCount">3 affected components</span>
+                    </div>
+                </div>
+                <div class="modal-footer-actions">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                        <i class="fas fa-times me-1"></i>
+                        Close
+                    </button>
+                    <button type="button" class="btn btn-primary cyber-btn" onclick="markAsReviewed()">
+                        <i class="fas fa-check me-1"></i>
+                        Mark as Reviewed
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Missing showScanProgress function and related helper functions -->
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/cve_scan.js') }}"></script>
+{% endblock %}

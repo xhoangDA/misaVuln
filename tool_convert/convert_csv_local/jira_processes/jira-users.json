@@ -1,0 +1,342 @@
+[
+  {
+    "key": "JIRAUSER10118",
+    "name": "00006",
+    "displayName": "Lê Xuân Thuyên"
+  },
+  {
+    "key": "JIRAUSER10120",
+    "name": "00038",
+    "displayName": "Trần Quốc Bảo"
+  },
+  {
+    "key": "JIRAUSER10116",
+    "name": "00084",
+    "displayName": "Phạm Văn Hiển"
+  },
+  {
+    "key": "JIRAUSER10401",
+    "name": "00090",
+    "displayName": "Hùng Lê"
+  },
+  {
+    "key": "JIRAUSER10117",
+    "name": "00093",
+    "displayName": "Huỳnh Tấn Hoàng"
+  },
+  {
+    "key": "JIRAUSER10214",
+    "name": "00112",
+    "displayName": "Lê Minh Phát"
+  },
+  {
+    "key": "JIRAUSER10104",
+    "name": "00132",
+    "displayName": "Trịnh Thị Ly Na"
+  },
+  {
+    "key": "JIRAUSER10212",
+    "name": "00135",
+    "displayName": "Võ Đăng Toàn"
+  },
+  {
+    "key": "JIRAUSER10119",
+    "name": "00200",
+    "displayName": "Trần Thế Anh"
+  },
+  {
+    "key": "JIRAUSER10102",
+    "name": "00201",
+    "displayName": "Hoàng Văn Dũng"
+  },
+  {
+    "key": "JIRAUSER10400",
+    "name": "00202",
+    "displayName": "Tuấn Phạm"
+  },
+  {
+    "key": "JIRAUSER10404",
+    "name": "00208",
+    "displayName": "Long Trần"
+  },
+  {
+    "key": "JIRAUSER10405",
+    "name": "00262",
+    "displayName": "Anh Nguyễn"
+  },
+  {
+    "key": "JIRAUSER10403",
+    "name": "00266",
+    "displayName": "Hữu Đoàn"
+  },
+  {
+    "key": "JIRAUSER10501",
+    "name": "00311",
+    "displayName": "Tống Thanh Trung"
+  },
+  {
+    "key": "JIRAUSER10208",
+    "name": "00318",
+    "displayName": "Trần Duy Tùng"
+  },
+  {
+    "key": "JIRAUSER10101",
+    "name": "00330",
+    "displayName": "Trần Nhật Vũ Linh"
+  },
+  {
+    "key": "JIRAUSER10103",
+    "name": "00393",
+    "displayName": "Huỳnh Đức Nhân Tâm"
+  },
+  {
+    "key": "JIRAUSER10108",
+    "name": "00420",
+    "displayName": "Doãn Diệp Linh"
+  },
+  {
+    "key": "JIRAUSER10215",
+    "name": "00435",
+    "displayName": "Lê Thanh Vũ"
+  },
+  {
+    "key": "JIRAUSER10109",
+    "name": "00437",
+    "displayName": "Phan Thị Ngọc Thu"
+  },
+  {
+    "key": "JIRAUSER10406",
+    "name": "00438",
+    "displayName": "Hiệp Trần"
+  },
+  {
+    "key": "JIRAUSER10115",
+    "name": "00477",
+    "displayName": "Lê Thị Thanh Bình"
+  },
+  {
+    "key": "JIRAUSER10503",
+    "name": "00490",
+    "displayName": "Trần Công Hiếu "
+  },
+  {
+    "key": "JIRAUSER10210",
+    "name": "00492",
+    "displayName": "Đinh Thiện Minh Hiền"
+  },
+  {
+    "key": "JIRAUSER10402",
+    "name": "00508",
+    "displayName": "Thái Bùi"
+  },
+  {
+    "key": "JIRAUSER10209",
+    "name": "00536",
+    "displayName": "Đỗ Trường Sang"
+  },
+  {
+    "key": "JIRAUSER10700",
+    "name": "00546",
+    "displayName": "Hoàng Văn Thường"
+  },
+  {
+    "key": "JIRAUSER10507",
+    "name": "00570",
+    "displayName": "Nguyễn Đạt Minh"
+  },
+  {
+    "key": "JIRAUSER10508",
+    "name": "00597",
+    "displayName": "Trần Phước Hạc"
+  },
+  {
+    "key": "JIRAUSER10114",
+    "name": "00608",
+    "displayName": "Trần Mạnh Dũng"
+  },
+  {
+    "key": "JIRAUSER10111",
+    "name": "00624",
+    "displayName": "Hồ Thanh Duy"
+  },
+  {
+    "key": "JIRAUSER10106",
+    "name": "00652",
+    "displayName": "Trần Ngọc Khải"
+  },
+  {
+    "key": "JIRAUSER10105",
+    "name": "00658",
+    "displayName": "Tôn Hoàng Quỳnh Như"
+  },
+  {
+    "key": "JIRAUSER10504",
+    "name": "00670",
+    "displayName": "Vũ Văn Tuy"
+  },
+  {
+    "key": "JIRAUSER10211",
+    "name": "00686",
+    "displayName": "Trần Văn Hoài Thương"
+  },
+  {
+    "key": "JIRAUSER10216",
+    "name": "00687",
+    "displayName": "Trần Thị Quỳnh Như"
+  },
+  {
+    "key": "JIRAUSER10112",
+    "name": "00695",
+    "displayName": "Tạ Minh Luật"
+  },
+  {
+    "key": "JIRAUSER10506",
+    "name": "00720",
+    "displayName": "Trần Duy Bảo"
+  },
+  {
+    "key": "JIRAUSER10113",
+    "name": "00751",
+    "displayName": "Nguyễn Như Trúc"
+  },
+  {
+    "key": "JIRAUSER10500",
+    "name": "00755",
+    "displayName": "Trương Thị Nhàn"
+  },
+  {
+    "key": "JIRAUSER10110",
+    "name": "00768",
+    "displayName": "Lỷ Nhần Quắn"
+  },
+  {
+    "key": "JIRAUSER10213",
+    "name": "00816",
+    "displayName": "Nguyễn Thành Nhân"
+  },
+  {
+    "key": "JIRAUSER10202",
+    "name": "00866",
+    "displayName": "Thái Đồng Minh Quân"
+  },
+  {
+    "key": "JIRAUSER10502",
+    "name": "00889",
+    "displayName": "LÊ THỊ KIM TUYỀN"
+  },
+  {
+    "key": "JIRAUSER10600",
+    "name": "00892",
+    "displayName": "Lê Minh Hải Đăng"
+  },
+  {
+    "key": "JIRAUSER10601",
+    "name": "00896",
+    "displayName": "Nguyễn Hoàng Hiệp"
+  },
+  {
+    "key": "JIRAUSER10301",
+    "name": "00907",
+    "displayName": "Lê Khánh Hoàng - 00907"
+  },
+  {
+    "key": "JIRAUSER10204",
+    "name": "00913",
+    "displayName": "Nguyễn Thu Hiền"
+  },
+  {
+    "key": "JIRAUSER10107",
+    "name": "00919",
+    "displayName": "Đào Văn Hải"
+  },
+  {
+    "key": "JIRAUSER10207",
+    "name": "00931",
+    "displayName": "Lê Thị Ngọc Trâm"
+  },
+  {
+    "key": "JIRAUSER10505",
+    "name": "00939",
+    "displayName": "Mã Tấn Vĩnh"
+  },
+  {
+    "key": "JIRAUSER10205",
+    "name": "00941",
+    "displayName": "Phùng Thị Hồng Thuyên"
+  },
+  {
+    "key": "JIRAUSER10509",
+    "name": "00942",
+    "displayName": "Nguyễn Quốc Nhựt"
+  },
+  {
+    "key": "JIRAUSER10510",
+    "name": "00944",
+    "displayName": "Trần Vũ Anh Thư"
+  },
+  {
+    "key": "JIRAUSER10206",
+    "name": "00947",
+    "displayName": "Nguyễn Thị Thu Giang"
+  },
+  {
+    "key": "JIRAUSER10201",
+    "name": "00949",
+    "displayName": "Mai Anh Quân"
+  },
+  {
+    "key": "JIRAUSER10203",
+    "name": "00956",
+    "displayName": "Trần Khánh Duy"
+  },
+  {
+    "key": "JIRAUSER10200",
+    "name": "00957",
+    "displayName": "Trần Ngọc Linh"
+  },
+  {
+    "key": "JIRAUSER10300",
+    "name": "A02-0004",
+    "displayName": "Đặng Thái Dương - A02-0004"
+  },
+  {
+    "key": "JIRAUSER10000",
+    "name": "admin",
+    "displayName": "admin"
+  },
+  {
+    "key": "JIRAUSER10100",
+    "name": "B-0997",
+    "displayName": "Bạch Hoàng Việt"
+  },
+  {
+    "key": "JIRAUSER10125",
+    "name": "B06-0041",
+    "displayName": "Trần Ngọc Sơn"
+  },
+  {
+    "key": "JIRAUSER10121",
+    "name": "B24-0020",
+    "displayName": "Nguyễn Trung Kiên"
+  },
+  {
+    "key": "JIRAUSER10122",
+    "name": "C10-0022",
+    "displayName": "Nguyên Thanh Thủy"
+  },
+  {
+    "key": "JIRAUSER10124",
+    "name": "J-0002",
+    "displayName": "Chị Thu MISA"
+  },
+  {
+    "key": "JIRAUSER10126",
+    "name": "misaticket",
+    "displayName": "misaticket -VNR"
+  },
+  {
+    "key": "JIRAUSER10123",
+    "name": "ticket",
+    "displayName": "Ticket"
+  }
+]

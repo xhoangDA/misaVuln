@@ -1,0 +1,24 @@
+# Format: <key-hostname>: <project>
+empty: SOD
+sme: SOD
+cep: SOD
+elk-acc: SOD
+elk-bus: SOD
+elk-apm: SOD
+lb: SOD
+slg: SOD
+cgv: SOD
+qts: SOD
+aim: SOD
+inv: SOD
+mtx: SOD
+# ams2
+# act2
+crm2: SOD
+asb: SOD
+act: SOD
+ibt: SOD
+# suman: SOD
+mep: SOD
+qth: SOD
+dvc: SOD

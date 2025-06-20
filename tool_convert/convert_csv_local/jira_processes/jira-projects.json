@@ -1,0 +1,27 @@
+[
+  {
+    "id": "10100",
+    "key": "SOD",
+    "name": "An ninh thông tin"
+  },
+  {
+    "id": "10002",
+    "key": "EBM",
+    "name": "EBM"
+  },
+  {
+    "id": "10001",
+    "key": "HRM",
+    "name": "HRM"
+  },
+  {
+    "id": "10003",
+    "key": "LMS",
+    "name": "LMS"
+  },
+  {
+    "id": "10000",
+    "key": "UN",
+    "name": "Uncategory"
+  }
+]

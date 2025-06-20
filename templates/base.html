@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}CVE Security Scanner{% endblock %}</title>
+    <meta name="description" content="Advanced CVE vulnerability scanner and security assessment platform">
+    
+    <!-- Preload critical fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap & FontAwesome -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+    
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-glass fixed-top">
+        <div class="container">
+            <!-- Brand -->
+            <a class="navbar-brand" href="/" aria-label="CVE Security Scanner Home">
+                <i class="fas fa-shield-alt brand-icon pulse"></i>
+                <span class="brand-text">
+                    <span class="brand-primary">CVE</span>
+                    <span class="brand-secondary">Security Scanner</span>
+                </span>
+            </a>
+
+            <!-- Mobile Toggle -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon">
+                    <i class="fas fa-bars"></i>
+                </span>
+            </button>
+
+            <!-- Navigation Items -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/" data-bs-toggle="tooltip" title="Dashboard Overview">
+                            <i class="fas fa-tachometer-alt icon"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/projects" data-bs-toggle="tooltip" title="Manage Projects">
+                            <i class="fas fa-project-diagram icon"></i>
+                            <span>Projects</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/managers" data-bs-toggle="tooltip" title="Project Managers">
+                            <i class="fas fa-users-cog icon"></i>
+                            <span>Managers</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/components" data-bs-toggle="tooltip" title="System Components">
+                            <i class="fas fa-microchip icon"></i>
+                            <span>Components</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link cve-scanner-link" href="/cve-scan" data-bs-toggle="tooltip" title="CVE Vulnerability Scanner">
+                            <i class="fas fa-shield-alt icon"></i>
+                            <span>CVE Scanner</span>
+                            <span class="scanner-badge">AI</span>
+                        </a>
+                    </li>
+                </ul>
+                
+                <!-- Security Status Indicator -->
+                <div class="security-status ms-3">
+                    <div class="status-indicator" id="securityStatus">
+                        <i class="fas fa-shield-check"></i>
+                        <span class="status-text">System Secure</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Loading Overlay -->
+        <div class="loading-overlay" id="loadingOverlay">
+            <div class="loading-content">
+                <div class="cyber-loader">
+                    <div class="loader-ring"></div>
+                    <div class="loader-ring"></div>
+                    <div class="loader-ring"></div>
+                    <i class="fas fa-shield-alt loader-icon"></i>
+                </div>
+                <p class="loading-text">Initializing Security Systems...</p>
+            </div>
+        </div>
+
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Floating Actions -->
+    <div class="floating-actions">
+        <!-- Scroll to Top -->
+        <button class="btn btn-floating scroll-top" id="scrollToTop" data-bs-toggle="tooltip" title="Back to Top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <!-- Quick Scanner -->
+        <button class="btn btn-floating quick-scan" id="quickScan" data-bs-toggle="tooltip" title="Quick Security Scan">
+            <i class="fas fa-search"></i>
+        </button>
+        
+        <!-- Security Report -->
+        <button class="btn btn-floating security-report" id="securityReport" data-bs-toggle="tooltip" title="Generate Security Report">
+            <i class="fas fa-file-shield"></i>
+        </button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="cyber-footer">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="footer-brand">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>CVE Security Scanner</span>
+                    </div>
+                    <p class="footer-text">Advanced vulnerability assessment & security monitoring platform</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="footer-stats">
+                        <div class="stat-item">
+                            <span class="stat-number" id="totalCVEs">506K+</span>
+                            <span class="stat-label">CVE Rules</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">Monitoring</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">99.9%</span>
+                            <span class="stat-label">Uptime</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+    <script src="{{ url_for('static', filename='js/modal-fix.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    
+    <script>
+        // Enhanced Base Template JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            // Hide loading overlay immediately on DOM ready
+            hideLoadingOverlay();
+            
+            initializeNavigation();
+            initializeFloatingActions();
+            initializeSecurityFeatures();
+            initializeAnimations();
+            initializeTooltips();
+        });
+
+        // Function to hide loading overlay
+        function hideLoadingOverlay() {
+            const loadingOverlay = document.getElementById('loadingOverlay');
+            if (loadingOverlay) {
+                // Hide immediately for CVE scan page AND scan details page
+                if (window.location.pathname === '/cve-scan' || window.location.pathname.startsWith('/scan-details/')) {
+                    loadingOverlay.style.display = 'none';
+                } else {
+                    // Animate out for other pages
+                    setTimeout(() => {
+                        gsap.to(loadingOverlay, {
+                            opacity: 0,
+                            duration: 0.5,
+                            onComplete: () => {
+                                loadingOverlay.style.display = 'none';
+                            }
+                        });
+                    }, 500);
+                }
+            }
+        }
+
+        // Navigation Enhancement
+        function initializeNavigation() {
+            const currentPath = window.location.pathname;
+            
+            // Highlight active nav item
+            document.querySelectorAll('.nav-link').forEach(link => {
+                const href = link.getAttribute('href');
+                if (href === currentPath || (currentPath.startsWith(href) && href !== '/')) {
+                    link.classList.add('active');
+                    link.parentElement.classList.add('active');
+                }
+            });
+
+            // Navbar glass effect with enhanced animations
+            let scrolled = false;
+            window.addEventListener('scroll', throttle(() => {
+                const navbar = document.querySelector('.navbar-glass');
+                const isScrolled = window.pageYOffset > 20;
+                
+                if (isScrolled !== scrolled) {
+                    scrolled = isScrolled;
+                    navbar.classList.toggle('scrolled', scrolled);
+                }
+            }, 16));
+        }
+
+        // Floating Actions
+        function initializeFloatingActions() {
+            const scrollBtn = document.getElementById('scrollToTop');
+            const quickScan = document.getElementById('quickScan');
+            const securityReport = document.getElementById('securityReport');
+
+            // Show floating buttons after delay
+            setTimeout(() => {
+                [scrollBtn, quickScan, securityReport].forEach((btn, index) => {
+                    if (btn) {
+                        btn.style.opacity = '1';
+                        btn.style.transform = 'translateY(0) scale(1)';
+                        btn.style.transition = 'all 0.3s ease';
+                        btn.style.transitionDelay = (index * 0.1) + 's';
+                    }
+                });
+            }, 1000);
+
+            // Scroll to top functionality
+            if (scrollBtn) {
+                window.addEventListener('scroll', throttle(() => {
+                    const show = window.pageYOffset > 300;
+                    scrollBtn.style.opacity = show ? '1' : '0';
+                    scrollBtn.style.transform = show ? 'translateY(0) scale(1)' : 'translateY(20px) scale(0.8)';
+                }, 16));
+
+                scrollBtn.addEventListener('click', () => {
+                    gsap.to(window, {duration: 1, scrollTo: 0, ease: "power2.out"});
+                });
+            }
+
+            // Quick scan functionality
+            if (quickScan) {
+                quickScan.addEventListener('click', () => {
+                    showNotification('Quick scan initiated...', 'info');
+                    // Redirect to CVE scan page
+                    setTimeout(() => {
+                        window.location.href = '/cve-scan';
+                    }, 1000);
+                });
+            }
+
+            // Security report functionality
+            if (securityReport) {
+                securityReport.addEventListener('click', () => {
+                    showNotification('Generating security report...', 'info');
+                    // Add report generation logic here
+                });
+            }
+        }
+
+        // Security Features
+        function initializeSecurityFeatures() {
+            const securityStatus = document.getElementById('securityStatus');
+            
+            // Simulate security status updates
+            updateSecurityStatus();
+            setInterval(updateSecurityStatus, 30000); // Update every 30 seconds
+        }
+
+        function updateSecurityStatus() {
+            const securityStatus = document.getElementById('securityStatus');
+            if (!securityStatus) return;
+            
+            const statusText = securityStatus.querySelector('.status-text');
+            const statusIcon = securityStatus.querySelector('i');
+            
+            // Simulate different security states
+            const states = [
+                { text: 'System Secure', icon: 'fas fa-shield-check', class: 'secure' },
+                { text: 'Monitoring Active', icon: 'fas fa-shield-alt', class: 'scanning' },
+                { text: 'All Systems Normal', icon: 'fas fa-shield-check', class: 'secure' }
+            ];
+            
+            const randomState = states[Math.floor(Math.random() * states.length)];
+            if (statusText) statusText.textContent = randomState.text;
+            if (statusIcon) statusIcon.className = randomState.icon;
+            securityStatus.className = `status-indicator ${randomState.class}`;
+        }
+
+        // Animations
+        function initializeAnimations() {
+            // Register ScrollTrigger plugin
+            if (typeof gsap !== 'undefined' && gsap.registerPlugin) {
+                gsap.registerPlugin(ScrollTrigger);
+                
+                // Entrance animations for page elements
+                gsap.utils.toArray('.fade-in-up').forEach((element, index) => {
+                    gsap.fromTo(element, 
+                        { y: 50, opacity: 0 },
+                        {
+                            y: 0,
+                            opacity: 1,
+                            duration: 0.8,
+                            delay: index * 0.1,
+                            scrollTrigger: {
+                                trigger: element,
+                                start: 'top 90%',
+                                end: 'bottom 10%',
+                                toggleActions: 'play none none reverse'
+                            }
+                        }
+                    );
+                });
+            }
+        }
+
+        // Initialize tooltips
+        function initializeTooltips() {
+            if (typeof bootstrap !== 'undefined' && bootstrap.Tooltip) {
+                const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+                tooltipTriggerList.map(function (tooltipTriggerEl) {
+                    return new bootstrap.Tooltip(tooltipTriggerEl);
+                });
+            }
+        }
+
+        // Utility functions
+        function throttle(func, limit) {
+            let inThrottle;
+            return function() {
+                const args = arguments;
+                const context = this;
+                if (!inThrottle) {
+                    func.apply(context, args);
+                    inThrottle = true;
+                    setTimeout(() => inThrottle = false, limit);
+                }
+            }
+        }
+
+        function showNotification(message, type = 'info') {
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.className = `notification notification-${type}`;
+            
+            const iconMap = {
+                info: 'info-circle',
+                success: 'check-circle',
+                warning: 'exclamation-triangle',
+                error: 'times-circle'
+            };
+            
+            notification.innerHTML = `
+                <i class="fas fa-${iconMap[type]}"></i>
+                <span>${message}</span>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // Animate in
+            if (typeof gsap !== 'undefined') {
+                gsap.fromTo(notification, 
+                    { x: 300, opacity: 0 },
+                    { x: 0, opacity: 1, duration: 0.3 }
+                );
+                
+                // Remove after 3 seconds
+                setTimeout(() => {
+                    gsap.to(notification, {
+                        x: 300,
+                        opacity: 0,
+                        duration: 0.3,
+                        onComplete: () => notification.remove()
+                    });
+                }, 3000);
+            } else {
+                // Fallback without GSAP
+                notification.style.transform = 'translateX(0)';
+                notification.style.opacity = '1';
+                setTimeout(() => {
+                    notification.remove();
+                }, 3000);
+            }
+        }
+
+        // Additional page load handling
+        window.addEventListener('load', function() {
+            // Ensure loading overlay is hidden on full page load
+            hideLoadingOverlay();
+        });
+    </script>
+    
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

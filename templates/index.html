@@ -1,0 +1,177 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="hero-section">
+    <div class="container">
+        <div class="hero-content text-center">
+            <h1 class="hero-title display-1 fw-bold mb-4">
+                <span class="text-primary glow-text">OUTSCALE</span><br>
+                <span class="text-white">PROJECT MANAGEMENT</span>
+            </h1>
+            <p class="hero-subtitle h3 mb-5">Never Surrender Your Data</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary btn-lg me-4 geometric-border">
+                    <i class="fas fa-rocket me-2"></i>Explore More
+                </button>
+                <button class="btn btn-outline-success btn-lg">
+                    <i class="fas fa-play me-2"></i>SIGNUP FOR FREE
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="features-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="feature-card card h-100 geometric-border">
+                    <div class="card-body text-center p-4">
+                        <div class="feature-icon mb-4">
+                            <i class="fas fa-project-diagram fa-4x text-primary glow-text"></i>
+                        </div>
+                        <h3 class="card-title h4 fw-bold text-primary mb-3">PROJECT MANAGEMENT</h3>
+                        <p class="card-text text-secondary mb-4">Private Repo, all public project rules, translation to 48 frameworks and AI powered sub-second search.</p>
+                        <a href="/projects" class="btn btn-primary">
+                            <i class="fas fa-arrow-right me-2"></i>EXPLORE PROJECTS
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="feature-card card h-100 geometric-border">
+                    <div class="card-body text-center p-4">
+                        <div class="feature-icon mb-4">
+                            <i class="fas fa-user-tie fa-4x text-primary glow-text"></i>
+                        </div>
+                        <h3 class="card-title h4 fw-bold text-primary mb-3">TEAM MANAGEMENT</h3>
+                        <p class="card-text text-secondary mb-4">Coordinate with project managers and track responsibilities effectively across all teams.</p>
+                        <a href="/managers" class="btn btn-primary">
+                            <i class="fas fa-arrow-right me-2"></i>VIEW MANAGERS
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="feature-card card h-100 geometric-border">
+                    <div class="card-body text-center p-4">
+                        <div class="feature-icon mb-4">
+                            <i class="fas fa-cogs fa-4x text-primary glow-text"></i>
+                        </div>
+                        <h3 class="card-title h4 fw-bold text-primary mb-3">TECHNOLOGY STACK</h3>
+                        <p class="card-text text-secondary mb-4">Monitor and manage technology components across all your projects with real-time insights.</p>
+                        <a href="/components" class="btn btn-primary">
+                            <i class="fas fa-arrow-right me-2"></i>VIEW COMPONENTS
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Tech Stack Section -->
+        <div class="tech-stack-section mt-5 pt-5">
+            <div class="text-center mb-5">
+                <h3 class="text-primary fw-bold mb-3">POWERED BY MODERN TECHNOLOGY</h3>
+                <p class="text-secondary">Built with industry-leading frameworks and tools</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-auto">
+                    <div class="tech-grid d-flex justify-content-center align-items-center flex-wrap gap-4">
+                        <div class="tech-item">
+                            <i class="fab fa-python fa-3x text-primary"></i>
+                            <span class="tech-name">Python</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-database fa-3x text-primary"></i>
+                            <span class="tech-name">MySQL</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-js-square fa-3x text-primary"></i>
+                            <span class="tech-name">JavaScript</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-bootstrap fa-3x text-primary"></i>
+                            <span class="tech-name">Bootstrap</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-flask fa-3x text-primary"></i>
+                            <span class="tech-name">Flask</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}?v=1">
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Simple and reliable animation approach
+    const animateOnScroll = () => {
+        const elements = document.querySelectorAll('.feature-card, .tech-item');
+        
+        elements.forEach((el, index) => {
+            const rect = el.getBoundingClientRect();
+            const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+            
+            if (isVisible && !el.classList.contains('animated')) {
+                el.classList.add('animated');
+                el.style.animationDelay = `${index * 0.2}s`;
+            }
+        });
+    };
+
+    // Hero animations
+    setTimeout(() => {
+        document.querySelector('.hero-title').style.opacity = '1';
+        document.querySelector('.hero-title').style.transform = 'translateY(0)';
+    }, 300);
+
+    setTimeout(() => {
+        document.querySelector('.hero-subtitle').style.opacity = '1';
+        document.querySelector('.hero-subtitle').style.transform = 'translateY(0)';
+    }, 600);
+
+    setTimeout(() => {
+        document.querySelectorAll('.hero-buttons .btn').forEach((btn, i) => {
+            setTimeout(() => {
+                btn.style.opacity = '1';
+                btn.style.transform = 'translateY(0)';
+            }, i * 200);
+        });
+    }, 900);
+
+    // Initial check
+    animateOnScroll();
+
+    // Listen for scroll
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                animateOnScroll();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    });
+
+    // Fallback - show all after 2 seconds regardless
+    setTimeout(() => {
+        document.querySelectorAll('.feature-card, .tech-item').forEach(el => {
+            if (!el.classList.contains('animated')) {
+                el.classList.add('animated');
+            }
+        });
+    }, 2000);
+});
+</script>
+{% endblock %}

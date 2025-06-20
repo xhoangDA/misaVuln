@@ -1,0 +1,5091 @@
+﻿Summary,Issue Type,Status,Project key,Project name,Priority,Assignee,Reporter,Creator,Component/s,Custom field (Bộ phận phản ánh),Custom field (Ghi chú (Mô tả vấn đề)),Custom field (Kênh hỗ trợ),Custom field (Loại hỗ trợ),Custom field (Loại lỗi),Custom field (Severity),Custom field (Thêm labels),Custom field (Độ khó),Custom field (Phân loại yêu cầu)
+Cleartext Transmission of Sensitive Information via HTTP,Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""Cleartext Transmission of Sensitive Information via HTTP""
+- CVSS: AV:A/AC:L/Au:N/C:P/I:P/A:N - 4.8
+- Related CVE: []
+- Severity: Medium
+- Description: The host / application transmits sensitive information (username, passwords) in cleartext via HTTP.
+- Impact: Impact: An attacker could use this situation to compromise or eavesdrop on the HTTP communication between the client and the server using a man-in-the-middle attack to get access to sensitive data like usernames or passwords.
+- Affected OS detected: Linux Kernel, Microsoft Windows, Microsoft Windows Server 2016 or Microsoft Windows 10
+- Affected services/hosts:
+	Service: php:php:5.6.31
+- Resolution: Enforce the transmission of sensitive data via an encrypted SSL/TLS connection. Additionally make sure the host / application is redirecting all users to the secured SSL/TLS connection before allowing to input sensitive data into the mentioned functions.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+Cogent DataHub Multiple Vulnerabilities - Active Check,Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""Cogent DataHub Multiple Vulnerabilities - Active Check""
+- CVSS: AV:N/AC:L/Au:N/C:N/I:N/A:P - 5.0
+- Related CVE: []
+- Severity: Medium
+- Description: Cogent DataHub is prone to a directory traversal vulnerability, an information disclosure vulnerability and to multiple buffer-overflow and integer-overflow vulnerabilities.
+- Impact: Impact: Exploiting the issues may allow an attacker to obtain sensitive information that could aid in further attacks or may allow attackers to execute arbitrary code within the context of the privileged domain.
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: ietf:transport_layer_security
+- Resolution: Update to version 6.4.20, 7.1.2 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+DCE/RPC and MSRPC Services Enumeration Reporting,Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""DCE/RPC and MSRPC Services Enumeration Reporting""
+- CVSS: AV:N/AC:L/Au:N/C:P/I:N/A:N - 5.0
+- Related CVE: []
+- Severity: Medium
+- Description: Distributed Computing Environment / Remote Procedure Calls (DCE/RPC) or MSRPC services running on the remote host can be enumerated by connecting on port 135 and doing the appropriate queries.
+- Impact: Impact: An attacker may use this fact to gain more knowledge about the remote host.
+- Affected OS detected: Microsoft Windows, Microsoft Windows Server 2016 or Microsoft Windows 10, Windows Server 2008 R2 Enterprise 7601 Service Pack 1, Windows Server 2016 Standard 14393
+- Affected services/hosts:
+	Service: loc-srv
+- Resolution: Filter incoming traffic to this ports.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+Elastic Elasticsearch DoS Vulnerability (ESA-2021-15),Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""Elastic Elasticsearch DoS Vulnerability (ESA-2021-15)""
+- CVSS: 
+- Related CVE: []
+- Severity: Medium
+- Description: Elasticsearch is prone to a denial of service (DoS) vulnerability. An uncontrolled recursion vulnerability that could lead to a denial of service attack was identified in the Elasticsearch Grok parser. A user with the ability to submit arbitrary queries to Elasticsearch could create a malicious Grok query that will crash the Elasticsearch node.
+- Impact: 
+- Affected OS detected: Ubuntu 20.04
+- Affected services/hosts:
+	Service: f5:nginx:1.23.2
+	Service: f5:nginx:1.23.2
+	Service: f5:nginx:1.23.2
+- Resolution: Update to version 6.8.17, 7.13.3 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+Elastic Elasticsearch Information Disclosure Vulnerability (ESA-2021-05),Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""Elastic Elasticsearch Information Disclosure Vulnerability (ESA-2021-05)""
+- CVSS: 
+- Related CVE: []
+- Severity: Medium
+- Description: Elasticsearch is prone to an information disclosure vulnerability. A document disclosure flaw was found in Elasticsearch when Document or Field Level Security is used. Get requests do not properly apply security permissions when executing a query against a recently updated document. This affects documents that have been updated and not yet refreshed in the index.
+- Impact: Impact: This could result in the search disclosing the existence of documents and fields the attacker should not be able to view. A mitigating factor to this flaw is an attacker must know the document ID to run the get request.
+- Affected OS detected: Ubuntu 20.04
+- Affected services/hosts:
+	Service: nginx:nginx:1.23.2
+- Resolution: Update to version 7.11.0 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+Elastic Elasticsearch Memory Disclosure Vulnerability (ESA-2021-16),Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""Elastic Elasticsearch Memory Disclosure Vulnerability (ESA-2021-16)""
+- CVSS: 
+- Related CVE: []
+- Severity: Medium
+- Description: Elasticsearch is prone to a memory disclosure vulnerability. A memory disclosure vulnerability was identified in Elasticsearch's error reporting. A user with the ability to submit arbitrary queries to Elasticsearch could submit a malformed query that would result in an error message returned containing previously used portions of a data buffer. This buffer could contain sensitive information such as Elasticsearch documents or authentication details.
+- Impact: 
+- Affected OS detected: Ubuntu 20.04
+- Affected services/hosts:
+	Service: nginx:nginx:1.23.2
+- Resolution: Update to version 7.13.4 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+Elastic Elasticsearch Multiple Log4j Vulnerabilities (Dec 2021),Vấn đề của khách hàng,Chờ xử lý,,,Trung bình,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""Elastic Elasticsearch Multiple Log4j Vulnerabilities (Dec 2021)""
+- CVSS: 
+- Related CVE: []
+- Severity: Critical
+- Description: Elastic Elasticsearch is prone to multiple vulnerabilities in the Apache Log4j library. The following vulnerabilities exist: CVE-2021-45046: Denial of Service (DoS) and a possible remote code execution (RCE) in certain non-default configurations. CVE-2021-45105: Apache Log4j2 did not protect from uncontrolled recursion from self-referential lookups. When the logging configuration uses a non-default Pattern Layout with a Context Lookup (for example, $${ctx:loginId}), attackers with control over Thread Context Map (MDC) input data can craft malicious input data that contains a recursive lookup, resulting in a StackOverflowError that will terminate the process.
+- Impact: Impact: The vendor states that there is no impact in all currently supported versions with default configurations. To avoid unknown risks it is still recommended to apply the updates or workarounds provided by the vendor.
+- Affected OS detected: Ubuntu 20.04
+- Affected services/hosts:
+	Service: nginx:nginx:1.23.2
+- Resolution: Update to version 6.8.22, 7.16.2 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Critical,,Trung bình,Bảo mật
+"Elastic Elasticsearch Multiple Log4j Vulnerabilities (ESA-2021-31, Log4Shell) - Version Check",Vấn đề của khách hàng,Chờ xử lý,,,Trung bình,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""Elastic Elasticsearch Multiple Log4j Vulnerabilities (ESA-2021-31, Log4Shell) - Version Check""
+- CVSS: 
+- Related CVE: []
+- Severity: Critical
+- Description: Elastic Elasticsearch is prone to multiple vulnerabilities in the Apache Log4j library. The following vulnerabilities exist: CVE-2021-44228: Apache Log4j2 JNDI features used in configuration, log messages, and parameters do not protect against attacker controlled LDAP and other JNDI related endpoints. An attacker who can control log messages or log message parameters can execute arbitrary code loaded from LDAP servers when message lookup substitution is enabled. This vulnerability is dubbed 'Log4Shell'. CVE-2021-45046: Denial of Service (DoS) and a possible remote code execution (RCE) in certain non-default configurations.
+- Impact: Impact: Please note the following vendor statement on the impact: Elasticsearch 6 and 7 are not susceptible to remote code execution with this vulnerability due to our use of the Java Security Manager. Elasticsearch running on JDK8 or below is susceptible to an information leak via DNS. Elasticsearch 5 is susceptible to both remote code execution and an information leak via DNS. To avoid unknown risks it is still recommended to apply the update provided by the vendor.
+- Affected OS detected: Ubuntu 20.04
+- Affected services/hosts:
+	Service: nginx:nginx:1.23.2
+- Resolution: Update to version 6.8.21, 7.16.1 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Critical,,Trung bình,Bảo mật
+"Elastic Elasticsearch Multiple Vulnerabilities (ESA-2021-06, ESA-2021-08)",Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""Elastic Elasticsearch Multiple Vulnerabilities (ESA-2021-06, ESA-2021-08)""
+- CVSS: 
+- Related CVE: []
+- Severity: Medium
+- Description: Elasticsearch is prone to multiple vulnerabilities. The following vulnerabilities exist: - CVE-2021-22135: Suggester & Profile API information disclosure flaw - CVE-2021-22137: Field disclosure flaw
+- Impact: Impact: This could lead to disclosing the existence of documents and fields the attacker should not be able to view or result in an attacker gaining additional insight into potentially sensitive indices.
+- Affected OS detected: Ubuntu 20.04
+- Affected services/hosts:
+	Service: nginx:nginx:1.23.2
+- Resolution: Update to version 6.8.15, 7.12.0 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+"Elastic Kibana 7.0.0 < 7.17.5, 8.0.0 <= 8.2.3 XSS Vulnerability (ESA-2022-08)",Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""Elastic Kibana 7.0.0 < 7.17.5, 8.0.0 <= 8.2.3 XSS Vulnerability (ESA-2022-08)""
+- CVSS: 
+- Related CVE: []
+- Severity: Medium
+- Description: Kibana is prone to a cross-site scripting (XSS) vulnerability. A cross-site-scripting (XSS) vulnerability was discovered in the Vega Charts Kibana integration which could allow arbitrary JavaScript to be executed in a victim's browser.
+- Impact: 
+- Affected OS detected: Ubuntu 20.04, Ubuntu 22.04
+- Affected services/hosts:
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+- Resolution: Update to version 7.17.5, 8.3.0 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+"Elastic Kibana 7.0.0 < 7.17.8, 8.0.0 < 8.5.0 RCE Vulnerability (ESA-2022-12)",Vấn đề của khách hàng,Chờ xử lý,,,Trung bình,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""Elastic Kibana 7.0.0 < 7.17.8, 8.0.0 < 8.5.0 RCE Vulnerability (ESA-2022-12)""
+- CVSS: 
+- Related CVE: []
+- Severity: High
+- Description: Kibana is prone to a remote code execution (RCE) vulnerability in the headless Chromium browser that Kibana relies on for its reporting capabilities. The vulnerability in Chromium is not exploitable on its own but could be exploited via an additional cross-site scripting (XSS) in some of affected versions of Kibana with the worst impact being remote code execution (RCE) with an attacker executing arbitrary commands with permissions of the Kibana process.
+- Impact: 
+- Affected OS detected: Ubuntu 20.04, Ubuntu 22.04
+- Affected services/hosts:
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+- Resolution: Update to version 7.17.8, 8.5.0 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,High,,Trung bình,Bảo mật
+"Elastic Kibana 7.0.0 < 7.17.9, 8.0.0 < 8.6.1 DoS Vulnerability (ESA-2023-02)",Vấn đề của khách hàng,Chờ xử lý,,,Trung bình,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""Elastic Kibana 7.0.0 < 7.17.9, 8.0.0 < 8.6.1 DoS Vulnerability (ESA-2023-02)""
+- CVSS: 
+- Related CVE: []
+- Severity: High
+- Description: Elastic Kibana is prone to a denial of service (DoS) vulnerability. A flaw was discovered in one of Kibana's third party dependencies, that could allow an authenticated user to perform a request that crashes the Kibana server process.
+- Impact: 
+- Affected OS detected: Ubuntu 20.04, Ubuntu 22.04
+- Affected services/hosts:
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+- Resolution: Update to version 7.17.9, 8.6.1 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,High,,Trung bình,Bảo mật
+"Elastic Kibana 7.0.0 < 7.17.9, 8.0.0 < 8.6.2 Open Redirect Vulnerability (ESA-2023-03)",Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""Elastic Kibana 7.0.0 < 7.17.9, 8.0.0 < 8.6.2 Open Redirect Vulnerability (ESA-2023-03)""
+- CVSS: 
+- Related CVE: []
+- Severity: Medium
+- Description: Kibana is prone to an open redirect vulnerability. An open redirect was discovered in Kibana that could lead to a user being redirected to an arbitrary website if they use a maliciously crafted Kibana URL.
+- Impact: 
+- Affected OS detected: Ubuntu 20.04, Ubuntu 22.04
+- Affected services/hosts:
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+- Resolution: Update to version 7.17.9, 8.6.2 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+"Elastic Kibana 7.17.4 - 7.17.9, 8.2.0 - 8.6.2 XSS Vulnerability (ESA-2023-06)",Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""Elastic Kibana 7.17.4 - 7.17.9, 8.2.0 - 8.6.2 XSS Vulnerability (ESA-2023-06)""
+- CVSS: 
+- Related CVE: []
+- Severity: Medium
+- Description: Kibana is prone to a cross-site scripting (XSS) vulnerability. A flaw was discovered in one of Kibana's dependencies, which could allow arbitrary JavaScript to be executed in a victim's browser via a maliciously crafted custom visualization in Kibana.
+- Impact: 
+- Affected OS detected: Ubuntu 20.04, Ubuntu 22.04
+- Affected services/hosts:
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+- Resolution: Update to version 7.17.10, 8.7.0 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+"Elastic Kibana 7.9.0 - 7.17.9, 8.0.0 - 8.6.2 XSS Vulnerability (ESA-2023-05)",Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""Elastic Kibana 7.9.0 - 7.17.9, 8.0.0 - 8.6.2 XSS Vulnerability (ESA-2023-05)""
+- CVSS: 
+- Related CVE: []
+- Severity: Medium
+- Description: Kibana is prone to a cross-site scripting (XSS) vulnerability. A flaw was discovered in one of Kibana's dependencies, which could allow arbitrary JavaScript to be executed in a victim's browser via a maliciously crafted custom visualization in Kibana.
+- Impact: 
+- Affected OS detected: Ubuntu 20.04, Ubuntu 22.04
+- Affected services/hosts:
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+- Resolution: Update to version 7.17.10, 8.7.0 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+Elastic Kibana 8.0.0 - 8.7.0 Arbitrary Code Execution Vulnerability (ESA-2023-07),Vấn đề của khách hàng,Chờ xử lý,,,Trung bình,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""Elastic Kibana 8.0.0 - 8.7.0 Arbitrary Code Execution Vulnerability (ESA-2023-07)""
+- CVSS: 
+- Related CVE: []
+- Severity: High
+- Description: Kibana is prone to an arbitrary code execution vulnerability. An attacker with write access to Kibana yaml or env configuration could add a specific payload that will attempt to execute JavaScript code. This could lead to the attacker executing arbitrary commands on the host system with permissions of the Kibana process. Note: - This issue does not affect Kibana instances running on Elastic Cloud as the payload required to trigger this vulnerability cannot be set in Kibana's configuration. - This issue affects Kibana instances running on Elastic Cloud Enterprise (ECE) but the code execution is limited within the Kibana Docker container. Further exploitation such as container escape is prevented by seccomp-bpf and AppArmor profiles. - This issue affects Kibana instances running on Elastic Cloud on Kubernetes (ECK) but the code execution is limited within the Kibana Docker container. Further exploitation such as container escape can be prevented by seccomp-bpf when configured and supported (Kubernetes v1.19 and later).
+- Impact: 
+- Affected OS detected: Ubuntu 20.04, Ubuntu 22.04
+- Affected services/hosts:
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+- Resolution: Update to version 8.7.1 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,High,,Trung bình,Bảo mật
+Elastic Kibana 8.0.x < 8.11.1 Information Disclosure Vulnerability (ESA-2023-25),Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""Elastic Kibana 8.0.x < 8.11.1 Information Disclosure Vulnerability (ESA-2023-25)""
+- CVSS: 
+- Related CVE: []
+- Severity: Medium
+- Description: Kibana is prone to an information disclosure vulnerability. If an error occurred, sensitive information was recorded in the event of an error. The error message recorded in the log may contain account credentials for the kibana_system user, API Keys, and credentials of Kibana end-users.
+- Impact: 
+- Affected OS detected: Ubuntu 20.04, Ubuntu 22.04
+- Affected services/hosts:
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+- Resolution: Update to version 8.11.1 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+Generic HTTP Directory Traversal (Web Root) - Active Check,Vấn đề của khách hàng,Chờ xử lý,,,Trung bình,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""Generic HTTP Directory Traversal (Web Root) - Active Check""
+- CVSS: AV:N/AC:L/Au:N/C:C/I:N/A:N - 7.8
+- Related CVE: []
+- Severity: High
+- Description: Generic check for HTTP directory traversal vulnerabilities on the web root level of the remote web server.
+- Impact: Impact: Successfully exploiting this issue may allow an attacker to access paths and directories that should normally not be accessible by a user. This can result in effects ranging from disclosure of confidential information to arbitrary code execution.
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: php:php:5.6.31
+- Resolution: Contact the vendor for a solution.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,High,,Trung bình,Bảo mật
+ICMP Timestamp Reply Information Disclosure,Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""ICMP Timestamp Reply Information Disclosure""
+- CVSS: AV:L/AC:L/Au:N/C:P/I:N/A:N - 2.1
+- Related CVE: []
+- Severity: Low
+- Description: The remote host responded to an ICMP timestamp request. The Timestamp Reply is an ICMP message which replies to a Timestamp message. It consists of the originating timestamp sent by the sender of the Timestamp as well as a receive timestamp and a transmit timestamp.
+- Impact: Impact: This information could theoretically be used to exploit weak time-based random number generators in other services.
+- Affected OS detected: Linux Kernel, Microsoft Windows, Microsoft Windows Server 2016 or Microsoft Windows 10, NetBSD, Ubuntu 18.04, Windows Server 2008 R2 Enterprise 7601 Service Pack 1, Windows Server 2016 Standard 14393
+- Affected services/hosts:
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+- Resolution: Various mitigations are possible: - Disable the support for ICMP timestamp on the remote host completely - Protect the remote host by a firewall, and block ICMP packets passing through the firewall in either direction (either completely or only for untrusted networks)",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Low,,Trung bình,Bảo mật
+Linux Home Folder Accessible (HTTP),Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""Linux Home Folder Accessible (HTTP)""
+- CVSS: AV:N/AC:L/Au:N/C:P/I:N/A:N - 5.0
+- Related CVE: []
+- Severity: Medium
+- Description: The script attempts to identify files of a linux home folder accessible at the webserver. Currently the script is checking for the following files: - /.ssh/authorized_keys - /.ssh/config - /.ssh/known_hosts - /.ssh/identity - /.ssh/id_rsa - /.ssh/id_rsa.pub - /.ssh/id_dsa - /.ssh/id_dsa.pub - /.ssh/id_dss - /.ssh/id_dss.pub - /.ssh/id_ecdsa - /.ssh/id_ecdsa.pub - /.ssh/id_ed25519 - /.ssh/id_ed25519.pub - /.mysql_history - /.sqlite_history - /.psql_history - /.sh_history - /.bash_history - /.profile - /.bashrc
+- Impact: Impact: Based on the information provided in these files an attacker might be able to gather additional info.
+- Affected OS detected: Ubuntu 20.04, Ubuntu 22.04
+- Affected services/hosts:
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+- Resolution: A users home folder shouldn't be accessible via a webserver. Restrict access to it or remove it completely.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+MongoDB Buffer Over-Read Vulnerability (SERVER-96419) - Windows,Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""MongoDB Buffer Over-Read Vulnerability (SERVER-96419) - Windows""
+- CVSS: AV:N/AC:H/Au:S/C:C/I:N/A:C - 6.6
+- Related CVE: []
+- Severity: Medium
+- Description: MongoDB is prone to a buffer over-read vulnerability.
+- Impact: Impact: An authorized user may trigger crashes or receive the contents of buffer over-reads of Server memory by issuing specially crafted requests that construct malformed BSON in the MongoDB Server.
+- Affected OS detected: Microsoft Windows Server 2016 or Microsoft Windows 10
+- Affected services/hosts:
+	Service: mongodb
+- Resolution: Update to version 5.0.30, 6.0.19, 7.0.15, 8.0.3 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+MongoDB Certificate Validation Vulnerability (SERVER-72839) - Windows,Vấn đề của khách hàng,Chờ xử lý,,,Trung bình,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""MongoDB Certificate Validation Vulnerability (SERVER-72839) - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: Critical
+- Description: MongoDB is prone to a certificate validation vulnerability. Under certain configurations of --tlsCAFile and tls.CAFile, MongoDB Server may skip peer certificate validation which may result in untrusted connections to succeed. This may effectively reduce the security guarantees provided by TLS and open connections that should have been closed due to failing certificate validation. Required Configuration: A server process will allow incoming connections to skip peer certificate validation if the server process was started with TLS enabled (net.tls.mode set to allowTLS, preferTLS, or requireTLS) and without a net.tls.CAFile configured.
+- Impact: 
+- Affected OS detected: Microsoft Windows Server 2016 or Microsoft Windows 10
+- Affected services/hosts:
+	Service: mongodb
+- Resolution: Update to version 4.4.29, 5.0.25, 6.0.14, 7.0.6 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Critical,,Trung bình,Bảo mật
+MongoDB DoS Vulnerability (SERVER-75601) - Windows,Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""MongoDB DoS Vulnerability (SERVER-75601) - Windows""
+- CVSS: AV:N/AC:L/Au:N/C:N/I:N/A:P - 5.0
+- Related CVE: []
+- Severity: Medium
+- Description: MongoDB is prone to a denial of service (DoS) vulnerability. An unauthenticated user can trigger a fatal assertion in the server while generating ftdc diagnostic metrics due to attempting to build a BSON object that exceeds certain memory sizes.
+- Impact: 
+- Affected OS detected: Microsoft Windows Server 2016 or Microsoft Windows 10
+- Affected services/hosts:
+	Service: mongodb
+- Resolution: Update to version 5.0.17, 6.0.6, 6.3.2 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+MongoDB Improper Authorization Vulnerability (SERVER-73662) - Windows,Vấn đề của khách hàng,Chờ xử lý,,,Trung bình,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""MongoDB Improper Authorization Vulnerability (SERVER-73662) - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: High
+- Description: MongoDB is prone to an improper authorization vulnerability. If the MongoDB Server is configured to use TLS with a specific set of configuration options, it is possible that client certificate validation may not be in effect, potentially allowing client to establish a TLS connection with the server that supplies any certificate.
+- Impact: 
+- Affected OS detected: Microsoft Windows Server 2016 or Microsoft Windows 10
+- Affected services/hosts:
+	Service: mongodb
+- Resolution: Update to version 4.4.23, 5.0.19, 6.0.7, 7.0.0-rc2 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,High,,Trung bình,Bảo mật
+MongoDB Improper Validation Vulnerability (SERVER-85263) - Windows,Vấn đề của khách hàng,Chờ xử lý,,,Trung bình,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""MongoDB Improper Validation Vulnerability (SERVER-85263) - Windows""
+- CVSS: AV:N/AC:L/Au:N/C:N/I:N/A:C - 7.8
+- Related CVE: []
+- Severity: High
+- Description: MongoDB is prone to an improper validation vulnerability. Improper validation of certain metadata input may result in the server not correctly serialising BSON. This can be performed pre-authentication and may cause unexpected application behavior including unavailability of serverStatus responses.
+- Impact: 
+- Affected OS detected: Microsoft Windows Server 2016 or Microsoft Windows 10
+- Affected services/hosts:
+	Service: mongodb
+- Resolution: Update to version 5.0.25, 6.0.14, 7.0.6, 7.2.1 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,High,,Trung bình,Bảo mật
+MongoDB Local Privilege Escalation Vulnerability (SERVER-93211),Vấn đề của khách hàng,Chờ xử lý,,,Trung bình,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""MongoDB Local Privilege Escalation Vulnerability (SERVER-93211)""
+- CVSS: 
+- Related CVE: []
+- Severity: High
+- Description: MongoDB is prone to a local privilege escalation vulnerability. Incorrect validation of files loaded from a local untrusted directory may allow local privilege escalation if the underlying operating systems is Windows. This may result in the application executing arbitrary behaviour determined by the contents of untrusted files.
+- Impact: 
+- Affected OS detected: Microsoft Windows Server 2016 or Microsoft Windows 10
+- Affected services/hosts:
+	Service: mongodb
+- Resolution: Update to version 5.0.27, 6.0.16, 7.0.12, 7.3.3 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,High,,Trung bình,Bảo mật
+MongoDB Log Spoofing Vulnerability (SERVER-50605),Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""MongoDB Log Spoofing Vulnerability (SERVER-50605)""
+- CVSS: 
+- Related CVE: []
+- Severity: Medium
+- Description: MongoDB is prone to a log spoofing vulnerability. Sending specially crafted commands to a MongoDB Server may result in artificial log entries being generated or for log entries to be split.
+- Impact: 
+- Affected OS detected: Linux Kernel
+- Affected services/hosts:
+	Service: mongodb
+	Service: mongodb
+	Service: mongodb
+	Service: mongodb
+	Service: mongodb
+	Service: mongodb
+	Service: mongodb
+	Service: mongodb
+	Service: mongodb
+	Service: mongodb
+- Resolution: Update to version 3.6.21, 4.0.22, 4.2.11 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+MongoDB Missing Authorization Check Vulnerability (SERVER-79327) - Windows,Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""MongoDB Missing Authorization Check Vulnerability (SERVER-79327) - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: Medium
+- Description: MongoDB is prone to a missing authorization check vulnerability in refine collection shard key. A command for refining a collection shard key is missing an authorization check. This may cause the command to run directly on a shard, leading to either degradation of query performance, or to revealing chunk boundaries through timing side channels.
+- Impact: 
+- Affected OS detected: Microsoft Windows Server 2016 or Microsoft Windows 10
+- Affected services/hosts:
+	Service: mongodb
+- Resolution: Update to version 5.0.22, 6.0.11, 7.0.3 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+Oracle MySQL Server 5.7 <= 5.7.31 / 8.0 <= 8.0.21 Security Update (cpuoct2020) - Windows,Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""Oracle MySQL Server 5.7 <= 5.7.31 / 8.0 <= 8.0.21 Security Update (cpuoct2020) - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: Medium
+- Description: Oracle MySQL Server is prone to multiple vulnerabilities.
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: mysql
+- Resolution: Update to version 5.7.32, 8.0.22 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+Oracle MySQL Server 5.7 <= 5.7.31 Security Update (cpuoct2020) - Windows,Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""Oracle MySQL Server 5.7 <= 5.7.31 Security Update (cpuoct2020) - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: Medium
+- Description: Oracle MySQL Server is prone to a vulnerability leading to a Denial of Service or to an unauthorized modification of accessible data.
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: mysql
+- Resolution: Update to version 5.7.32 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+Oracle MySQL Server 5.7 <= 5.7.32 / 8.0 <= 8.0.22 Security Update (cpujan2021) - Windows,Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""Oracle MySQL Server 5.7 <= 5.7.32 / 8.0 <= 8.0.22 Security Update (cpujan2021) - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: Medium
+- Description: Oracle MySQL Server is prone to an information disclosure vulnerability.
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: mysql
+- Resolution: Update to version 5.7.33, 8.0.23 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+Oracle MySQL Server 5.7 <= 5.7.32 Security Update (cpujan2021) - Windows,Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""Oracle MySQL Server 5.7 <= 5.7.32 Security Update (cpujan2021) - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: Medium
+- Description: Oracle MySQL Server is prone to a denial of service (DoS) vulnerability.
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: mysql
+- Resolution: Update to version 5.7.33 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+Oracle MySQL Server <= 5.7.35 / 8.0 <= 8.0.26 Security Update (cpuoct2021) - Windows,Vấn đề của khách hàng,Chờ xử lý,,,Trung bình,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""Oracle MySQL Server <= 5.7.35 / 8.0 <= 8.0.26 Security Update (cpuoct2021) - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: Critical
+- Description: Oracle MySQL Server is prone to multiple vulnerabilities.
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: mysql
+	Service: mysql
+- Resolution: Update to version 5.7.36, 8.0.27 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Critical,,Trung bình,Bảo mật
+Oracle MySQL Server <= 5.7.36 / 8.0 <= 8.0.27 Security Update (cpujan2022) - Windows,Vấn đề của khách hàng,Chờ xử lý,,,Trung bình,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""Oracle MySQL Server <= 5.7.36 / 8.0 <= 8.0.27 Security Update (cpujan2022) - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: High
+- Description: Oracle MySQL Server is prone to multiple vulnerabilities.
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: mysql
+	Service: mysql
+- Resolution: Update to version 5.7.37, 8.0.28 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,High,,Trung bình,Bảo mật
+Oracle MySQL Server <= 5.7.36 / 8.0 <= 8.0.27 Security Update (cpuoct2022) - Windows,Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""Oracle MySQL Server <= 5.7.36 / 8.0 <= 8.0.27 Security Update (cpuoct2022) - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: Medium
+- Description: Oracle MySQL Server is prone to a denial of service (DoS) vulnerability.
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: mysql
+	Service: mysql
+- Resolution: Update to version 5.7.37, 8.0.28 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+Oracle MySQL Server <= 5.7.37 / 8.0 <= 8.0.28 Security Update (cpuapr2022) - Windows,Vấn đề của khách hàng,Chờ xử lý,,,Trung bình,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""Oracle MySQL Server <= 5.7.37 / 8.0 <= 8.0.28 Security Update (cpuapr2022) - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: High
+- Description: Oracle MySQL Server is prone to multiple vulnerabilities.
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: mysql
+	Service: mysql
+- Resolution: Update to version 5.7.38, 8.0.29 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,High,,Trung bình,Bảo mật
+Oracle MySQL Server <= 5.7.38 / 8.0 <= 8.0.29 Security Update (cpujul2022) - Windows,Vấn đề của khách hàng,Chờ xử lý,,,Trung bình,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""Oracle MySQL Server <= 5.7.38 / 8.0 <= 8.0.29 Security Update (cpujul2022) - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: Critical
+- Description: Oracle MySQL Server is prone to multiple vulnerabilities.
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: mysql
+	Service: mysql
+- Resolution: Update to version 5.7.39, 8.0.30 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Critical,,Trung bình,Bảo mật
+Oracle MySQL Server <= 5.7.39 / 8.0 <= 8.0.16 Security Update (cpuoct2022) - Windows,Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""Oracle MySQL Server <= 5.7.39 / 8.0 <= 8.0.16 Security Update (cpuoct2022) - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: Medium
+- Description: Oracle MySQL Server is prone to an information disclosure vulnerability.
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: mysql
+	Service: mysql
+- Resolution: Update to version 5.7.40, 8.0.17 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+Oracle MySQL Server <= 5.7.39 / 8.0 <= 8.0.29 Security Update (cpuoct2022) - Windows,Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""Oracle MySQL Server <= 5.7.39 / 8.0 <= 8.0.29 Security Update (cpuoct2022) - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: Medium
+- Description: Oracle MySQL Server is prone to an information disclosure vulnerability.
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: mysql
+	Service: mysql
+- Resolution: Update to version 5.7.40, 8.0.30 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+Oracle MySQL Server <= 5.7.39 / 8.0 <= 8.0.30 Security Update (cpuoct2022) - Windows,Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""Oracle MySQL Server <= 5.7.39 / 8.0 <= 8.0.30 Security Update (cpuoct2022) - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: Medium
+- Description: Oracle MySQL Server is prone to multiple vulnerabilities.
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: mysql
+	Service: mysql
+- Resolution: Update to version 5.7.40, 8.0.31 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+Oracle MySQL Server <= 5.7.40 Security Update (cpujan2023) - Windows,Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""Oracle MySQL Server <= 5.7.40 Security Update (cpujan2023) - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: Medium
+- Description: Oracle MySQL Server is prone to a denial of service (DoS) vulnerability.
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: mysql
+	Service: mysql
+- Resolution: Update to version 5.7.41 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+"Oracle MySQL Server <= 5.7.40, 8.x <= 8.0.31 Security Update (cpuapr2023) - Windows",Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""Oracle MySQL Server <= 5.7.40, 8.x <= 8.0.31 Security Update (cpuapr2023) - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: Low
+- Description: Oracle MySQL Server is prone to a denial of service (DoS) vulnerability.
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: mysql
+	Service: mysql
+- Resolution: Update to version 5.7.41, 8.0.32 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Low,,Trung bình,Bảo mật
+"Oracle MySQL Server <= 5.7.40, 8.x <= 8.0.31 Security Update (cpujan2023) - Windows",Vấn đề của khách hàng,Chờ xử lý,,,Trung bình,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""Oracle MySQL Server <= 5.7.40, 8.x <= 8.0.31 Security Update (cpujan2023) - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: Critical
+- Description: Oracle MySQL Server is prone to a vulnerability in libcurl.
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: mysql
+	Service: mysql
+- Resolution: Update to version 5.7.41, 8.0.32 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Critical,,Trung bình,Bảo mật
+"Oracle MySQL Server <= 5.7.41, 8.x <= 8.0.30 Security Update (cpuapr2023) - Windows",Vấn đề của khách hàng,Chờ xử lý,,,Trung bình,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""Oracle MySQL Server <= 5.7.41, 8.x <= 8.0.30 Security Update (cpuapr2023) - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: High
+- Description: Oracle MySQL Server is prone to a denial of service (DoS) vulnerability.
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: mysql
+	Service: mysql
+- Resolution: Update to version 5.7.42, 8.0.31 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,High,,Trung bình,Bảo mật
+"Oracle MySQL Server <= 5.7.41, 8.x <= 8.0.31 Security Update (cpuapr2023) - Windows",Vấn đề của khách hàng,Chờ xử lý,,,Trung bình,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""Oracle MySQL Server <= 5.7.41, 8.x <= 8.0.31 Security Update (cpuapr2023) - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: Critical
+- Description: Oracle MySQL Server is prone to a vulnerability in InnoDB (zlib).
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: mysql
+	Service: mysql
+- Resolution: Update to version 5.7.42, 8.0.32 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Critical,,Trung bình,Bảo mật
+"Oracle MySQL Server <= 5.7.41, 8.x <= 8.0.32 Security Update (cpuapr2023) - Windows",Vấn đề của khách hàng,Chờ xử lý,,,Trung bình,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""Oracle MySQL Server <= 5.7.41, 8.x <= 8.0.32 Security Update (cpuapr2023) - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: High
+- Description: Oracle MySQL Server is prone to multiple vulnerabilities.
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: mysql
+	Service: mysql
+- Resolution: Update to version 5.7.42, 8.0.33 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,High,,Trung bình,Bảo mật
+"Oracle MySQL Server <= 5.7.41, 8.x <= 8.0.32 Security Update (cpujul2023) - Windows",Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""Oracle MySQL Server <= 5.7.41, 8.x <= 8.0.32 Security Update (cpujul2023) - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: Medium
+- Description: Oracle MySQL Server is prone to a denial of service (DoS) vulnerability.
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: mysql
+	Service: mysql
+- Resolution: Update to version 5.7.42, 8.0.33 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+"Oracle MySQL Server <= 5.7.42, 8.x <= 8.0.31 Security Update (cpuoct2023) - Windows",Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""Oracle MySQL Server <= 5.7.42, 8.x <= 8.0.31 Security Update (cpuoct2023) - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: Medium
+- Description: Oracle MySQL Server is prone to multiple vulnerabilities.
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: mysql
+	Service: mysql
+- Resolution: Update to version 5.7.43, 8.0.32 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+"Oracle MySQL Server <= 5.7.42, 8.x <= 8.0.33 Security Update (cpujul2023) - Windows",Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""Oracle MySQL Server <= 5.7.42, 8.x <= 8.0.33 Security Update (cpujul2023) - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: Medium
+- Description: Oracle MySQL Server is prone to a unspecified vulnerability.
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: mysql
+	Service: mysql
+- Resolution: Update to version 5.7.43, 8.0.34 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+"Oracle MySQL Server <= 5.7.42, 8.x <= 8.0.33 Security Update (cpuoct2023) - Windows",Vấn đề của khách hàng,Chờ xử lý,,,Trung bình,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""Oracle MySQL Server <= 5.7.42, 8.x <= 8.0.33 Security Update (cpuoct2023) - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: High
+- Description: Oracle MySQL Server is prone to multiple vulnerabilities.
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: mysql
+	Service: mysql
+- Resolution: Update to version 5.7.43, 8.0.34 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,High,,Trung bình,Bảo mật
+"Oracle MySQL Server <= 5.7.43, 8.x <= 8.0.31 Security Update (cpuoct2023) - Windows",Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""Oracle MySQL Server <= 5.7.43, 8.x <= 8.0.31 Security Update (cpuoct2023) - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: Medium
+- Description: Oracle MySQL Server is prone to denial of service (DoS) vulnerability.
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: mysql
+	Service: mysql
+- Resolution: Update to version 5.7.44, 8.0.32 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+"Oracle MySQL Server <= 5.7.43, 8.x <= 8.0.34, 8.1.0 Security Update (cpuoct2023) - Windows",Vấn đề của khách hàng,Chờ xử lý,,,Trung bình,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""Oracle MySQL Server <= 5.7.43, 8.x <= 8.0.34, 8.1.0 Security Update (cpuoct2023) - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: Critical
+- Description: Oracle MySQL Server is prone to multiple vulnerabilities.
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: mysql
+	Service: mysql
+- Resolution: Update to version 5.7.44, 8.0.35, 8.1.1 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Critical,,Trung bình,Bảo mật
+Oracle MySQL Server <= 8.0.35 Security Update (cpuoct2024) - Windows,Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""Oracle MySQL Server <= 8.0.35 Security Update (cpuoct2024) - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: Medium
+- Description: Oracle MySQL Server is prone to a denial of service (DoS) vulnerability.
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: mysql
+	Service: mysql
+- Resolution: Update to version 8.0.36 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+"Oracle MySQL Server <= 8.0.38, 8.1 <= 8.4.1, 9.0 <= 9.0.1 Security Update (cpuoct2024) - Windows",Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""Oracle MySQL Server <= 8.0.38, 8.1 <= 8.4.1, 9.0 <= 9.0.1 Security Update (cpuoct2024) - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: Medium
+- Description: Oracle MySQL Server is prone to a denial of service (DoS) vulnerability.
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: mysql
+	Service: mysql
+- Resolution: Update to version 8.0.39, 8.4.2, 9.0.2 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+"Oracle MySQL Server <= 8.0.39, 8.1 <= 8.4.0 Security Update (cpuoct2024) - Windows",Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""Oracle MySQL Server <= 8.0.39, 8.1 <= 8.4.0 Security Update (cpuoct2024) - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: Medium
+- Description: Oracle MySQL Server is prone to a denial of service (DoS) vulnerability.
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: mysql
+	Service: mysql
+- Resolution: Update to version 8.0.40, 8.4.1 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+"Oracle MySQL Server <= 8.0.39, 8.1 <= 8.4.1, 9.0 <= 9.0.1 Security Update (cpuoct2024) - Windows",Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""Oracle MySQL Server <= 8.0.39, 8.1 <= 8.4.1, 9.0 <= 9.0.1 Security Update (cpuoct2024) - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: Medium
+- Description: Oracle MySQL Server is prone to a denial of service (DoS) vulnerability.
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: mysql
+	Service: mysql
+- Resolution: Update to version 8.0.40, 8.4.2, 9.0.2 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+"Oracle MySQL Server <= 8.0.39, 8.1 <= 8.4.2, 9.0 <= 9.0.1 Security Update (cpuoct2024) - Windows",Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""Oracle MySQL Server <= 8.0.39, 8.1 <= 8.4.2, 9.0 <= 9.0.1 Security Update (cpuoct2024) - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: Medium
+- Description: Oracle MySQL Server is prone to multiple vulnerabilities.
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: mysql
+	Service: mysql
+- Resolution: Update to version 8.0.40, 8.4.3, 9.0.2 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+PHP 'CVE-2017-7189' Improper Input Validation Vulnerability - Windows,Vấn đề của khách hàng,Chờ xử lý,,,Trung bình,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""PHP 'CVE-2017-7189' Improper Input Validation Vulnerability - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: High
+- Description: PHP is improperly validating input from untrusted input. main/streams/xp_socket.c in PHP misparses fsockopen calls, such as by interpreting fsockopen('127.0.0.1:80', 443) as if the address/port were 127.0.0.1:80:443, which is later truncated to 127.0.0.1:80. This behavior has a security risk if the explicitly provided port number (i.e., 443 in this example) is hardcoded into an application as a security policy, but the hostname argument (i.e., 127.0.0.1:80 in this example) is obtained from untrusted input.
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: ietf:transport_layer_security
+- Resolution: No solution was made available by the vendor. General solution options are to upgrade to a newer release, disable respective features, remove the product or replace the product by another one. Note: PHP versions 7.0.18 and 7.1.4 introduced a fix which was reverted again in version 7.0.19 / 7.1.5 respectively and the fix wasn't introduced again as of today (08-2020).",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,High,,Trung bình,Bảo mật
+PHP 'CVE-2018-19935' - 'imap_mail' Denial of Service Vulnerability - Windows,Vấn đề của khách hàng,Chờ xử lý,,,Trung bình,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""PHP 'CVE-2018-19935' - 'imap_mail' Denial of Service Vulnerability - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: High
+- Description: PHP is prone to a denial of service (DoS) vulnerability. The flaw exists due to a NULL pointer dereference and application crash via an empty string in the message argument to the imap_mail function of ext/imap/php_imap.c.
+- Impact: Impact: Successful exploitation will allow attackers to cause a denial of service of the affected application.
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: SSLInfo
+- Resolution: Update to version 5.6.39, 7.0.33, 7.1.26, 7.2.14, 7.3.0 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,High,,Trung bình,Bảo mật
+PHP 'CVE-2019-13224' Use-After-Free Vulnerability - Windows,Vấn đề của khách hàng,Chờ xử lý,,,Trung bình,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""PHP 'CVE-2019-13224' Use-After-Free Vulnerability - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: Critical
+- Description: PHP is prone to a use-after-free vulnerability in a used third-pary library. The flaw exists due to a use-after-free in onig_new_deluxe() in regext.c of the third-party library Oniguruma 6.9.2 which is used by PHP. The attacker provides a pair of a regex pattern and a string, with a multi-byte encoding that gets handled by onig_new_deluxe().
+- Impact: Impact: This flaw allows attackers to potentially cause information disclosure, denial of service, or possibly code execution by providing a crafted regular expression.
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: SSLInfo
+- Resolution: Update to version 7.1.32, 7.3.9 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Critical,,Trung bình,Bảo mật
+PHP 'PHAR' Error Page Reflected XSS And DoS Vulnerabilities - Windows,Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""PHP 'PHAR' Error Page Reflected XSS And DoS Vulnerabilities - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: Medium
+- Description: PHP is prone to cross site scripting (XSS) and denial of service (DoS) vulnerabilities. Multiple flaws are due to: - An input validation error on the PHAR 404 error page via the URI of a request for a .phar file. - An integer signedness error in gd_gif_in.c in the GD Graphics Library (aka libgd).
+- Impact: Impact: Successfully exploiting this issue allows attacker to execute arbitrary script code in the browser of an unsuspecting user in the context of the affected site. This may allow the attacker to steal cookie-based authentication credentials and to launch other attacks and will also lead to a denial of service and exhausting the server resources.
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: apache:http_server
+- Resolution: Update to PHP version 5.6.33, 7.0.27, 7.1.13 or 7.2.1 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+PHP 'PHP-FPM' Denial of Service Vulnerability - Windows,Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""PHP 'PHP-FPM' Denial of Service Vulnerability - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: Medium
+- Description: PHP is prone to a denial of service (DoS) vulnerability. The flaw exists due to the php-fpm master process restarts a child process in an endless loop when using program execution functions with a non-blocking STDIN stream.
+- Impact: Impact: Successfully exploitation will allow an attacker to consume 100% of the CPU, and consume disk space with a large volume of error logs, as demonstrated by an attack by a customer of a shared-hosting facility.
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: SSLInfo
+- Resolution: Update to PHP 7.1.20, 7.2.8 or 7.3.0alpha3.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+PHP 'timelib_meridian' Heap Based Buffer Overflow Vulnerability - Windows,Vấn đề của khách hàng,Chờ xử lý,,,Trung bình,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""PHP 'timelib_meridian' Heap Based Buffer Overflow Vulnerability - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: High
+- Description: PHP is prone to a heap buffer overflow vulnerability. The flaw exists due to an error in the date extension's 'timelib_meridian' handling of 'front of' and 'back of' directives.
+- Impact: Impact: Successfully exploiting this issue allow attacker to execute arbitrary code with elevated privileges within the context of a privileged process.
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: php:php:5.6.31
+- Resolution: Update to PHP version 5.6.32, 7.0.25, 7.1.11, or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,High,,Trung bình,Bảo mật
+"PHP 5.3.7 - 7.3.31, 7.4.x < 7.4.25, 8.0.x < 8.0.12 Security Update (Oct 2021) - Windows",Vấn đề của khách hàng,Chờ xử lý,,,Trung bình,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""PHP 5.3.7 - 7.3.31, 7.4.x < 7.4.25, 8.0.x < 8.0.12 Security Update (Oct 2021) - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: High
+- Description: PHP released new versions which includes a security fix. Fixed bug #81026 (PHP-FPM oob R/W in root process leading to privilege escalation).
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: apache:http_server
+- Resolution: Update to version 7.3.32 (not released yet), 7.4.25, 8.0.12 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,High,,Trung bình,Bảo mật
+PHP < 7.0.12 RCE / DoS Vulnerability - Windows,Vấn đề của khách hàng,Chờ xử lý,,,Trung bình,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""PHP < 7.0.12 RCE / DoS Vulnerability - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: Critical
+- Description: PHP is prone to a remote code execution (RCE) or denial of service (DoS) vulnerability. The SplObjectStorage unserialize implementation in ext/spl/spl_observer.c does not verify that a key is an object, which allows remote attackers to execute arbitrary code or cause a denial of service (uninitialized memory access) via crafted serialized data.
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: SSLInfo
+- Resolution: Update to version 7.0.12 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Critical,,Trung bình,Bảo mật
+PHP < 7.2.26 Multiple Vulnerabilities (Dec 2019) - Windows,Vấn đề của khách hàng,Chờ xử lý,,,Trung bình,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""PHP < 7.2.26 Multiple Vulnerabilities (Dec 2019) - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: High
+- Description: PHP is prone to multiple vulnerabilities. PHP is prone to multiple vulnerabilities: - Buffer underflow in bc_shift_addsub (CVE-2019-11046) - link() silently truncates after a null byte on Windows (CVE-2019-11044) - DirectoryIterator class silently truncates after a null byte (CVE-2019-11045) - Use-after-free in exif parsing under memory sanitizer (CVE-2019-11050) - Heap-buffer-overflow READ in exif (CVE-2019-11047)
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: ietf:transport_layer_security
+- Resolution: Update to version 7.2.26 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,High,,Trung bình,Bảo mật
+"PHP < 7.2.27, 7.3.x < 7.3.14, 7.4.x < 7.4.2 Multiple Vulnerabilities (Jan 2020) - Windows",Vấn đề của khách hàng,Chờ xử lý,,,Trung bình,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""PHP < 7.2.27, 7.3.x < 7.3.14, 7.4.x < 7.4.2 Multiple Vulnerabilities (Jan 2020) - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: Critical
+- Description: PHP is prone to multiple vulnerabilities. PHP is prone to multiple vulnerabilities: - OOB read in php_strip_tags_ex (CVE-2020-7059) - Global buffer-overflow in 'mbfl_filt_conv_big5_wchar' (CVE-2020-7060)
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: SSLInfo
+- Resolution: Update to version 7.2.27, 7.3.14, 7.4.2 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Critical,,Trung bình,Bảo mật
+PHP < 7.2.28 Multiple Vulnerabilities (Feb 2020) - Windows,Vấn đề của khách hàng,Chờ xử lý,,,Trung bình,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""PHP < 7.2.28 Multiple Vulnerabilities (Feb 2020) - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: High
+- Description: PHP is prone to multiple vulnerabilities. PHP is prone to multiple vulnerabilities: - Null Pointer Dereference in PHP Session Upload Progress (CVE-2020-7062) - Files added to tar with Phar::buildFromIterator have all-access permissions (CVE-2020-7063)
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: php:php:5.6.31
+- Resolution: Update to version 7.2.28 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,High,,Trung bình,Bảo mật
+PHP < 7.2.29 Multiple Vulnerabilities (Mar 2020) - Windows,Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""PHP < 7.2.29 Multiple Vulnerabilities (Mar 2020) - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: Medium
+- Description: PHP is prone to multiple vulnerabilities. PHP is prone to multiple vulnerabilities: - Use-of-uninitialized-value in exif (CVE-2020-7064) - get_headers() silently truncates after a null byte (CVE-2020-7066)
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: apache:http_server
+- Resolution: Update to version 7.2.29 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+"PHP < 7.2.30, 7.3 < 7.3.17, 7.4 < 7.4.5 DoS Vulnerability (Apr 2020) - Windows",Vấn đề của khách hàng,Chờ xử lý,,,Trung bình,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""PHP < 7.2.30, 7.3 < 7.3.17, 7.4 < 7.4.5 DoS Vulnerability (Apr 2020) - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: High
+- Description: PHP is prone to a denial of service (DoS) vulnerability. If 'CHARSET_EBCDIC' is defined (usually, on systems with EBCDIC encoding support), an out-of-bounds read can occur using a malformed url-encoded string.
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: apache:http_server
+- Resolution: Update to version 7.2.30, 7.3.17, 7.4.5 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,High,,Trung bình,Bảo mật
+"PHP < 7.2.31, 7.3 < 7.3.18, 7.4 < 7.4.6 Multiple DoS Vulnerabilities (May 2020) - Windows",Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""PHP < 7.2.31, 7.3 < 7.3.18, 7.4 < 7.4.6 Multiple DoS Vulnerabilities (May 2020) - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: Medium
+- Description: PHP is prone to two Denial-of-Service vulnerabilities. The following flaws exist: - Long filenames cause OOM and temp files to not be cleaned - Long variables in multipart/form-data cause OOM and temp files are not cleaned leading to a Denial-of-Service condition (CVE-2019-11048).
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: php:php:5.6.31
+- Resolution: Update to version 7.2.31, 7.3.18, 7.4.6 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+"PHP < 7.2.32, 7.3 < 7.3.20, 7.4 < 7.4.8 libcurl Vulnerability (May 2020) - Windows",Vấn đề của khách hàng,Chờ xử lý,,,Trung bình,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""PHP < 7.2.32, 7.3 < 7.3.20, 7.4 < 7.4.8 libcurl Vulnerability (May 2020) - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: High
+- Description: PHP is prone to an information disclosure vulnerability in libcurl.
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: php:php:5.6.31
+- Resolution: Update to version 7.2.32, 7.3.20, 7.4.8 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,High,,Trung bình,Bảo mật
+"PHP < 7.2.33, 7.3 < 7.3.21, 7.4 < 7.4.9 DoS Vulnerability (Aug 2020) - Windows",Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""PHP < 7.2.33, 7.3 < 7.3.21, 7.4 < 7.4.9 DoS Vulnerability (Aug 2020) - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: Low
+- Description: PHP is prone to a denial of service vulnerability in the phar_parse_zipfile function. The phar_parse_zipfile function had use-after-free vulnerability because of mishandling of the actual_alias variable.
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: php:php:5.6.31
+- Resolution: Update to version 7.2.33, 7.3.21, 7.4.9 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Low,,Trung bình,Bảo mật
+"PHP < 7.2.34, 7.3 < 7.3.23, 7.4 < 7.4.11 Multiple Vulnerabilities (Oct 2020) - Windows",Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""PHP < 7.2.34, 7.3 < 7.3.23, 7.4 < 7.4.11 Multiple Vulnerabilities (Oct 2020) - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: Medium
+- Description: PHP is prone to multiple vulnerabilities. The following vulnerabilities exist: - Wrong ciphertext/tag in AES-CCM encryption for a 12 bytes IV (CVE-2020-7069) - PHP parses encoded cookie names so malicious '__Host-' cookies can be sent (CVE-2020-7070)
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: ietf:transport_layer_security
+- Resolution: Update to version 7.2.34, 7.3.23, 7.4.11 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+"PHP < 7.3.26, 7.4.x < 7.4.14, 8.0.x < 8.0.1 Filter Vulnerability (Jan 2021) - Windows",Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""PHP < 7.3.26, 7.4.x < 7.4.14, 8.0.x < 8.0.1 Filter Vulnerability (Jan 2021) - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: Medium
+- Description: PHP is prone to a vulnerability where FILTER_VALIDATE_URL accepts URLs with invalid userinfo.
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: apache:http_server
+- Resolution: Update to version 7.3.26, 7.4.14, 8.0.1 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+"PHP < 7.3.27, 7.4.x < 7.4.15, 8.0.x < 8.0.2 NULL Deference Vulnerability (Feb 2021) - Windows",Vấn đề của khách hàng,Chờ xử lý,,,Trung bình,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""PHP < 7.3.27, 7.4.x < 7.4.15, 8.0.x < 8.0.2 NULL Deference Vulnerability (Feb 2021) - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: High
+- Description: PHP is prone to a NULL dereference vulnerability in the SoapClient.
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: apache:http_server
+- Resolution: Update to version 7.3.27, 7.4.15, 8.0.2 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,High,,Trung bình,Bảo mật
+"PHP < 7.3.28, 7.4.x < 7.4.18 IMAP Header Injection Vulnerability (Apr 2021) - Windows",Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""PHP < 7.3.28, 7.4.x < 7.4.18 IMAP Header Injection Vulnerability (Apr 2021) - Windows""
+- CVSS: AV:N/AC:L/Au:N/C:P/I:N/A:N - 5.0
+- Related CVE: []
+- Severity: Medium
+- Description: PHP is prone to an IMAP header injection vulnerability.
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: SSLInfo
+- Resolution: Update to version 7.3.28, 7.4.18 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+PHP < 7.3.29 Multiple Vulnerabilities (Jul 2021) - Windows,Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""PHP < 7.3.29 Multiple Vulnerabilities (Jul 2021) - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: Medium
+- Description: PHP is prone to multiple vulnerabilities. The following flaws exist: - CVE-2021-21705: SSRF bypass in FILTER_VALIDATE_URL. - CVE-2021-21704: Stack buffer overflow in firebird_info_cb. - CVE-2021-21704: SIGSEGV in firebird_handle_doer. - CVE-2021-21704: SIGSEGV in firebird_stmt_execute. - CVE-2021-21704: Crash while parsing blob data in firebird_fetch_blob.
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: apache:http_server
+- Resolution: Update to version 7.3.29 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+"PHP < 7.3.30, 7.4.x < 7.4.23, 8.0.x < 8.0.10 Security Update (Aug 2021) - Windows",Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""PHP < 7.3.30, 7.4.x < 7.4.23, 8.0.x < 8.0.10 Security Update (Aug 2021) - Windows""
+- CVSS: AV:N/AC:L/Au:N/C:P/I:N/A:N - 5.0
+- Related CVE: []
+- Severity: Medium
+- Description: PHP released new versions which include security fixes.
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: ietf:transport_layer_security
+- Resolution: Update to version 7.3.30, 7.4.23, 8.0.10 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+"PHP < 7.3.30, 7.4.x < 7.4.23, 8.0.x < 8.0.10 Security Update (Sep 2021) - Windows",Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""PHP < 7.3.30, 7.4.x < 7.4.23, 8.0.x < 8.0.10 Security Update (Sep 2021) - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: Medium
+- Description: PHP released new versions which include a security fix. Fixed bug #81420 (ZipArchive::extractTo extracts outside of destination).
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: SSLInfo
+- Resolution: Update to version 7.3.31, 7.4.24, 8.0.11 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+"PHP < 7.3.33, 7.4.x < 7.4.26, 8.0.x < 8.0.13 Security Update (Nov 2021) - Windows",Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""PHP < 7.3.33, 7.4.x < 7.4.26, 8.0.x < 8.0.13 Security Update (Nov 2021) - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: Medium
+- Description: PHP released new versions which include a security fix. Fixed bug #79971 (special character is breaking the path in xml function).
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: apache:http_server
+- Resolution: Update to version 7.3.33, 7.4.26, 8.0.13 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+"PHP < 7.4.28, 8.0.x < 8.0.16, 8.1.x < 8.1.3 Security Update (Feb 2022) - Windows",Vấn đề của khách hàng,Chờ xử lý,,,Trung bình,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""PHP < 7.4.28, 8.0.x < 8.0.16, 8.1.x < 8.1.3 Security Update (Feb 2022) - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: Critical
+- Description: PHP released new versions which include a security fix. Fix #81708: UAF due to php_filter_float() failing for ints.
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: apache:http_server
+- Resolution: Update to version 7.4.28, 8.0.16, 8.1.3 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Critical,,Trung bình,Bảo mật
+"PHP < 7.4.30, 8.0.x < 8.0.20, 8.1.x < 8.1.7 Security Update (Jun 2022) - Windows",Vấn đề của khách hàng,Chờ xử lý,,,Trung bình,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""PHP < 7.4.30, 8.0.x < 8.0.20, 8.1.x < 8.1.7 Security Update (Jun 2022) - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: High
+- Description: PHP released new versions which include a security fix. The following vulnerabilities exist: - CVE-2022-31625: Uninitialized array in pg_query_params() - CVE-2022-31626: mysqlnd/pdo password buffer overflow
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: SSLInfo
+- Resolution: Update to version 7.4.30, 8.0.20, 8.1.7 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,High,,Trung bình,Bảo mật
+"PHP < 7.4.31, 8.0.x < 8.0.24, 8.1.x < 8.1.11 Security Update - Windows",Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""PHP < 7.4.31, 8.0.x < 8.0.24, 8.1.x < 8.1.11 Security Update - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: Medium
+- Description: PHP is prone to multiple vulnerabilities. The following vulnerabilities exist: - CVE-2022-31628: The phar uncompressor code would recursively uncompress 'quines' gzip files, resulting in an infinite loop. - CVE-2022-31629: The vulnerability enables network and same-site attackers to set a standard insecure cookie in the victim's browser which is treated as a '__Host-' or '__Secure-' cookie by PHP applications.
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: SSLInfo
+- Resolution: Update to version 7.4.31, 8.0.24, 8.1.11 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+"PHP < 7.4.33, 8.0.x < 8.0.25, 8.1.x < 8.1.12 Security Update - Windows",Vấn đề của khách hàng,Chờ xử lý,,,Trung bình,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""PHP < 7.4.33, 8.0.x < 8.0.25, 8.1.x < 8.1.12 Security Update - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: Critical
+- Description: PHP is prone to multiple vulnerabilities. The following vulnerabilities exist: - CVE-2022-31630: OOB read due to insufficient input validation in imageloadfont() - CVE-2022-37454: Buffer overflow in hash_update() on long parameter
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: ietf:transport_layer_security
+- Resolution: Update to version 7.4.33, 8.0.25, 8.1.12 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Critical,,Trung bình,Bảo mật
+"PHP < 8.0.22, 8.1.x < 8.1.9 Security Update - Windows",Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""PHP < 8.0.22, 8.1.x < 8.1.9 Security Update - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: Medium
+- Description: PHP is prone to a buffer overflow vulnerability. Fixed potential overflow for the builtin server via the PHP_CLI_SERVER_WORKERS environment variable.
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: SSLInfo
+- Resolution: Update to version 8.0.22, 8.1.9, 8.2.0 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+"PHP < 8.0.27, 8.1.x < 8.1.14, 8.2.x < 8.2.1 Security Update - Windows",Vấn đề của khách hàng,Chờ xử lý,,,Trung bình,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""PHP < 8.0.27, 8.1.x < 8.1.14, 8.2.x < 8.2.1 Security Update - Windows""
+- CVSS: AV:N/AC:L/Au:N/C:N/I:N/A:C - 7.8
+- Related CVE: []
+- Severity: High
+- Description: PHP is prone to an integer overflow vulnerability. Due to an uncaught integer overflow, PDO::quote() of PDO_SQLite may return a not properly quoted string.
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: SSLInfo
+- Resolution: Update to version 8.0.27, 8.1.14, 8.2.1 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,High,,Trung bình,Bảo mật
+"PHP < 8.0.28, 8.1.x < 8.1.16, 8.2.x < 8.2.3 Security Update - Windows",Vấn đề của khách hàng,Chờ xử lý,,,Trung bình,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""PHP < 8.0.28, 8.1.x < 8.1.16, 8.2.x < 8.2.3 Security Update - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: High
+- Description: PHP is prone to multiple vulnerabilities. The following flaws exist: - CVE-2023-0567: Fixed bug #81744 (Password_verify() always return true with some hash) - CVE-2023-0568: Fixed bug #81746 (1-byte array overrun in common path resolve code) - CVE-2023-0662: Fixed bug GHSA-54hq-v5wp-fqgv (DOS vulnerability when parsing multipart request body)
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: ietf:transport_layer_security
+- Resolution: Update to version 8.0.28, 8.1.16, 8.2.3 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,High,,Trung bình,Bảo mật
+"PHP < 8.0.29, 8.1.x < 8.1.20, 8.2.x < 8.2.7 Security Update - Windows",Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""PHP < 8.0.29, 8.1.x < 8.1.20, 8.2.x < 8.2.7 Security Update - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: Medium
+- Description: PHP is prone to a missing error check and insufficient random bytes in HTTP Digest authentication for SOAP vulnerability.
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: SSLInfo
+- Resolution: Update to version 8.0.29, 8.1.10, 8.2.7 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+"PHP < 8.0.30, 8.1.x < 8.1.22, 8.2.x < 8.2.9 Security Update - Windows",Vấn đề của khách hàng,Chờ xử lý,,,Trung bình,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""PHP < 8.0.30, 8.1.x < 8.1.22, 8.2.x < 8.2.9 Security Update - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: Critical
+- Description: PHP is prone to multiple vulnerabilities. The following flaws exist: - CVE-2023-3823: Fixed bug GHSA-3qrf-m4j2-pcrr (Security issue with external entity loading in XML without enabling it) - CVE-2023-3824: Fixed bug GHSA-jqcx-ccgc-xwhv (Buffer mismanagement in phar_dir_read())
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: ietf:transport_layer_security
+- Resolution: Update to version 8.0.30, 8.1.22, 8.2.9 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Critical,,Trung bình,Bảo mật
+"PHP < 8.1.28, 8.2.x < 8.2.18, 8.3.x < 8.3.6 Multiple Vulnerabilities - Windows",Vấn đề của khách hàng,Chờ xử lý,,,Trung bình,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""PHP < 8.1.28, 8.2.x < 8.2.18, 8.3.x < 8.3.6 Multiple Vulnerabilities - Windows""
+- CVSS: AV:N/AC:L/Au:N/C:C/I:C/A:P - 9.7
+- Related CVE: []
+- Severity: Critical
+- Description: PHP is prone to multiple vulnerabilities. The following vulnerabilities exist: - CVE-2024-1874: Command injection via array-ish $command parameter of proc_open even if bypass_shell option enabled - CVE-2024-3096: password_verify can erroneously return true, opening ATO risk
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: apache:http_server
+- Resolution: Update to version 8.1.28, 8.2.18, 8.3.6 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Critical,,Trung bình,Bảo mật
+"PHP < 8.1.29, 8.2.x < 8.2.20, 8.3.x < 8.3.8 Multiple Vulnerabilities - Windows",Vấn đề của khách hàng,Chờ xử lý,,,Trung bình,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""PHP < 8.1.29, 8.2.x < 8.2.20, 8.3.x < 8.3.8 Multiple Vulnerabilities - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: Critical
+- Description: PHP is prone to multiple vulnerabilities. The following vulnerabilities exist: - CVE-2024-4577: Argument injection in PHP-CGI (bypass of CVE-2012-1823) - CVE-2024-5458: Filter bypass in filter_var FILTER_VALIDATE_URL - CVE-2024-5585: Bypass of CVE-2024-1874 - CVE-2024-2408: Marvin attack in OpenSSL on Windows builds
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: php:php:5.6.31
+- Resolution: Update to version 8.1.29, 8.2.20, 8.3.8 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Critical,,Trung bình,Bảo mật
+"PHP < 8.1.30, 8.2.x < 8.2.24, 8.3.x < 8.3.12 Multiple Vulnerabilities - Windows",Vấn đề của khách hàng,Chờ xử lý,,,Trung bình,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""PHP < 8.1.30, 8.2.x < 8.2.24, 8.3.x < 8.3.12 Multiple Vulnerabilities - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: High
+- Description: PHP is prone to multiple vulnerabilities. The following vulnerabilities exist: - CVE-2024-8925, CVE-2024-8928: Erroneous parsing of multipart form data - CVE-2024-8926: Bypass of CVE-2024-4577, Parameter Injection Vulnerability - CVE-2024-8927: cgi.force_redirect configuration is bypassable due to the environment variable collision - CVE-2024-9026: Logs from children may be altered
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: ietf:transport_layer_security
+- Resolution: Update to version 8.1.30, 8.2.24, 8.3.12 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,High,,Trung bình,Bảo mật
+"PHP < 8.1.31, 8.2.x < 8.2.26, 8.3.x < 8.3.14 Multiple Vulnerabilities - Windows",Vấn đề của khách hàng,Chờ xử lý,,,Trung bình,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""PHP < 8.1.31, 8.2.x < 8.2.26, 8.3.x < 8.3.14 Multiple Vulnerabilities - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: Critical
+- Description: PHP is prone to multiple vulnerabilities. The following vulnerabilities exist: - CVE-2024-8929: Leak partial content of the heap through heap buffer over-read - CVE-2024-8932: OOB access in ldap_escape - CVE-2024-11233: Single byte overread with convert.quoted-printable-decode filter - CVE-2024-11234: Configuring a proxy in a stream context might allow for CRLF injection in URIs - CVE-2024-11236: Integer overflow in the firebird/dblib quoter causing OOB writes - No CVE: Heap-Use-After-Free in sapi_read_post_data Processing in CLI SAPI Interface
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: ietf:transport_layer_security
+- Resolution: Update to version 8.1.31, 8.2.26, 8.3.14 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Critical,,Trung bình,Bảo mật
+"PHP < 8.1.32, 8.2.x < 8.2.28 Multiple Vulnerabilities - Windows",Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""PHP < 8.1.32, 8.2.x < 8.2.28 Multiple Vulnerabilities - Windows""
+- CVSS: AV:N/AC:L/Au:N/C:P/I:N/A:N - 5.0
+- Related CVE: []
+- Severity: Medium
+- Description: PHP is prone to multiple vulnerabilities. The following vulnerabilities exist: - CVE-2025-1217: Header parser of 'http' stream wrapper does not handle folded headers - CVE-2025-1219: libxml streams use wrong 'content-type' header when requesting a redirected resource - CVE-2025-1734: Streams HTTP wrapper does not fail for headers without colon - CVE-2025-1736: Stream HTTP wrapper header check might omit basic auth header - CVE-2025-1861: Stream HTTP wrapper truncate redirect location to 1024 bytes
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: php:php:5.6.31
+- Resolution: Update to version 8.1.32, 8.2.28 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+PHP End of Life (EOL) Detection - Windows,Vấn đề của khách hàng,Chờ xử lý,,,Trung bình,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""PHP End of Life (EOL) Detection - Windows""
+- CVSS: AV:N/AC:L/Au:N/C:C/I:C/A:C - 10.0
+- Related CVE: []
+- Severity: Critical
+- Description: The PHP version on the remote host has reached the end of life (EOL) and should not be used anymore. Each release branch of PHP is fully supported for two years from its initial stable release. During this period, bugs and security issues that have been reported are fixed and are released in regular point releases. After this two year period of active support, each branch is then supported for an additional year for critical security issues only. Releases during this period are made on an as-needed basis: there may be multiple point releases, or none, depending on the number of reports. Once the three years of support are completed, the branch reaches its end of life and is no longer supported.
+- Impact: Impact: An EOL version of PHP is not receiving any security updates from the vendor. Unfixed security vulnerabilities might be leveraged by an attacker to compromise the security of this host.
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: php:php:5.6.31
+- Resolution: Update the PHP version on the remote host to a still supported version.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Critical,,Trung bình,Bảo mật
+PHP Heap Use-After-Free Vulnerability (Sep 2019) - Windows,Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""PHP Heap Use-After-Free Vulnerability (Sep 2019) - Windows""
+- CVSS: AV:N/AC:M/Au:N/C:P/I:P/A:P - 6.8
+- Related CVE: []
+- Severity: Medium
+- Description: PHP is prone to a heap-based use-after-free vulnerability. PHP is prone to a heap use-after-free in pcrelib (cmb).
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: ietf:transport_layer_security
+- Resolution: Update to version 7.1.32 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+PHP Multiple Heap Buffer Overflow and Information Disclosure Vulnerabilities - Windows,Vấn đề của khách hàng,Chờ xử lý,,,Trung bình,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""PHP Multiple Heap Buffer Overflow and Information Disclosure Vulnerabilities - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: High
+- Description: PHP is prone to multiple heap buffer overflow and information disclosure vulnerabilities. Multiple flaws exist due to: - exif_process_IFD_in_MAKERNOTE function in exif.c file suffers from improper validation against crafted JPEG files. - exif_thumbnail_extract function in exif.c file suffers from improper validation of length of 'ImageInfo->Thumbnail.offset + ImageInfo->Thumbnail.size' - linkinfo function on windows doesn't implement openbasedir check.
+- Impact: Impact: Successful exploitation will allow attackers to cause heap overflow, denial of service and disclose sensitive information.
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: SSLInfo
+- Resolution: Update to PHP version 5.6.37, 7.0.31, 7.1.20 or 7.2.8 or later. Please see the references for more information.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,High,,Trung bình,Bảo mật
+PHP Multiple Vulnerabilities (Dec 2018) - Windows,Vấn đề của khách hàng,Chờ xử lý,,,Trung bình,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""PHP Multiple Vulnerabilities (Dec 2018) - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: High
+- Description: PHP is prone to multiple security vulnerabilities. The flaws exist due to: - the imap_open functions which allows to run arbitrary shell commands via mailbox parameter. - a Heap Buffer Overflow (READ: 4) in phar_parse_pharfile. - ext/standard/var_unserializer.c allows attackers to cause a denial of service (application crash) via an unserialize call for the com, dotnet, or variant class. - because com and com_safearray_proxy return NULL in com_properties_get in ext/com_dotnet/com_handlers.c, as demonstrated by a serialize call on COM('WScript.Shell').
+- Impact: Impact: Successful exploitation will allow remote attackers to execute remote code on the affected application/system and/or cause a cause a denial of service.
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: apache:http_server
+- Resolution: Update to version 5.6.39, 7.0.33, 7.1.25, 7.2.13, 7.3.0 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,High,,Trung bình,Bảo mật
+PHP Multiple Vulnerabilities (Feb 2019) - Windows,Vấn đề của khách hàng,Chờ xử lý,,,Trung bình,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""PHP Multiple Vulnerabilities (Feb 2019) - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: Critical
+- Description: PHP is prone to multiple vulnerabilities. The following flaws exist: - Fixed bug #77269 (efree() on uninitialized Heap data in imagescale leads to use-after-free). (CVE-2016-10166) - Fixed bug #77270 (imagecolormatch Out Of Bounds Write on Heap). (CVE-2019-6977) - Fixed bug #77370 (Buffer overflow on mb regex functions - fetch_token). (CVE-2019-9023) - Fixed bug #77371 (heap buffer overflow in mb regex functions - compile_string_node). (CVE-2019-9023) - Fixed bug #77381 (heap buffer overflow in multibyte match_at). (CVE-2019-9023) - Fixed bug #77382 (heap buffer overflow due to incorrect length in expand_case_fold_string). (CVE-2019-9023) - Fixed bug #77385 (buffer overflow in fetch_token). (CVE-2019-9023) - Fixed bug #77394 (Buffer overflow in multibyte case folding - unicode). (CVE-2019-9023) - Fixed bug #77418 (Heap overflow in utf32be_mbc_to_code). (CVE-2019-9023) - Fixed bug #77247 (heap buffer overflow in phar_detect_phar_fname_ext). (CVE-2019-9021) - Fixed bug #77242 (heap out of bounds read in xmlrpc_decode()). (CVE-2019-9020) - Fixed bug #77380 (Global out of bounds read in xmlrpc base64 code). (CVE-2019-9024)
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: php:php:5.6.31
+- Resolution: Update to version 5.6.40, 7.1.16, 7.2.14, 7.3.1 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Critical,,Trung bình,Bảo mật
+PHP Multiple Vulnerabilities (May 2018) - Windows,Vấn đề của khách hàng,Chờ xử lý,,,Trung bình,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""PHP Multiple Vulnerabilities (May 2018) - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: High
+- Description: PHP is prone to multiple vulnerabilities. Multiple flaws exist due to - An out of bounds read error in 'exif_read_data' function while processing crafted JPG data. - An error in stream filter 'convert.iconv' which leads to infinite loop on invalid sequence. - An error in the LDAP module of PHP which allows a malicious LDAP server or man-in-the-middle attacker to crash PHP. - An error in the 'phar_do_404()' function in 'ext/phar/phar_object.c' script which returns parts of the request unfiltered, leading to another XSS vector. This is due to incomplete fix for CVE-2018-5712.
+- Impact: Impact: Successful exploitation will allow an attacker to conduct XSS attacks, crash PHP, conduct denial-of-service condition and execute arbitrary code in the context of the affected application.
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: php:php:5.6.31
+- Resolution: Update to version 7.2.5 or 7.0.30 or 5.6.36 or 7.1.17 or later. Please see the references for more information.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,High,,Trung bình,Bảo mật
+PHP Multiple Vulnerabilities (Sep 2019) - Windows,Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""PHP Multiple Vulnerabilities (Sep 2019) - Windows""
+- CVSS: AV:N/AC:M/Au:N/C:P/I:P/A:P - 6.8
+- Related CVE: []
+- Severity: Medium
+- Description: PHP is prone to multiple vulnerabilities. PHP is prone to multiple vulnerabilities: - Buffer overflow in zendparse - Cast to object confuses GC, causes crash - Exif crash (bus error) due to wrong alignment and invalid cast - Use-after-free in FPM master event handling
+- Impact: 
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: SSLInfo
+- Resolution: Update to version 7.2.22, 7.3.9 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+PHP Security Bypass Vulnerability (May 2018) - Windows,Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""PHP Security Bypass Vulnerability (May 2018) - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: Medium
+- Description: PHP is prone to a security bypass vulnerability. The flaw exists as the dumpable FPM child processes allow bypassing opcache access controls
+- Impact: Impact: Successful exploitation will allow an attacker to bypass security restrictions and access sensitive configuration data for other accounts directly in the PHP worker process's memory.
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: apache:http_server
+- Resolution: Update to version 7.2.4 or 7.0.29 or 5.6.35 or 7.1.16 or later. Please see the references for more information.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+PHP Stack Buffer Overflow Vulnerability (Mar 2018) - Windows,Vấn đề của khách hàng,Chờ xử lý,,,Trung bình,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""PHP Stack Buffer Overflow Vulnerability (Mar 2018) - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: Critical
+- Description: PHP is prone to a stack buffer overflow vulnerability. The flaw exists because php fails to adequately bounds-check user-supplied data before copying it into an insufficiently sized buffer.
+- Impact: Impact: Successful exploitation will allow an attacker to execute arbitrary code in the context of the affected application. Failed exploit attempts will result in denial-of-service conditions.
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: apache:http_server
+- Resolution: Update to version 7.2.3, 7.0.28, 5.6.34, 7.1.15 or later.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Critical,,Trung bình,Bảo mật
+Redis Server No Password,Vấn đề của khách hàng,Chờ xử lý,,,Trung bình,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""Redis Server No Password""
+- CVSS: AV:N/AC:L/Au:N/C:P/I:P/A:P - 7.5
+- Related CVE: []
+- Severity: High
+- Description: The remote Redis server is not protected with a password. It was possible to login without a password.
+- Impact: Impact: This issue may be exploited by a remote attacker to gain access to sensitive information or modify system configuration.
+- Affected OS detected: Linux Kernel, Ubuntu 22.04
+- Affected services/hosts:
+	Service: redis
+	Service: redis
+	Service: redis
+	Service: redis
+	Service: redis
+	Service: redis
+	Service: redis
+	Service: redis
+	Service: redis
+	Service: redis
+	Service: redis
+	Service: redis
+- Resolution: Set password.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,High,,Trung bình,Bảo mật
+SSL/TLS: Certificate Expired,Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""SSL/TLS: Certificate Expired""
+- CVSS: AV:N/AC:L/Au:N/C:N/I:P/A:N - 5.0
+- Related CVE: []
+- Severity: Medium
+- Description: The remote server's SSL/TLS certificate has already expired. This script checks expiry dates of certificates associated with SSL/TLS-enabled services on the target and reports whether any have already expired.
+- Impact: 
+- Affected OS detected: Microsoft Windows, Microsoft Windows Server 2016 or Microsoft Windows 10, Ubuntu 20.04
+- Affected services/hosts:
+	Service: ietf:transport_layer_security:1.2
+- Resolution: Replace the SSL/TLS certificate by a new one.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+SSL/TLS: Certificate Signed Using A Weak Signature Algorithm,Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""SSL/TLS: Certificate Signed Using A Weak Signature Algorithm""
+- CVSS: AV:N/AC:H/Au:N/C:P/I:P/A:N - 4.0
+- Related CVE: []
+- Severity: Medium
+- Description: The remote service is using a SSL/TLS certificate in the certificate chain that has been signed using a cryptographically weak hashing algorithm. The following hashing algorithms used for signing SSL/TLS certificates are considered cryptographically weak and not secure enough for ongoing use: - Secure Hash Algorithm 1 (SHA-1) - Message Digest 5 (MD5) - Message Digest 4 (MD4) - Message Digest 2 (MD2) Beginning as late as January 2017 and as early as June 2016, browser developers such as Microsoft and Google will begin warning users when visiting web sites that use SHA-1 signed Secure Socket Layer (SSL) certificates. NOTE: The script preference allows to set one or more custom SHA-1 fingerprints of CA certificates which are trusted by this routine. The fingerprints needs to be passed comma-separated and case-insensitive: Fingerprint1 or fingerprint1, Fingerprint2
+- Impact: 
+- Affected OS detected: Microsoft Windows, Windows Server 2008 R2 Enterprise 7601 Service Pack 1
+- Affected services/hosts:
+	Service: ms-wbt-server
+- Resolution: Servers that use SSL/TLS certificates signed with a weak SHA-1, MD5, MD4 or MD2 hashing algorithm will need to obtain new SHA-2 signed SSL/TLS certificates to avoid web browser SSL/TLS certificate warnings.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+SSL/TLS: Deprecated TLSv1.0 and TLSv1.1 Protocol Detection,Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""SSL/TLS: Deprecated TLSv1.0 and TLSv1.1 Protocol Detection""
+- CVSS: AV:N/AC:M/Au:N/C:N/I:P/A:N - 4.3
+- Related CVE: []
+- Severity: Medium
+- Description: It was possible to detect the usage of the deprecated TLSv1.0 and/or TLSv1.1 protocol on this system. The TLSv1.0 and TLSv1.1 protocols contain known cryptographic flaws like: - CVE-2011-3389: Browser Exploit Against SSL/TLS (BEAST) - CVE-2015-0204: Factoring Attack on RSA-EXPORT Keys Padding Oracle On Downgraded Legacy Encryption (FREAK)
+- Impact: Impact: An attacker might be able to use the known cryptographic flaws to eavesdrop the connection between clients and the service to get access to sensitive data transferred within the secured connection. Furthermore newly uncovered vulnerabilities in this protocols won't receive security updates anymore.
+- Affected OS detected: Linux Kernel, Microsoft Windows, Microsoft Windows Server 2016 or Microsoft Windows 10, Windows Server 2008 R2 Enterprise 7601 Service Pack 1, Windows Server 2016 Standard 14393
+- Affected services/hosts:
+	Service: ietf:transport_layer_security:1.2
+- Resolution: It is recommended to disable the deprecated TLSv1.0 and/or TLSv1.1 protocols in favor of the TLSv1.2+ protocols. Please see the references for more resources supporting you with this task.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+SSL/TLS: Diffie-Hellman Key Exchange Insufficient DH Group Strength Vulnerability,Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""SSL/TLS: Diffie-Hellman Key Exchange Insufficient DH Group Strength Vulnerability""
+- CVSS: AV:N/AC:H/Au:N/C:P/I:P/A:N - 4.0
+- Related CVE: []
+- Severity: Medium
+- Description: The SSL/TLS service uses Diffie-Hellman groups with insufficient strength (key size < 2048). The Diffie-Hellman group are some big numbers that are used as base for the DH computations. They can be, and often are, fixed. The security of the final secret depends on the size of these parameters. It was found that 512 and 768 bits to be weak, 1024 bits to be breakable by really powerful attackers like governments.
+- Impact: Impact: An attacker might be able to decrypt the SSL/TLS communication offline.
+- Affected OS detected: Microsoft Windows, Windows Server 2008 R2 Enterprise 7601 Service Pack 1
+- Affected services/hosts:
+	Service: ms-wbt-server
+- Resolution: '- Deploy (Ephemeral) Elliptic-Curve Diffie-Hellman (ECDHE) or use a 2048-bit or stronger Diffie-Hellman group. Please see the references for more resources supporting you with this task. - For Apache Web Servers: Beginning with version 2.4.7, mod_ssl will use DH parameters which include primes with lengths of more than 1024 bits.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+SSL/TLS: Known Untrusted / Dangerous Certificate Authority (CA) Detection,Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""SSL/TLS: Known Untrusted / Dangerous Certificate Authority (CA) Detection""
+- CVSS: AV:N/AC:L/Au:N/C:N/I:P/A:N - 5.0
+- Related CVE: []
+- Severity: Medium
+- Description: The service is using an SSL/TLS certificate from a known untrusted and/or dangerous certificate authority (CA).
+- Impact: Impact: An attacker could use this for man-in-the-middle (MITM) attacks, accessing sensible data and other attacks.
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: ietf:transport_layer_security
+- Resolution: Replace the SSL/TLS certificate with one signed by a trusted CA.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+"SSL/TLS: Renegotiation DoS Vulnerability (CVE-2011-1473, CVE-2011-5094)",Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""SSL/TLS: Renegotiation DoS Vulnerability (CVE-2011-1473, CVE-2011-5094)""
+- CVSS: AV:N/AC:L/Au:N/C:N/I:N/A:P - 5.0
+- Related CVE: []
+- Severity: Medium
+- Description: The remote SSL/TLS service is prone to a denial of service (DoS) vulnerability. The flaw exists because the remote SSL/TLS service does not properly restrict client-initiated renegotiation within the SSL and TLS protocols. Note: The referenced CVEs are affecting OpenSSL and Mozilla Network Security Services (NSS) but both are in a DISPUTED state with the following rationale: > It can also be argued that it is the responsibility of server deployments, not a security library, to prevent or limit renegotiation when it is inappropriate within a specific environment. Both CVEs are still kept in this VT as a reference to the origin of this flaw.
+- Impact: Impact: The flaw might make it easier for remote attackers to cause a DoS (CPU consumption) by performing many renegotiations within a single connection.
+- Affected OS detected: Linux Kernel
+- Affected services/hosts:
+	Service: mysql
+	Service: mysql
+	Service: mysql
+	Service: mysql
+	Service: mysql
+	Service: mysql
+	Service: mysql
+	Service: mysql
+	Service: mysql
+	Service: mysql
+	Service: mysql
+	Service: mysql
+	Service: mysql
+	Service: mysql
+	Service: mysql
+	Service: mysql
+- Resolution: Users should contact their vendors for specific patch information. A general solution is to remove/disable renegotiation capabilities altogether from/in the affected SSL/TLS service.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+SSL/TLS: Report Vulnerable Cipher Suites for HTTPS,Vấn đề của khách hàng,Chờ xử lý,,,Trung bình,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""SSL/TLS: Report Vulnerable Cipher Suites for HTTPS""
+- CVSS: 
+- Related CVE: []
+- Severity: High
+- Description: This routine reports all SSL/TLS cipher suites accepted by a service where attack vectors exists only on HTTPS services. These rules are applied for the evaluation of the vulnerable cipher suites: - 64-bit block cipher 3DES vulnerable to the SWEET32 attack (CVE-2016-2183).
+- Impact: Impact: This could allow remote attackers to obtain sensitive information or have other, unspecified impacts.
+- Affected OS detected: Linux Kernel
+- Affected services/hosts:
+	Service: ietf:transport_layer_security:1.2
+- Resolution: The configuration of this services should be changed so that it does not accept the listed cipher suites anymore. Please see the references for more resources supporting you with this task.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,High,,Trung bình,Bảo mật
+SSL/TLS: Report Weak Cipher Suites,Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""SSL/TLS: Report Weak Cipher Suites""
+- CVSS: 
+- Related CVE: []
+- Severity: Medium
+- Description: This routine reports all weak SSL/TLS cipher suites accepted by a service. These rules are applied for the evaluation of the cryptographic strength: - RC4 is considered to be weak (CVE-2013-2566, CVE-2015-2808) - Ciphers using 64 bit or less are considered to be vulnerable to brute force methods and therefore considered as weak (CVE-2015-4000) - 1024 bit RSA authentication is considered to be insecure and therefore as weak - Any cipher considered to be secure for only the next 10 years is considered as medium - Any other cipher is considered as strong
+- Impact: Impact: This could allow remote attackers to obtain sensitive information or have other, unspecified impacts.
+- Affected OS detected: Microsoft Windows, Windows Server 2008 R2 Enterprise 7601 Service Pack 1, Windows Server 2016 Standard 14393
+- Affected services/hosts:
+	Service: ietf:transport_layer_security
+- Resolution: The configuration of this services should be changed so that it does not accept the listed weak cipher suites anymore. Please see the references for more resources supporting you with this task.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+SSL/TLS: Server Certificate / Certificate in Chain with RSA keys less than 2048 bits,Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""SSL/TLS: Server Certificate / Certificate in Chain with RSA keys less than 2048 bits""
+- CVSS: 
+- Related CVE: []
+- Severity: Medium
+- Description: The remote SSL/TLS server certificate and/or any of the certificates in the certificate chain is using a RSA key with less than 2048 bits. SSL/TLS certificates using RSA keys with less than 2048 bits are considered unsafe.
+- Impact: Impact: Using certificates with weak RSA key size can lead to unauthorized exposure of sensitive information.
+- Affected OS detected: Microsoft Windows
+- Affected services/hosts:
+	Service: ietf:transport_layer_security
+- Resolution: Replace the certificate with a stronger key and reissue the certificates it signed.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+TCP Timestamps Information Disclosure,Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""TCP Timestamps Information Disclosure""
+- CVSS: AV:N/AC:H/Au:N/C:P/I:N/A:N - 2.6
+- Related CVE: []
+- Severity: Low
+- Description: The remote host implements TCP timestamps and therefore allows to compute the uptime. The remote host implements TCP timestamps, as defined by RFC1323/RFC7323.
+- Impact: Impact: A side effect of this feature is that the uptime of the remote host can sometimes be computed.
+- Affected OS detected: Linux Kernel, Microsoft Windows, Ubuntu 18.04, Ubuntu 20.04, Ubuntu 22.04, Windows Server 2008 R2 Enterprise 7601 Service Pack 1, Windows Server 2016 Standard 14393
+- Affected services/hosts:
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+	Service: Unknown
+- Resolution: To disable TCP timestamps on linux add the line 'net.ipv4.tcp_timestamps = 0' to /etc/sysctl.conf. Execute 'sysctl -p' to apply the settings at runtime. To disable TCP timestamps on Windows execute 'netsh int tcp set global timestamps=disabled' Starting with Windows Server 2008 and Vista, the timestamp can not be completely disabled. The default behavior of the TCP/IP stack on this Systems is to not use the Timestamp options when initiating TCP connections, but use them if the TCP peer that is initiating communication includes them in their synchronize (SYN) segment. See the references for more information.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Low,,Trung bình,Bảo mật
+Unprotected MongoDB Service,Vấn đề của khách hàng,Chờ xử lý,,,Trung bình,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""Unprotected MongoDB Service""
+- CVSS: AV:N/AC:L/Au:N/C:P/I:P/A:P - 7.5
+- Related CVE: []
+- Severity: High
+- Description: The remote MongoDB service is unprotected.
+- Impact: Impact: Attackers can exploit this issue to obtain sensitive information that may lead to further attacks.
+- Affected OS detected: Linux Kernel, Microsoft Windows Server 2016 or Microsoft Windows 10
+- Affected services/hosts:
+	Service: mongodb
+	Service: mongodb
+	Service: mongodb
+	Service: mongodb
+	Service: mongodb
+	Service: mongodb
+	Service: mongodb
+	Service: mongodb
+	Service: mongodb
+	Service: mongodb
+	Service: mongodb
+	Service: mongodb
+	Service: mongodb
+	Service: mongodb
+	Service: mongodb
+	Service: mongodb
+	Service: mongodb
+	Service: mongodb
+	Service: mongodb
+	Service: mongodb
+	Service: mongodb
+- Resolution: Enable authentication or restrict access to the MongoDB service.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,High,,Trung bình,Bảo mật
+Weak Encryption Algorithm(s) Supported (SSH),Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""Weak Encryption Algorithm(s) Supported (SSH)""
+- CVSS: AV:N/AC:M/Au:N/C:P/I:N/A:N - 4.3
+- Related CVE: []
+- Severity: Medium
+- Description: The remote SSH server is configured to allow / support weak encryption algorithm(s). - The 'arcfour' cipher is the Arcfour stream cipher with 128-bit keys. The Arcfour cipher is believed to be compatible with the RC4 cipher [SCHNEIER]. Arcfour (and RC4) has problems with weak keys, and should not be used anymore. - The 'none' algorithm specifies that no encryption is to be done. Note that this method provides no confidentiality protection, and it is NOT RECOMMENDED to use it. - A vulnerability exists in SSH messages that employ CBC mode that may allow an attacker to recover plaintext from a block of ciphertext.
+- Impact: 
+- Affected OS detected: Linux Kernel
+- Affected services/hosts:
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+- Resolution: Disable the reported weak encryption algorithm(s).",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+Weak Key Exchange (KEX) Algorithm(s) Supported (SSH),Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""Weak Key Exchange (KEX) Algorithm(s) Supported (SSH)""
+- CVSS: 
+- Related CVE: []
+- Severity: Medium
+- Description: The remote SSH server is configured to allow / support weak key exchange (KEX) algorithm(s). - 1024-bit MODP group / prime KEX algorithms: Millions of HTTPS, SSH, and VPN servers all use the same prime numbers for Diffie-Hellman key exchange. Practitioners believed this was safe as long as new key exchange messages were generated for every connection. However, the first step in the number field sieve-the most efficient algorithm for breaking a Diffie-Hellman connection-is dependent only on this prime. A nation-state can break a 1024-bit prime.
+- Impact: Impact: An attacker can quickly break individual connections.
+- Affected OS detected: Linux Kernel
+- Affected services/hosts:
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+- Resolution: Disable the reported weak KEX algorithm(s) - 1024-bit MODP group / prime KEX algorithms: Alternatively use elliptic-curve Diffie-Hellmann in general, e.g. Curve 25519.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Medium,,Trung bình,Bảo mật
+Weak MAC Algorithm(s) Supported (SSH),Vấn đề của khách hàng,Chờ xử lý,,,Thấp,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""Weak MAC Algorithm(s) Supported (SSH)""
+- CVSS: AV:N/AC:H/Au:N/C:P/I:N/A:N - 2.6
+- Related CVE: []
+- Severity: Low
+- Description: The remote SSH server is configured to allow / support weak MAC algorithm(s).
+- Impact: 
+- Affected OS detected: Linux Kernel, Ubuntu 18.04, Ubuntu 20.04, Ubuntu 22.04
+- Affected services/hosts:
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+	Service: ssh
+- Resolution: Disable the reported weak MAC algorithm(s).",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Low,,Trung bình,Bảo mật
+jQuery End of Life (EOL) Detection - Windows,Vấn đề của khách hàng,Chờ xử lý,,,Trung bình,,,,,TT PTPM,"Kính gửi Phòng QTHT,
+Qua kết quả đánh giá an ninh TTDL Quý 2, Ban ANTT có ghi nhận lỗ hổng có thông tin như sau:
+- Name: ""jQuery End of Life (EOL) Detection - Windows""
+- CVSS: 
+- Related CVE: []
+- Severity: Critical
+- Description: The jQuery version on the remote host has reached the end of life (EOL) and should not be used anymore.
+- Impact: Impact: An EOL version of jQuery is not receiving any security updates from the vendor. Unfixed security vulnerabilities might be leveraged by an attacker to compromise the security of this host.
+- Affected OS detected: Microsoft Windows Server 2016 or Microsoft Windows 10
+- Affected services/hosts:
+	Service: microsoft:internet_information_services:10.0
+	Service: microsoft:internet_information_services:10.0
+- Resolution: Update jQuery on the remote host to a still supported version.",Khối sản xuất,Lỗi phần mềm,Lỗi an ninh,Critical,,Trung bình,Bảo mật

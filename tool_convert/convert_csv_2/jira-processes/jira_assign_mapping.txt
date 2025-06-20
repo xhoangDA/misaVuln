@@ -1,0 +1,6 @@
+# Format: <project_key>: <username>
+# Mỗi dòng là 1 ánh xạ project-user
+FO: user1
+AIMS: ai_owner
+HRM: hrm_manager
+MISA: admin

@@ -1,0 +1,21 @@
+# Core Flask dependencies
+Flask==2.3.2
+Flask-SQLAlchemy==3.0.3
+Flask-Migrate==4.0.4
+Werkzeug==2.3.6
+
+# Database
+PyMySQL==1.1.0
+cryptography==41.0.3
+
+# Utilities
+python-dotenv==1.0.0
+requests==2.31.0
+pytz==2023.3
+pandas==2.0.3
+
+# Production server
+gunicorn==21.2.0
+
+# Optional: for health checks in container
+curl-cffi==0.5.10

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal Test</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/modal-debug.css') }}">
+</head>
+<body>
+    <div class="test-container">
+        <h1 class="text-center mb-4">
+            <i class="fas fa-bug me-2"></i>
+            Modal Debug Test
+        </h1>
+        
+        <div class="text-center">
+            <button class="btn btn-primary test-button" onclick="testBasicModal()">
+                <i class="fas fa-play me-2"></i>
+                Test Basic Modal
+            </button>
+            
+            <button class="btn btn-success test-button" onclick="testCVEModal()">
+                <i class="fas fa-shield-alt me-2"></i>
+                Test CVE Modal
+            </button>
+            
+            <button class="btn btn-warning test-button" onclick="checkBootstrap()">
+                <i class="fas fa-check me-2"></i>
+                Check Bootstrap
+            </button>
+            
+            <button class="btn btn-info test-button" onclick="showMockCVE()">
+                <i class="fas fa-eye me-2"></i>
+                Show Mock CVE
+            </button>
+        </div>
+        
+        <div class="mt-4">
+            <h3>Console Output:</h3>
+            <div id="console-output" class="console-output">
+                <div class="text-success">Ready for testing...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CVE Details Modal -->
+    <div class="modal fade" id="cveDetailsModal" tabindex="-1">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        <i class="fas fa-shield-alt me-2"></i>
+                        CVE Details Test
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-tabs">
+                        <button class="modal-tab active" onclick="switchTab(0)">
+                            <i class="fas fa-info-circle me-2"></i>
+                            Information
+                        </button>
+                        <button class="modal-tab" onclick="switchTab(1)">
+                            <i class="fas fa-puzzle-piece me-2"></i>
+                            Affected Components
+                        </button>
+                        <button class="modal-tab" onclick="switchTab(2)">
+                            <i class="fas fa-plug me-2"></i>
+                            Plugins
+                        </button>
+                    </div>
+                    
+                    <div class="modal-tab-content" id="tab-0">
+                        <span class="modal-label">
+                            <i class="fas fa-file-alt me-2"></i>Description
+                        </span>
+                        <div class="modal-section-content" id="cveDescription">
+                            This is a test CVE description to verify that the modal is working correctly.
+                        </div>
+                        
+                        <div class="mt-4">
+                            <span class="modal-label">
+                                <i class="fas fa-tachometer-alt me-2"></i>CVSS Score
+                            </span>
+                            <div class="modal-section-content">
+                                <span class="badge bg-danger fs-6">9.8 - CRITICAL</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-tab-content d-none" id="tab-1">
+                        <span class="modal-label">
+                            <i class="fas fa-puzzle-piece me-2"></i>Affected Projects
+                        </span>
+                        <div class="modal-section-content">
+                            <div class="card bg-dark border-secondary">
+                                <div class="card-body">
+                                    <h6>Test Project</h6>
+                                    <p class="mb-0">Manager: Test Manager</p>
+                                    <small class="text-muted">Component: React v18.2.0</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-tab-content d-none" id="tab-2">
+                        <span class="modal-label">
+                            <i class="fas fa-plug me-2"></i>Detection Plugins
+                        </span>
+                        <div class="modal-section-content">
+                            <div class="card bg-dark border-secondary">
+                                <div class="card-body">
+                                    <h6>CVE Prime Analysis Engine</h6>
+                                    <p class="mb-0">Advanced vulnerability detection and matching</p>
+                                    <small class="text-muted">Confidence: 95%</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        <i class="fas fa-times me-1"></i>Close
+                    </button>
+                    <button type="button" class="btn btn-primary">
+                        <i class="fas fa-check me-1"></i>Mark as Reviewed
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const consoleOutput = document.getElementById('console-output');
+        
+        function log(message, type = 'info') {
+            const colors = {
+                'success': 'text-success',
+                'error': 'text-danger',
+                'warning': 'text-warning',
+                'info': 'text-info'
+            };
+            
+            const div = document.createElement('div');
+            div.className = colors[type] || 'text-light';
+            div.innerHTML = `[${new Date().toLocaleTimeString()}] ${message}`;
+            consoleOutput.appendChild(div);
+            consoleOutput.scrollTop = consoleOutput.scrollHeight;
+            
+            // Also log to real console
+            console.log(message);
+        }
+        
+        function testBasicModal() {
+            log('🔧 Testing basic modal...', 'info');
+            
+            const modal = document.getElementById('cveDetailsModal');
+            if (!modal) {
+                log('❌ Modal element not found!', 'error');
+                return;
+            }
+            log('✅ Modal element found', 'success');
+            
+            if (typeof bootstrap === 'undefined') {
+                log('❌ Bootstrap not loaded!', 'error');
+                return;
+            }
+            log('✅ Bootstrap is loaded', 'success');
+            
+            try {
+                const bsModal = new bootstrap.Modal(modal);
+                bsModal.show();
+                log('✅ Modal opened successfully!', 'success');
+            } catch (error) {
+                log(`❌ Error opening modal: ${error.message}`, 'error');
+            }
+        }
+        
+        function testCVEModal() {
+            log('🔍 Testing CVE modal with tabs...', 'info');
+            testBasicModal();
+            
+            setTimeout(() => {
+                log('🔄 Testing tab switching...', 'info');
+                switchTab(1);
+                setTimeout(() => switchTab(2), 1000);
+                setTimeout(() => switchTab(0), 2000);
+            }, 500);
+        }
+        
+        function checkBootstrap() {
+            log('🔍 Checking Bootstrap...', 'info');
+            log(`Bootstrap version: ${typeof bootstrap !== 'undefined' ? 'Loaded' : 'Not loaded'}`, 
+                typeof bootstrap !== 'undefined' ? 'success' : 'error');
+            
+            if (typeof bootstrap !== 'undefined') {
+                log(`Bootstrap.Modal: ${typeof bootstrap.Modal}`, 'info');
+                log(`Bootstrap.Tooltip: ${typeof bootstrap.Tooltip}`, 'info');
+            }
+            
+            // Check jQuery (not needed for Bootstrap 5, but good to know)
+            log(`jQuery: ${typeof $ !== 'undefined' ? 'Loaded' : 'Not loaded'}`, 'info');
+        }
+        
+        function showMockCVE() {
+            log('🚀 Showing mock CVE data...', 'info');
+            
+            const mockData = {
+                cve_id: 'CVE-2024-TEST',
+                description: 'This is a test vulnerability for debugging modal functionality.',
+                cvss_score: 9.8,
+                severity: 'CRITICAL'
+            };
+            
+            // Update modal content
+            document.getElementById('cveDescription').textContent = mockData.description;
+            
+            // Update title
+            const modalTitle = document.querySelector('#cveDetailsModal .modal-title');
+            modalTitle.innerHTML = `
+                <i class="fas fa-exclamation-triangle me-2 text-danger"></i>
+                ${mockData.cve_id} - ${mockData.severity} Risk
+            `;
+            
+            testBasicModal();
+            log(`✅ Mock CVE displayed: ${mockData.cve_id}`, 'success');
+        }
+        
+        function switchTab(tabIndex) {
+            log(`🔄 Switching to tab ${tabIndex}`, 'info');
+            
+            // Remove active from all tabs
+            document.querySelectorAll('.modal-tab').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.modal-tab-content').forEach(content => content.classList.add('d-none'));
+            
+            // Add active to selected tab
+            const tabs = document.querySelectorAll('.modal-tab');
+            const contents = document.querySelectorAll('.modal-tab-content');
+            
+            if (tabs[tabIndex]) {
+                tabs[tabIndex].classList.add('active');
+                log(`✅ Tab ${tabIndex} activated`, 'success');
+            }
+            
+            if (contents[tabIndex]) {
+                contents[tabIndex].classList.remove('d-none');
+                log(`✅ Content ${tabIndex} shown`, 'success');
+            }
+        }
+        
+        // Test on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            log('🔧 Page loaded, running initial tests...', 'info');
+            checkBootstrap();
+            
+            // Test that functions are available
+            log(`testBasicModal: ${typeof testBasicModal}`, 'info');
+            log(`switchTab: ${typeof switchTab}`, 'info');
+        });
+    </script>
+</body>
+</html>

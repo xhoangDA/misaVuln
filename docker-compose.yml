@@ -1,0 +1,65 @@
+version: '3.8'
+
+services:
+  # MySQL Database
+  mysql:
+    image: mysql:8.0
+    container_name: cve_mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: cve_tool
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./data/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    networks:
+      - cve_network
+    restart: unless-stopped
+
+  # Flask Application
+  web:
+    build: .
+    container_name: cve_web
+    environment:
+      - FLASK_ENV=production
+      - DATABASE_URL=mysql+pymysql://user:password@mysql:3306/cve_tool
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mysql
+    networks:
+      - cve_network
+    restart: unless-stopped
+    volumes:
+      - ./data:/app/data:ro
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Nginx Reverse Proxy (Optional)
+  nginx:
+    image: nginx:alpine
+    container_name: cve_nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./ssl:/etc/nginx/ssl:ro
+    depends_on:
+      - web
+    networks:
+      - cve_network
+    restart: unless-stopped
+
+volumes:
+  mysql_data:
+
+networks:
+  cve_network:
+    driver: bridge
